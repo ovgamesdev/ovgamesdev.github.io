@@ -1,0 +1,3020 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BOTANIKA_ROLLS · Переводчик</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2f3ec; --paper-2:#e9ebe0; --ink:#22301f; --ink-soft:#5a6653;
+    --moss:#3f5738; --moss-deep:#2b3d26; --sage:#8fa07f; --line:#d5d8c9;
+    --plum:#7a4a5c; --amber:#b6802f; --ok:#3f7a4e; --ok-bg:#e3ede0; --white:#fffefb;
+    --shadow: 0 1px 2px rgba(34,48,31,.06), 0 6px 20px rgba(34,48,31,.06);
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace;}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif; font-weight:600; margin:0;}
+
+  .topbar{ display:flex; align-items:center; gap:12px; padding:12px 22px; background:var(--moss-deep); color:var(--paper); }
+  .topbar .leaf{ width:20px; height:20px; flex:none; }
+  .topbar h1{ font-size:17px; color:var(--white); }
+  .topbar .sub{ font-size:11.5px; color:#c7d2bf; margin-top:1px; }
+
+  .sectionbar{
+    display:flex; align-items:center; gap:12px; padding:10px 22px;
+    background:var(--white); border-bottom:1px solid var(--line);
+    flex-wrap:wrap; position:sticky; top:0; z-index:20; box-shadow:var(--shadow);
+  }
+  .tabs{ display:flex; gap:6px; }
+  .tab-btn{
+    appearance:none; border:1px solid var(--line); background:var(--paper);
+    color:var(--ink-soft); font-family:inherit; font-weight:600; font-size:13px;
+    padding:8px 14px; border-radius:999px; cursor:pointer; display:flex; align-items:center; gap:7px;
+  }
+  .tab-btn .badge{ font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; color:var(--ink-soft); background:rgba(0,0,0,.05); padding:1px 6px; border-radius:999px; }
+  .tab-btn.active{ background:var(--moss); border-color:var(--moss); color:#fff; }
+  .tab-btn.active .badge{ background:rgba(255,255,255,.2); color:#fff; }
+  .sb-spacer{ flex:1; }
+
+  .btn{
+    appearance:none; border:none; cursor:pointer; font-family:inherit; font-weight:600; font-size:13.5px;
+    padding:9px 16px; border-radius:999px; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .btn:active{ transform:scale(.97); }
+  .btn-primary{ background:var(--amber); color:#241a08; }
+  .btn-primary:hover{ background:#c68f3c; }
+  .btn-outline{ background:transparent; color:var(--moss-deep); border:1px solid var(--line); }
+  .btn-outline:hover{ background:var(--paper-2); }
+  .btn-sm{ padding:7px 13px; font-size:12.5px; }
+
+  .progress-pill{ display:flex; flex-direction:column; gap:1px; background:var(--paper-2); border:1px solid var(--line); border-radius:12px; padding:6px 14px; font-size:11.5px; color:var(--ink-soft); }
+  .progress-pill b{ font-family:'JetBrains Mono',monospace; color:var(--moss-deep); font-size:13px; }
+
+  .landing-wrap{ display:none; }
+  .landing-wrap.show{ display:block; }
+  .landing{ max-width:640px; margin:36px auto; padding:0 20px; }
+  .card{ background:var(--white); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); padding:28px; }
+  .card h2{ font-size:22px; color:var(--moss-deep); margin-bottom:8px; }
+  .card p{ line-height:1.6; color:var(--ink-soft); font-size:14px; }
+  .steps{ list-style:none; margin:18px 0; padding:0; display:grid; gap:10px; }
+  .steps li{ display:flex; gap:10px; align-items:flex-start; font-size:13.5px; line-height:1.5; }
+  .steps .num{ flex:none; width:24px; height:24px; border-radius:50%; background:var(--ok-bg); color:var(--moss); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; }
+
+  .dropzone{ display:flex; flex-direction:column; align-items:center; justify-content:center; margin-top:18px; border:1.5px dashed var(--sage); border-radius:12px; padding:26px; text-align:center; background:var(--paper-2); cursor:pointer; }
+  .dropzone:hover, .dropzone.drag{ background:#e2e6d5; border-color:var(--moss); }
+  .dropzone input{ display:none; }
+  .dropzone .dz-title{ font-weight:600; color:var(--moss-deep); font-size:14px; }
+  .dropzone .dz-sub{ font-size:12px; color:var(--ink-soft); margin-top:4px; }
+
+  .triple-upload{ margin-top:18px; display:grid; gap:10px; }
+  .file-slot{ display:flex; align-items:center; gap:10px; border:1px solid var(--line); border-radius:10px; padding:10px 14px; background:var(--paper-2); }
+  .file-slot .fs-lang{ font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--moss-deep); width:34px; flex:none; }
+  .file-slot .fs-req{ font-size:10.5px; color:var(--plum); font-weight:700; }
+  .file-slot .fs-name{ flex:1; font-size:12.5px; color:var(--ink-soft); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .file-slot label.pick{ font-size:12px; font-weight:600; color:var(--moss); cursor:pointer; padding:5px 10px; border:1px solid var(--sage); border-radius:8px; }
+  .file-slot input{ display:none; }
+
+  .fileerr{ color:#a13a3a; font-size:13px; margin-top:12px; }
+
+  .app{ display:none; }
+  .app.active{ display:flex; height:calc(100vh - 106px); }
+  .sidebar{ width:330px; flex:none; border-right:1px solid var(--line); background:var(--white); display:flex; flex-direction:column; }
+  .sidebar-controls{ padding:12px; border-bottom:1px solid var(--line); display:grid; gap:8px; }
+  .search-wrap{ position:relative; }
+  .search-wrap input{ width:100%; padding:9px 12px 9px 30px; border-radius:8px; border:1px solid var(--line); font-size:13px; font-family:inherit; background:var(--paper); }
+  .search-wrap svg{ position:absolute; left:9px; top:50%; transform:translateY(-50%); opacity:.5; }
+  select{ width:100%; padding:8px 10px; border-radius:8px; border:1px solid var(--line); font-size:12.5px; font-family:inherit; background:var(--paper); color:var(--ink); }
+  .toggle-row{ display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--ink-soft); }
+  .toggle-row input{ accent-color:var(--moss); }
+  .sidebar-list{ flex:1; overflow-y:auto; }
+  .prod-item{ display:flex; align-items:center; gap:10px; padding:9px 14px; border-bottom:1px solid #eef0e6; cursor:pointer; font-size:13px; }
+  .prod-item:hover{ background:var(--paper-2); }
+  .prod-item.active{ background:var(--ok-bg); }
+  .prod-dot{ flex:none; width:9px; height:9px; border-radius:50%; background:#d8ccb4; }
+  .prod-dot.done{ background:var(--ok); }
+  .prod-dot.partial{ background:var(--amber); }
+  .prod-name{ flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .prod-id{ font-size:10.5px; color:#9aa392; font-family:'JetBrains Mono',monospace; }
+  .sidebar-count{ padding:9px 14px; font-size:11px; color:var(--ink-soft); border-top:1px solid var(--line); }
+
+  .main{ flex:1; overflow-y:auto; }
+  .main-inner{ max-width:760px; margin:0 auto; padding:26px 26px 90px; }
+  .empty-state{ display:flex; align-items:center; justify-content:center; height:100%; color:var(--ink-soft); font-size:14px; }
+
+  .prod-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:14px; margin-bottom:4px; }
+  .prod-head h2{ font-size:21px; color:var(--moss-deep); }
+  .prod-meta{ font-size:11.5px; color:var(--ink-soft); margin-top:4px; }
+  .prod-meta span{ margin-right:14px; }
+  .nav-btns{ display:flex; gap:6px; flex:none; flex-wrap:wrap; justify-content:flex-end;}
+
+  .field-block{ margin-top:20px; background:var(--white); border:1px solid var(--line); border-radius:12px; padding:16px 18px; transition:border-color .15s ease, background .15s ease; }
+  .field-block.is-reviewed{ border-color:var(--ok); background:linear-gradient(180deg, var(--ok-bg), var(--white) 70px); }
+  .field-block h3{ font-size:13.5px; color:var(--moss-deep); margin-bottom:2px; }
+  .field-block .field-hint{ font-size:11.5px; color:var(--ink-soft); margin-bottom:10px; }
+  textarea.ru-edit{ background:var(--paper-2); }
+  textarea.ru-edit:focus{ background:var(--white); }
+  .lang-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:11px; }
+  .lang-grid.single{ grid-template-columns:1fr; }
+  .lang-col label{ display:flex; align-items:center; gap:6px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--ink-soft); margin-bottom:5px; }
+  textarea{ width:100%; border:1px solid var(--line); border-radius:8px; padding:9px 11px; font-family:inherit; font-size:13px; color:var(--ink); resize:vertical; min-height:38px; background:var(--white); line-height:1.5; }
+  textarea:focus{ outline:none; border-color:var(--sage); box-shadow:0 0 0 3px rgba(143,160,127,.18); }
+  textarea.big{ min-height:100px; }
+  textarea:disabled{ background:#f4f4ef; color:#aab0a2; }
+
+  .reviewed-row{ display:flex; align-items:center; gap:8px; margin-top:12px; font-size:12.5px; font-weight:600; color:var(--ink-soft); cursor:pointer; user-select:none; }
+  .reviewed-row input{ width:16px; height:16px; accent-color:var(--ok); }
+  .field-block.is-reviewed .reviewed-row{ color:var(--ok); }
+
+  .subhead{ margin-top:24px; margin-bottom:-8px; font-size:11.5px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:var(--plum); }
+
+  .save-indicator{ position:fixed; right:22px; bottom:22px; z-index:30; background:var(--moss-deep); color:var(--white); font-size:12px; padding:8px 14px; border-radius:999px; box-shadow:var(--shadow); display:flex; align-items:center; gap:8px; opacity:0; transform:translateY(6px); transition:opacity .25s ease, transform .25s ease; pointer-events:none; }
+  .save-indicator.show{ opacity:1; transform:translateY(0); }
+  .save-indicator .dot{ width:7px; height:7px; border-radius:50%; background:var(--sage); }
+
+  .bottom-nav{ position:sticky; bottom:0; background:linear-gradient(0deg, var(--paper) 60%, transparent); padding:18px 0 4px; display:flex; justify-content:space-between; gap:10px; }
+  ::-webkit-scrollbar{ width:10px; height:10px; }
+  ::-webkit-scrollbar-thumb{ background:#d3d6c6; border-radius:8px; }
+  ::-webkit-scrollbar-track{ background:transparent; }
+
+  @media (max-width: 860px){
+    .app.active{ flex-direction:column; height:auto; }
+    .sidebar{ width:100%; max-height:260px; }
+    .lang-grid{ grid-template-columns:1fr; }
+    .sectionbar{ position:static; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <svg class="leaf" viewBox="0 0 24 24" fill="none"><path d="M4 20C4 12 9 5 20 4C19 15 12 20 4 20Z" stroke="#c7d2bf" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 20C8 16 12 12 19 5" stroke="#c7d2bf" stroke-width="1.4" stroke-linecap="round"/></svg>
+    <div>
+      <h1>BOTANIKA_ROLLS</h1>
+      <div class="sub">Переводчик · товары, категории, интерфейс</div>
+    </div>
+  </div>
+
+  <div class="sectionbar">
+    <div class="tabs" id="tabs"></div>
+    <div class="sb-spacer"></div>
+    <label class="toggle-row" id="enToggleWrap" style="margin:0;"><input type="checkbox" id="enToggle" checked/> 🇬🇧 English</label>
+    <div class="progress-pill" id="progressPill" style="display:none;">
+      <span><b id="progressReviewed">0/0</b> проверено</span>
+      <span id="progressTranslated"></span>
+    </div>
+    <button class="btn btn-outline btn-sm" id="btnReload" style="display:none;">Загрузить другой файл</button>
+    <button class="btn btn-primary" id="btnExport" style="display:none;">Скачать</button>
+  </div>
+
+  <div class="landing-wrap" id="uploadArea"></div>
+
+  <div class="app" id="workArea">
+    <div class="sidebar">
+      <div class="sidebar-controls">
+        <div class="search-wrap">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#5a6653" stroke-width="2"/><path d="M21 21l-4-4" stroke="#5a6653" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="text" id="searchInput" placeholder="Поиск..." />
+        </div>
+        <div id="categoryFilterWrap" style="display:none;">
+          <select id="categoryFilter"><option value="">Все категории</option></select>
+        </div>
+        <label class="toggle-row"><input type="checkbox" id="onlyUnfinished"/> Показать только непроверенные</label>
+      </div>
+      <div class="sidebar-list" id="sidebarList"></div>
+      <div class="sidebar-count" id="sidebarCount"></div>
+    </div>
+    <div class="main">
+      <div class="main-inner" id="mainInner"></div>
+    </div>
+  </div>
+
+  <div class="save-indicator" id="saveIndicator"><span class="dot"></span><span id="saveIndicatorText">Сохранено</span></div>
+
+  <script type="application/json" id="embedded-products">{
+	"//": {
+		"title": "Название товара",
+		"short_description": "Краткое описание отображается только на карточке товара",
+		"description": "Описание отображается на странице товара",
+		"additional_information": [
+			{
+				"title": "Название дополнительной информации (Например \"Вес\")",
+				"value": "Значение дополнительной информации (Например 0.310 kg)"
+			}
+		],
+		"image": "Источник на изображение",
+		"category": "Категории товара. (Больше в \"./categories.json\")",
+		"createdAt": "Дата создания (для сортировки, например \"2026-01-09\" \"год-месяц-день\")",
+		"deleted": true
+	},
+	"1212": {
+		"title": "ЧИКЕН ЧИЗ С ХОЛОПЕНЬО",
+		"short_description": "",
+		"description": "Бургер булочка\nСоус бургер\nАйсберг\nКотлета в панировки\nКонсервированные огурцы\nПомидоры\nЛук красный\nСыр чеддер\nХолопеньо",
+		"additional_information": [{ "title": "Вес", "value": "0.365 kg" }],
+		"image": "1212.jpg",
+		"category": ["burger"]
+	},
+	"1114": {
+		"title": "ЧИКЕН БУРГЕР С ХОЛОПЕНЬО",
+		"short_description": "",
+		"description": "Булочка бургер\nФирменный соус\nАйсберг\nКотлета в панировке\nПомидоры\nЛук красный\nМаринованные огурчики\nХолопеньо",
+		"additional_information": [{ "title": "Вес", "value": "0.345 kg" }],
+		"image": "1114.jpg",
+		"category": ["burger"]
+	},
+	"1113": {
+		"title": "ЧИКЕН БУРГЕР",
+		"short_description": "",
+		"description": "Булочка бургер\nФирменный соус\nАйсберг\nКотлета в панировке\nПомидоры\nЛук красный\nМаринованные огурчики",
+		"additional_information": [{ "title": "Вес", "value": "0.320 kg" }],
+		"image": "1113.jpg",
+		"category": ["burger"]
+	},
+	"1111": {
+		"title": "ЧИКЕН-ЧИЗ",
+		"short_description": "",
+		"description": "Бургер булочка\nСоус бургер\nАйсберг\nКотлета в панировки\nКонсервированные огурцы\nПомидоры\nЛук красный\nСыр чеддер",
+		"additional_information": [{ "title": "Вес", "value": "0.340 kg" }],
+		"image": "1111.jpg",
+		"category": ["burger"]
+	},
+	"1115": {
+		"title": "Капаи",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nПомидор\nОгурец\nСоус унаги\nЗеленый лук",
+		"additional_information": [],
+		"image": "1115.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1116": {
+		"title": "Веган",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nАйсберг\nПерец болгарский\nПомидор\nОгурец",
+		"additional_information": [],
+		"image": "1116.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1117": {
+		"title": "Саке Премиум",
+		"short_description": "",
+		"description": "Рис\nНори\nЛосось\nТворожный сыр\nОгурец",
+		"additional_information": [],
+		"image": "1117.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1118": {
+		"title": "Сашими ролл",
+		"short_description": "",
+		"description": "Рисовая бумага\nСемга\nНори\nОгурец\nТунец\nЗеленый лук",
+		"additional_information": [],
+		"image": "1118.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1119": {
+		"title": "МИКС РОЛЛ ПРЕМИУМ",
+		"short_description": "",
+		"description": "Нори\nЛосось\nЧеддер\nМассаго красная\nОгурец",
+		"additional_information": [],
+		"image": "1119.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1110": {
+		"title": "Хаттори",
+		"short_description": "",
+		"description": "Рис красный\nОгурец\nТунец\nМассаго черная\nСыр творожный\nПищевое золото",
+		"additional_information": [],
+		"image": "1110.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1120": {
+		"title": "Лосось Премиум Чиз",
+		"short_description": "",
+		"description": "Рис\nНори\nЛосось\nОгурец\nКреветка\nЧеддер\nШапочка семги\nСырный соус\nУнаги соус",
+		"additional_information": [],
+		"image": "1120.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1121": {
+		"title": "Филадельфия Gold",
+		"short_description": "",
+		"description": "Рис\nТворожный сыр\nЛосось\nНори\nПищевое золото\nЧерная массаго",
+		"additional_information": [],
+		"image": "1121.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1122": {
+		"title": "Black Фила",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nОмлет\nАвокадо\nЛосось\nСалат чука\nСоус спайси",
+		"additional_information": [],
+		"image": "1122.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1123": {
+		"title": "ФУДЗИ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nЛосось\nОгурец\nВ кунжуте\nСалат чука",
+		"additional_information": [],
+		"image": "1123.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1124": {
+		"title": "Гайда маки",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nКреветка тигровая\nМасаго красная\nМасаго зеленая\n(4кусочка в красной 4в зеленой)",
+		"additional_information": [],
+		"image": "1124.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1125": {
+		"title": "КАЛИФОРНИЯ С ЛОСОСЕМ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nЛосось\nАвокадо\nОгурец\nМасаго красная\nКунжут",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.255 kg" }],
+		"image": "1125.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1126": {
+		"title": "КАНАДА С УГРЕМ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nУгорь шапка\nАвокадо\nОгурец\nУнаги соус\nКунжут",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.285 kg" }],
+		"image": "1126.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1127": {
+		"title": "Филадельфия КРЕВЕТКА",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nАвокадо\nКреветка тигровая\nМассаго красная",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.245 kg" }],
+		"image": "1127.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1128": {
+		"title": "ТУНА УРАМАКИ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nТунец шапка\nАвокадо\nОгурец\nКунжут унаги",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.270 kg" }],
+		"image": "1128.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1129": {
+		"title": "БЕКОН ЧИЗ ПРЕМИУМ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nБекон\nОмлет тамаго\nСыр чеддер\nСоус спайси",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.270 kg" }],
+		"image": "1129.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1130": {
+		"title": "КАЛИФОРНИЯ С КРАБОМ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nСнежный краб\nАвокадо\nОгурец\nМасаго красная\nКунжут",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.255 kg" }],
+		"image": "1130.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1131": {
+		"title": "Филадельфия премиум",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nСемга\nАвокадо\nОгурец",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.330 kg" }],
+		"image": "1131.jpg",
+		"category": ["rolls-classic"]
+	},
+	"2227": {
+		"title": "Эскалар",
+		"short_description": "",
+		"description": "Рис\nНори\nСыр\nКреветка\nОгурец\nЭскалар копченый",
+		"additional_information": [],
+		"image": "2227.jpg",
+		"category": ["rolls-classic"]
+	},
+	"2228": {
+		"title": "Одари",
+		"short_description": "",
+		"description": "Рис\nНори\nОгурец\nСыр креметте\nЛосось\nТунец\nУгорь",
+		"additional_information": [],
+		"image": "2228.jpg",
+		"category": ["rolls-classic"]
+	},
+	"2229": {
+		"title": "Бонито",
+		"short_description": "",
+		"description": "Бонито\nРис\nНори\nСыр креметте\nТенец\nОгурец\nСтружка тунца",
+		"additional_information": [],
+		"image": "2229.jpg",
+		"category": ["rolls-classic"]
+	},
+	"2230": {
+		"title": "Дорама",
+		"short_description": "",
+		"description": "Окрашенный рис\nСыр Филадельфия\nОгурец\nЛосось\nМассаго Черная\nПищевое золото",
+		"additional_information": [],
+		"image": "2230.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1132": {
+		"title": "Красный дракон",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nУгорь\nОгурец\nСоус свит Чили",
+		"additional_information": [],
+		"image": "1132.jpg",
+		"category": ["rolls-classic"]
+	},
+	"1133": {
+		"title": "ЭБИ ТЕМПУРА",
+		"short_description": "",
+		"description": "Красный рис\nСыр творожный\nОгурец\nКреветка\nНори\nПанировка",
+		"additional_information": [],
+		"image": "1133.jpg",
+		"category": ["rolls-tempura"]
+	},
+	"1134": {
+		"title": "ТЕМПУРА С УГРЕМ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nУгорь\nАвокадо",
+		"additional_information": [],
+		"image": "1134.jpg",
+		"category": ["rolls-tempura"]
+	},
+	"1135": {
+		"title": "ТЕМПУРА БАНЗАЙ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nКреветка\nМассаго\nОгурец",
+		"additional_information": [],
+		"image": "1135.jpg",
+		"category": ["rolls-tempura"]
+	},
+	"1136": {
+		"title": "ТЕМПУРА С БЕКОНОМ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nБекон\nОгурец\nСыр чеддер",
+		"additional_information": [],
+		"image": "1136.jpg",
+		"category": ["rolls-tempura"]
+	},
+	"1137": {
+		"title": "ТЕМПУРА ЦЕЗАРЬ",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nАйсберг\nОгурец\nКурочка",
+		"additional_information": [],
+		"image": "1137.jpg",
+		"category": ["rolls-tempura"]
+	},
+	"2220": {
+		"title": "Филадельфия Гриль",
+		"short_description": "",
+		"description": "Рис\nНори\nОгурец\nСыр\nЛосось гриль",
+		"additional_information": [],
+		"image": "2220.jpg",
+		"category": ["rolls-classic"]
+	},
+	"2223": {
+		"title": "Саке темпура",
+		"short_description": "",
+		"description": "Рис\nНори\nЛосось\nОгурец\nСыр",
+		"additional_information": [],
+		"image": "2223.jpg",
+		"category": ["rolls-tempura"]
+	},
+	"2224": {
+		"title": "Темпура с тунцом",
+		"short_description": "",
+		"description": "Рис\nНори\nСыр креметте\nОгурец\nТунец\nСтружка тунца",
+		"additional_information": [],
+		"image": "2224.jpg",
+		"category": ["rolls-tempura"]
+	},
+	"1138": {
+		"title": "ЗАПЕЧЕННЫЙ С ТУНЦОМ 🌶",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nТунец\nОгурец\nОмлет тамаго\nМасаго красная\nУнаги, Кунжут сверху",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.260 kg" }],
+		"image": "1138.jpg",
+		"category": ["rolls-baked"]
+	},
+	"1139": {
+		"title": "ЗАПЕЧЕННЫЙ С УГРЕМ И ЛОСОСЕМ 🌶",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nЛосось\nОгурец\nУгорь\nМасаго красная\nМоцарелла\nУнаги, Кунжут сверху",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.285 kg" }],
+		"image": "1139.jpg",
+		"category": ["rolls-baked"]
+	},
+	"1140": {
+		"title": "Запеченный цезарь 🌶",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nКурица\nОгурец\nСпайси шапка\nУнаги, Кунжут",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.285 kg" }],
+		"image": "1140.jpg",
+		"category": ["rolls-baked"]
+	},
+	"1141": {
+		"title": "ЗАПЕЧЕННЫЙ С ЛОСОСЕМ 🌶",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nЛосось\nОгурец\nОмлет тамаго\nМасаго красная\nУнаги, Кунжут",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.290 kg" }],
+		"image": "1141.jpg",
+		"category": ["rolls-baked"]
+	},
+	"1142": {
+		"title": "ЗАПЕЧЕННЫЕ С МИДИЯМИ 🌶",
+		"short_description": "",
+		"description": "Рис\nНори\nТворожный сыр\nМидии\nОмлет тамаго\nМасаго зеленая\nУнаги, Кунжут",
+		"additional_information": [{ "title": "Вес ролла", "value": "0.245 kg" }],
+		"image": "1142.jpg",
+		"category": ["rolls-baked"]
+	},
+	"2225": {
+		"title": "Запеченный в кунжуте с креветкой",
+		"short_description": "",
+		"description": "Рис\nНори\nОгурец\nСнежный краб\nСыр\nОмлет\nКреветка\nКунжут\nСоус унаги",
+		"additional_information": [],
+		"image": "2225.png",
+		"category": ["rolls-baked"]
+	},
+	"2226": {
+		"title": "ЗАПЕЧЕННЫЙ С УГРЕМ",
+		"short_description": "",
+		"description": "Рис\nНори\nУгорь\nСыр творожный\nОмлет\nМассаго\nСоус запеченный",
+		"additional_information": [],
+		"image": "2226.jpg",
+		"category": ["rolls-baked"]
+	},
+	"1143": {
+		"title": "МИНИ С МИДИЯМИ",
+		"short_description": "",
+		"description": "Рис\nНори\nМидии\nСоус шапка",
+		"additional_information": [],
+		"image": "1143.jpg",
+		"category": ["rolls-mini"]
+	},
+	"1144": {
+		"title": "МИНИ С ЛОСОСЕМ",
+		"short_description": "",
+		"description": "Рис\nНори\nЛосось\nСырная шапочка",
+		"additional_information": [],
+		"image": "1144.jpg",
+		"category": ["rolls-mini"]
+	},
+	"1145": {
+		"title": "МИНИ С УГРЕМ",
+		"short_description": "",
+		"description": "Рис\nНори\nУгорь\nУнаги\nКунжут",
+		"additional_information": [],
+		"image": "1145.jpg",
+		"category": ["rolls-mini"]
+	},
+	"1146": {
+		"title": "МИНИ С АВОКАДО",
+		"short_description": "",
+		"description": "Рис\nНори\nАвокадо\nСырная шапочка",
+		"additional_information": [],
+		"image": "1146.jpg",
+		"category": ["rolls-mini"]
+	},
+	"1147": {
+		"title": "МИНИ С ТУНЦОМ",
+		"short_description": "",
+		"description": "Рис\nНори\nТунец\nСоус шапка",
+		"additional_information": [],
+		"image": "1147.jpg",
+		"category": ["rolls-mini"]
+	},
+	"1148": {
+		"title": "МИНИ С ОГУРЦОМ",
+		"short_description": "",
+		"description": "Рис\nНори\nОгурец\nСырная шапочка",
+		"additional_information": [],
+		"image": "1148.jpg",
+		"category": ["rolls-mini"]
+	},
+	"1150": {
+		"title": "ХОКАЙДО",
+		"short_description": "",
+		"description": "Филадельфия с креветкой\nКалифорния классик\nГайда маки\nКалифорния с лососем\nТуна урамаки",
+		"additional_information": [{ "title": "Вес набора", "value": "1.260 kg" }],
+		"image": "1150.jpg",
+		"category": ["sets-classic"]
+	},
+	"1151": {
+		"title": "ГАЙДЗЕН",
+		"short_description": "",
+		"description": "Филадельфия\nКанада\nКалифорния классик\nКалифорния с лососем\nБекон чиз\nГейша",
+		"additional_information": [{ "title": "Вес набора", "value": "1.660 kg" }],
+		"image": "1151.jpg",
+		"category": ["sets-classic"]
+	},
+	"1152": {
+		"title": "Токио Люкс",
+		"short_description": "",
+		"description": "Мини с угрем 8\nМини с тунцом 8\nМини с лососем 8\nСуши лосось 2\nСуши с креветкой 2\nГункан с лососем 4\nСашими 8\nМикс ролл 8",
+		"additional_information": [],
+		"image": "1152.jpg",
+		"category": ["sets-classic"]
+	},
+	"1153": {
+		"title": "Ханами",
+		"short_description": "",
+		"description": "Филадельфия премиум 8 шт.\nBLACK фила 8 шт.\nФиладельфия GOLD 8 шт.",
+		"additional_information": [],
+		"image": "1153.jpg",
+		"category": ["sets-classic"]
+	},
+	"1154": {
+		"title": "Сет Сёгун",
+		"short_description": "",
+		"description": "Гункан с лососем в соусе спайси 10 штук\nГункан с угрём и массагой 4 штуки\nСуши с креветкой 2 шт.\nСуши с лососем 2 штуки\nСуши с угрём 2 штуки",
+		"additional_information": [],
+		"image": "1154.jpg",
+		"category": ["sets-classic"]
+	},
+	"1155": {
+		"title": "АМЕРИКА",
+		"short_description": "",
+		"description": "Филадельфия\nКанада\nКалифорния классик\nМини с лососем\nМини с мидиями",
+		"additional_information": [{ "title": "Вес набора", "value": "1.130 kg" }],
+		"image": "1155.jpg",
+		"category": ["sets-classic"]
+	},
+	"2222": {
+		"title": "Нигири",
+		"short_description": "",
+		"description": "Гунканы снежным крабом 3\nТунцом 4\nКреветкой 3\nУгорь 2\nСуши с лососем 2 шт.\nЛососем гриль 2 шт.",
+		"additional_information": [],
+		"image": "2222.jpg",
+		"category": ["sets-classic"]
+	},
+	"1156": {
+		"title": "СУМО",
+		"short_description": "",
+		"description": "Хотатэ фрай\nЦезарь\nБанзай темпура\nЗапеченный с мидиями",
+		"additional_information": [{ "title": "Вес набора", "value": "1.100 kg" }],
+		"image": "1156.jpg",
+		"category": ["sets-baked"]
+	},
+	"1157": {
+		"title": "СЕНСЕЙ",
+		"short_description": "",
+		"description": "Запеченный цезарь\nЗапеченный с лососем\nТемпура с беконом\nБанзай темпура",
+		"additional_information": [{ "title": "Вес набора", "value": "1.150 kg" }],
+		"image": "1157.jpg",
+		"category": ["sets-baked"]
+	},
+	"1158": {
+		"title": "ТЕМПУРА МЕГА",
+		"short_description": "",
+		"description": "Темпура с беконом\nТемпура с угрем\nБанзай темпура\nЦезарь темпура\nХотатэ фрай",
+		"additional_information": [],
+		"image": "1158.jpg",
+		"category": ["sets-baked"]
+	},
+	"1159": {
+		"title": "ТРИАДА",
+		"short_description": "",
+		"description": "Запеченный с лососем\nЗапеченный с мидиями\nЗапеченный с тунцом",
+		"additional_information": [],
+		"image": "1159.jpg",
+		"category": ["sets-baked"]
+	},
+	"1160": {
+		"title": "Сакура",
+		"short_description": "",
+		"description": "Black фила\nДорамма\nЗапеченный с лососем\nМини с огурцом\nТемпура бекон",
+		"additional_information": [],
+		"image": "1160.jpg",
+		"category": ["sets-mix"]
+	},
+	"1161": {
+		"title": "МАЦУО МОНРО",
+		"short_description": "",
+		"description": "Филадельфия премиум\nКанада\nЦезарь запеченный\nСуши с креветкой 2 шт.",
+		"additional_information": [{ "title": "Вес набора", "value": "0.985 kg" }],
+		"image": "1161.jpg",
+		"category": ["sets-mix"]
+	},
+	"1162": {
+		"title": "АЗИЯ",
+		"short_description": "",
+		"description": "Банзай темпура\nЗапеченный с угрем\nБекон чиз\nКанада\nМини с тунцом спайси",
+		"additional_information": [{ "title": "Вес набора", "value": "1.235 kg" }],
+		"image": "1162.jpg",
+		"category": ["sets-mix"]
+	},
+	"1163": {
+		"title": "ФУТУРАМА",
+		"short_description": "",
+		"description": "Филадельфия\nКалифорния классик\nКалифорния с лососем\nКанада\nЗапеченный с угрем\nЗапеченный с мидиями\nТемпура с беконом\nФудзи в кунжуте",
+		"additional_information": [{ "title": "Вес набора", "value": "2.210 kg" }],
+		"image": "1163.jpg",
+		"category": ["sets-mix"]
+	},
+	"1164": {
+		"title": "ФУДЗИЯМА",
+		"short_description": "",
+		"description": "Гайда маки\nТуна урамаки\nТемпура с беконом\nЦезарь\nМини авокадо",
+		"additional_information": [{ "title": "Вес набора", "value": "0.935 kg" }],
+		"image": "1164.jpg",
+		"category": ["sets-mix"]
+	},
+	"1165": {
+		"title": "ХАКУ",
+		"short_description": "",
+		"description": "Филадельфия премиум\nКалифорния мега краб\nБекон чиз премиум\nЗапеченный лосось премиум\nЦезарь ролл премиум",
+		"additional_information": [{ "title": "Вес набора", "value": "1.440 kg" }],
+		"image": "1165.jpg",
+		"category": ["sets-mix"]
+	},
+	"2221": {
+		"title": "АВЕНЮ",
+		"short_description": "",
+		"description": "Фила гриль\nТуна прайм\nЗапеченный в кунжуте с креветкой\nСуши с лососем 1\nСуши с тунцом 1\nСуши лосось гриль 1",
+		"additional_information": [],
+		"image": "2221.jpg",
+		"category": ["sets-mix"]
+	},
+	"1170": {
+		"title": "RONIN",
+		"short_description": "",
+		"description": "Фила-лайт\nТори с лососем\nСаке-темпура\nЗапеченный с лососем",
+		"additional_information": [],
+		"image": "1170.jpg",
+		"category": ["sets-lite"]
+	},
+	"1171": {
+		"title": "ДУЭТ",
+		"short_description": "",
+		"description": "Фила-лайт\nЗапеченный с курицей\nФри\nМорс 2",
+		"additional_information": [],
+		"image": "1171.jpg",
+		"category": ["sets-lite"]
+	},
+	"1172": {
+		"title": "ЛЕДИ-WHITE",
+		"short_description": "",
+		"description": "Фила-лайт\nКалифорния\nТемпура с курицей\nКаппа-маки\nПицца-маргарита",
+		"additional_information": [],
+		"image": "1172.jpg",
+		"category": ["sets-lite"]
+	},
+	"1173": {
+		"title": "ОРИ-НОРИ",
+		"short_description": "",
+		"description": "Темпура с курицей\nЗапеченный с курицей\nСаке темпура\nЗапеченный саке-маки\nФри 2 п",
+		"additional_information": [],
+		"image": "1173.jpg",
+		"category": ["sets-lite"]
+	},
+	"1174": {
+		"title": "BIG-PARTY",
+		"short_description": "",
+		"description": "Фила-лайт\nТемпура с курицей\nСаке-маки\nЗапеченный саке-маки\nТори с лососем\nНаггетсы 1п",
+		"additional_information": [],
+		"image": "1174.jpg",
+		"category": ["sets-lite"]
+	},
+	"1180": {
+		"title": "МАРГАРИТА",
+		"short_description": "",
+		"description": "Тесто\nПицца соус\nМоцарелла\nТоматы",
+		"additional_information": [],
+		"image": "1180.jpg",
+		"category": ["pizza"]
+	},
+	"1181": {
+		"title": "СТАФФ С ЛОСОСЕМ МИНИ",
+		"short_description": "",
+		"description": "Сыр рикотта\nСыр моцарелла\nШпинат\nЛосось\nЛимон",
+		"additional_information": [],
+		"image": "1181.jpg",
+		"category": ["pizza"]
+	},
+	"1182": {
+		"title": "ПИЦЦА «STAFF С ЛОСОСЕМ»",
+		"short_description": "",
+		"description": "Нежное тесто\nСыр рикотта\nСыр моцарелла\nШпинат\nЛосось\nСпеции",
+		"additional_information": [],
+		"image": "1182.jpg",
+		"category": ["pizza"]
+	},
+	"1183": {
+		"title": "ГАВАЙСКАЯ",
+		"short_description": "",
+		"description": "Тесто\nСливочный соус\nАнанас консервированный\nКурица копченая\nМоцарелла",
+		"additional_information": [],
+		"image": "1183.jpg",
+		"category": ["pizza"]
+	},
+	"1184": {
+		"title": "КУРИЦА+ГРИБЫ",
+		"short_description": "",
+		"description": "Тесто\nСливочный соус\nМоцарелла\nКурица\nШампиньоны\nСухой чеснок\nСырный соус",
+		"additional_information": [],
+		"image": "1184.jpg",
+		"category": ["pizza"]
+	},
+	"1185": {
+		"title": "ДИАБЛО",
+		"short_description": "",
+		"description": "Тесто\nПицца соус\nМоцарелла\nКурица копченая\nПепперони\nЧерри\nМаслины\nХолопеньо\nСоус",
+		"additional_information": [],
+		"image": "1185.jpg",
+		"category": ["pizza"]
+	},
+	"1186": {
+		"title": "Вегетарианская пицца",
+		"short_description": "",
+		"description": "Тесто\nТоматный соус\nБолгарский перец\nПомидоры\nШампиньоны\nБрокколи\nМаслины\nСыр моцарелла",
+		"additional_information": [],
+		"image": "1186.jpg",
+		"category": ["pizza"]
+	},
+	"1187": {
+		"title": "МОРСКОЙ КОКТЕЙЛЬ",
+		"short_description": "",
+		"description": "Тесто\nСливочный соус\nСыр моцарелла\nТигровые креветки\nНежнейшая семга\nБрокколи\nМаслины",
+		"additional_information": [],
+		"image": "1187.jpg",
+		"category": ["pizza"]
+	},
+	"1188": {
+		"title": "СОЧНЫЙ БЕКОН",
+		"short_description": "",
+		"description": "Тесто\nСыр моцарелла\nБекон\nСалями\nКрасный лук",
+		"additional_information": [],
+		"image": "1188.jpg",
+		"category": ["pizza"]
+	},
+	"1189": {
+		"title": "ЧЕТЫРЕ СЫРА",
+		"short_description": "",
+		"description": "Тесто\nСливочный соус\nМоцарелла\nСыр пармезан\nСыр сливочный\nСыр чеддер",
+		"additional_information": [],
+		"image": "1189.jpg",
+		"category": ["pizza"]
+	},
+	"1190": {
+		"title": "ПИКАНТНАЯ КУРОЧКА",
+		"short_description": "",
+		"description": "Тесто\nПицца соус\nМоцарелла\nФиле курочки\nШампиньоны\nТоматы\nБрокколи\nПикантное масло",
+		"additional_information": [],
+		"image": "1190.jpg",
+		"category": ["pizza"]
+	},
+	"1191": {
+		"title": "ПЕПЕРОНИ",
+		"short_description": "",
+		"description": "Тесто\nПицца соус\nМоцарелла\nКолбаски салями\nМаслины",
+		"additional_information": [],
+		"image": "1191.jpg",
+		"category": ["pizza"]
+	},
+	"2231": {
+		"title": "КУРИЦА БЕКОН",
+		"short_description": "",
+		"description": "Белый соус\nМоцарелла\nКопченная грудка\nБекон «шашки»\nСоус сливочно чесночный",
+		"additional_information": [],
+		"image": "2231.jpg",
+		"category": ["pizza"]
+	},
+	"2232": {
+		"title": "ЦАРСКАЯ",
+		"short_description": "",
+		"description": "Томатный соус\nМоцарелла\nШампиньоны\nПепперони\nБолгарский перец\nКопченная грудка\nСоус bbq",
+		"additional_information": [],
+		"image": "2232.jpg",
+		"category": ["pizza"]
+	},
+	"1192": {
+		"title": "КРЕВЕТКИ В КЛЯРЕ",
+		"short_description": "",
+		"description": "Тигровые креветки в хрустящей панировки\nС соусом сладкий чили\n6 шт.",
+		"additional_information": [],
+		"image": "1192.jpg",
+		"category": ["snacks"]
+	},
+	"1193": {
+		"title": "НАГГЕТСЫ",
+		"short_description": "",
+		"description": "Сочные куриное филе в панировке\nПорция 6 кусочков",
+		"additional_information": [],
+		"image": "1193.jpg",
+		"category": ["snacks"]
+	},
+	"1194": {
+		"title": "ФРИ",
+		"short_description": "",
+		"description": "Манящий вкус картофеля, порадует не только детишек, но и взрослых",
+		"additional_information": [{ "title": "Вес", "value": "0.150 kg" }],
+		"image": "1194.jpg",
+		"category": ["snacks"]
+	},
+	"1195": {
+		"title": "ТОМ ЯМ С МОРЕПРОДУКТАМИ",
+		"short_description": "",
+		"description": "Бульон том ям\nШампиньоны\nПомидоры черри\nКальмары\nТигровые креветки\nЛистики лайма\nДополнения рис",
+		"additional_information": [],
+		"image": "1195.jpg",
+		"category": ["soups"]
+	},
+	"1196": {
+		"title": "ТОМ ЯМ С КУРИЦЕЙ",
+		"short_description": "",
+		"description": "Бульон том ям\nШампиньоны\nТоматы черри\nФиле курочки\nЛистики лайма\nДополнения рис",
+		"additional_information": [],
+		"image": "1196.jpg",
+		"category": ["soups"]
+	},
+	"1197": {
+		"title": "Удон с говядиной в соусе терияки",
+		"short_description": "",
+		"description": "Лапша Удон\nВырезка говядины\nБолгарский перец\nМорковь\nЛук репчатый\nСоус Терияки",
+		"additional_information": [],
+		"image": "1197.jpg",
+		"category": ["pastes"]
+	},
+	"1198": {
+		"title": "Вок в кунжутном соусе с курицей и овощами",
+		"short_description": "",
+		"description": "Лапша Удон\nКуриное филе\nБолгарский перец\nМорковь\nРепчатый лук\nСоус орехово-кунжутный",
+		"additional_information": [],
+		"image": "1198.jpg",
+		"category": ["pastes"]
+	},
+	"1199": {
+		"title": "Вок в сливочном соусе с курицей и грибами",
+		"short_description": "",
+		"description": "Лапша удон\nКуриное филе\nШампиньоны\nСливки\nРепчатый лук",
+		"additional_information": [],
+		"image": "1199.jpg",
+		"category": ["pastes"]
+	},
+	"1210": {
+		"title": "Поке",
+		"short_description": "",
+		"description": "Рис\nЛосось\nАвокадо\nОгурец\nТоматы черри\nРедис\nСалат чука\nМикрозелень\nСоус",
+		"additional_information": [],
+		"image": "1210.jpg",
+		"category": ["poke"]
+	},
+	"1211": {
+		"title": "ПОКЕ НА ЗАВТРАК",
+		"short_description": "",
+		"description": "РИС\nБЕЛАЯ ФАСОЛЬ\nЖАРЕННОЕ ЯЙЦО\nБЕКОН\nТоматы\nСоус\nОГУРЕЦ\nСАЛАТ «ЧУКА»",
+		"additional_information": [],
+		"image": "1211.png",
+		"category": ["poke"]
+	},
+	"4444": {
+		"title": "Фруктовая пицца",
+		"short_description": "",
+		"description": "Сладкая клубника\nТропический ананас\nНежный банан\nСочная клюква",
+		"additional_information": [],
+		"image": "4444.jpg",
+		"category": ["desserts"]
+	},
+	"4441": {
+		"title": "НАСЛАЖДЕНИЯ",
+		"short_description": "",
+		"description": "Рисовая бумага\nНежнейший шоколадный крем\nБанан\nАпельсин\nКлюква",
+		"additional_information": [],
+		"image": "4441.jpg",
+		"category": ["desserts"]
+	},
+	"4443": {
+		"title": "ВОДА БЕЗ ГАЗА",
+		"short_description": "",
+		"description": "",
+		"additional_information": [{ "title": "Объем", "value": "0.5 литра" }],
+		"image": "4443.jpg",
+		"category": ["drinks"]
+	},
+	"4445": {
+		"title": "ГАЗИРОВАННАЯ ВОДА",
+		"short_description": "",
+		"description": "",
+		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
+		"image": "4445.jpg",
+		"category": ["drinks"]
+	},
+	"4446": {
+		"title": "КОЛА",
+		"short_description": "",
+		"description": "Напиток Coca-Cola газированный",
+		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
+		"image": "4446.jpg",
+		"category": ["drinks"]
+	},
+	"4447": {
+		"title": "МОРС КЛЮКВА",
+		"short_description": "",
+		"description": "МОРС КЛЮКА НАТУРАЛЬНЫЙ",
+		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
+		"image": "4447.jpg",
+		"category": ["drinks"]
+	},
+	"4448": {
+		"title": "МОРС ОБЛЕПИХА",
+		"short_description": "",
+		"description": "МОРС ИЗ ЯГОД ОБЛЕПИХИ",
+		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
+		"image": "4448.jpg",
+		"category": ["drinks"]
+	},
+	"4449": {
+		"title": "СОК АПЕЛЬСИНОВЫЙ PIKO",
+		"short_description": "",
+		"description": "АПЕЛЬСИН",
+		"additional_information": [{ "title": "Объем", "value": "1 л" }],
+		"image": "4449.jpg",
+		"category": ["drinks"]
+	},
+	"4451": {
+		"title": "СОК ЯБЛОКО PIKO",
+		"short_description": "",
+		"description": "ЯБЛОКО",
+		"additional_information": [{ "title": "Объем", "value": "1 л" }],
+		"image": "4451.jpg",
+		"category": ["drinks"]
+	},
+	"4452": {
+		"title": "СОК МУЛЬТИФРУКТ PIKO MINI",
+		"short_description": "",
+		"description": "МУЛЬТИФРУКТ",
+		"additional_information": [{ "title": "Объем", "value": "0.2 л" }],
+		"image": "4452.jpg",
+		"category": ["drinks"]
+	},
+	"4453": {
+		"title": "СОК ЯБЛОКО PIKO MINI",
+		"short_description": "",
+		"description": "ЯБЛОКО",
+		"additional_information": [{ "title": "Объем", "value": "0.2 л" }],
+		"image": "4453.jpg",
+		"category": ["drinks"]
+	},
+	"4454": {
+		"title": "BBQ СОУС",
+		"short_description": "",
+		"description": "СОУС BBQ",
+		"additional_information": [],
+		"image": "4454.jpg",
+		"category": ["sauces"]
+	},
+	"4455": {
+		"title": "СОУС ТОМАТНЫЙ",
+		"short_description": "",
+		"description": "СОУС ТОМАТНЫЙ КЕТЧУП",
+		"additional_information": [],
+		"image": "4455.jpg",
+		"category": ["sauces"]
+	},
+	"4456": {
+		"title": "ОРЕХОВО-КУНЖУТНЫЙ СОУС",
+		"short_description": "",
+		"description": "",
+		"additional_information": [],
+		"image": "4456.jpg",
+		"category": ["sauces"]
+	},
+	"4457": {
+		"title": "СЛАДКИЙ ЧИЛИ",
+		"short_description": "",
+		"description": "",
+		"additional_information": [],
+		"image": "4457.jpg",
+		"category": ["sauces"]
+	},
+	"4458": {
+		"title": "СОУС СЫРНЫЙ",
+		"short_description": "",
+		"description": "СЫРНЫЙ СОУС НА РАЗЛИВ",
+		"additional_information": [{ "title": "Объем", "value": "0.03 л" }],
+		"image": "4458.jpg",
+		"category": ["sauces"]
+	},
+	"4459": {
+		"title": "ТЕРИЯКИ СОУС",
+		"short_description": "",
+		"description": "",
+		"additional_information": [],
+		"image": "4459.jpg",
+		"category": ["sauces"]
+	},
+	"4460": {
+		"title": "УНАГИ СОУС",
+		"short_description": "",
+		"description": "",
+		"additional_information": [],
+		"image": "4460.jpg",
+		"category": ["sauces"]
+	},
+	"4461": {
+		"title": "ШИРАЧА СОУС",
+		"short_description": "",
+		"description": "",
+		"additional_information": [],
+		"image": "4461.jpg",
+		"category": ["sauces"]
+	},
+	"8000": {
+		"title": "ИНЬ - ЯНЬ",
+		"short_description": "",
+		"description": "Нори – 2\nРис – 0,200\nКраситель черн.красн.– 0,004\nЛосось терияки – 0,030\nМикрозелень – 0,002\nКунжут микс – 0,005\nСыр твор. Красный – 0,020\nУнаги – 0,005",
+		"additional_information": [],
+		"image": "8000.jpg",
+		"category": ["rolls-classic"]
+	},
+	"8001": {
+		"title": "С АПЕЛЬСИНОМ И ЛОСОСЕМ",
+		"short_description": "",
+		"description": "Нори – 1\nРис – 0,130\nСыр творожный – 0,040\nЛосось – 0,050\nАпельсин – 0,040\nСоус манго-айоли – 0,020\nИкра имитация – 0,015\nМикро зелень – 0,005",
+		"additional_information": [],
+		"image": "8001.jpg",
+		"category": ["rolls-classic"]
+	},
+	"8002": {
+		"title": "С КРЕВЕТКОЙ ТЕМПУРА",
+		"short_description": "",
+		"description": "Рис – 0,130\nНори – 0,7\nОгурец – 0,040\nАвокадо – 0,030\nКреветка темпура – 0,085\nСоус манго-айоли – 0,010\nМикрозелень – 0,005\nПищевое золото – 0,001",
+		"additional_information": [],
+		"image": "8002.jpg",
+		"category": ["rolls-classic"]
+	},
+	"8003": {
+		"title": "С ТУНЦОМ И ЛОСОСЕМ",
+		"short_description": "",
+		"description": "Нори – 0,5\nРис – 0,130\nСыр творожный – 0,020\nУгорь – 0,030\nОгурец0,020\nЛосось – 0,030\nТунец – 0,050\nАпельсин – 0,20\nСтружка тунца – 0,010\nТобико – 0,005\nУнаги – 0,010\nМикрозелень – 0,005",
+		"additional_information": [],
+		"image": "8003.jpg",
+		"category": ["rolls-classic"]
+	},
+	"8004": {
+		"title": "МИНИ ЛОСОСЬ ТЕРИЯКИ",
+		"short_description": "",
+		"description": "Нори – 1\nРис – 0,100\nЛосось терияки – 0,040\nСпайси – 0,015\nСтружка тунца – 0,005\nКунжут микс  – 0,005\nМикро зелень – 0,005",
+		"additional_information": [],
+		"image": "8004.jpg",
+		"category": ["rolls-mini"]
+	},
+	"8005": {
+		"title": "С УГРЕМ И КРЕВЕТКОЙ",
+		"short_description": "",
+		"description": "Нори – 0,7\nРис – 0,130\nЛосось – 0,040\nИкра тобико – 0,010\nАвокадо – 0,030\nУгорь – 0,060(слайсы)\nСоус унаги – 0,010\nАрахис дробленный – 0,005\nСоус манго-айоли – 0,010\nМикрозелень – 0,005",
+		"additional_information": [],
+		"image": "8005.jpg",
+		"category": ["rolls-classic"]
+	},
+	"8006": {
+		"title": "КРЫЛО 6 ШТ СОУС БАФФАЛО 🌶",
+		"short_description": "",
+		"description": "Крылья 6 шт.\nПанировка – 0,100\nВода – 0,300\nСоус баффало – 0,100",
+		"additional_information": [],
+		"image": "8006.jpg",
+		"category": ["delicious_wings"]
+	},
+	"8007": {
+		"title": "КРЫЛЬЯ ФРАЙД",
+		"short_description": "",
+		"description": "Крыло 6 шт.\nВода – 0,300\nПанировка – 0,100\nКетчуп – 0,040",
+		"additional_information": [],
+		"image": "8007.jpg",
+		"category": ["delicious_wings"]
+	},
+	"8008": {
+		"title": "КРЫЛЬЯ BBQ",
+		"short_description": "",
+		"description": "Крыло 6 шт.\nВода – 0,300\nПанировка – 0,100\nСоус bbq – 0,100",
+		"additional_information": [],
+		"image": "8008.jpg",
+		"category": ["delicious_wings"]
+	},
+	"9000": {
+		"title": "САЛАТ С КОПЧЕННЫМ УГРЕМ И АПЕЛЬСИНОМ",
+		"short_description": "",
+		"description": "Микс зелени – 0,030\nЧерри – 0,030\nУгорь – 0,045\nАпельсин чист.– 0,050\nСоус свит чили – 0,040\nСтружка миндаля – 0,005",
+		"additional_information": [],
+		"image": "9000.jpg",
+		"category": ["salads"]
+	},
+	"9001": {
+		"title": "САЛАТ С ЛОСОСЕМ И АВОКАДО",
+		"short_description": "",
+		"description": "Микс зелени – 0,030\nЛосось с/с кубик – 0,050\nАвокадо кубик – 0,40\nЧерри – 0,040\nАрахис дробленный – 0,010\nСоус бальзамический – 0,050\nРедис – 0,005",
+		"additional_information": [],
+		"image": "9001.jpg",
+		"category": ["salads"]
+	},
+	"9002": {
+		"title": "САЛАТ ХРУСТ. БАКЛАЖАНЫ",
+		"short_description": "",
+		"description": "Баклажан – 0,150\nКрахмал – 0,080\nЧЕрри – 0,050\nМикс салата – 0,015\nСыр творож – 0,030\nСвит чили – 0,050\nЗемля из маслин – 0,001",
+		"additional_information": [],
+		"image": "9002.jpg",
+		"category": ["salads"]
+	},
+	"9003": {
+		"title": "САЛАТ ЧУККА",
+		"short_description": "",
+		"description": "Чукка водоросли – 0,150\nКунжутно–ореховый с. – 0,050\nЧерри – 0,030\nКунжут – 0,005",
+		"additional_information": [],
+		"image": "9003.jpg",
+		"category": ["salads"]
+	},
+	"9111": {
+		"title": "САНШАЙН СЕТ",
+		"short_description": "",
+		"description": "ТУНЕЦ YELLOWFIN\nТЕРИЯКИ SALMON\nАМАТЕРАСУ\nФЬЮЖИН",
+		"additional_information": [],
+		"image": "9111.png",
+		"category": ["sets-classic"]
+	},
+	"9112": {
+		"title": "ФЬЮЖИН",
+		"short_description": "",
+		"description": "Нори – 0.7\nРис – 130 гр\nСыр – 80 гр\nОгурец – 30 гр\nЛосось – 100 гр\nСыр Чеддер – 40 гр\nСоус угорь – 10 гр\nСоус сырный – 10 гр\nСоус Унаги – 10 гр\nСтружка нори – 2 гр",
+		"additional_information": [],
+		"image": "9112.png",
+		"category": ["rolls-classic"]
+	},
+	"9113": {
+		"title": "АМАТЕРАСУ",
+		"short_description": "",
+		"description": "Нори – 0.7\nРис – 130 гр\nСыр – 80 гр\nЛосось – 50 гр\nМанго – 30 гр\nПищевое золото – 2 листа\nСоус угорь – 10 гр\nНити Чили – 2 гр\nСтружка нори – 2 гр",
+		"additional_information": [],
+		"image": "9113.png",
+		"category": ["rolls-classic"]
+	},
+	"9114": {
+		"title": "ТЕРИЯКИ SALMON",
+		"short_description": "",
+		"description": "Нори – 0,7\nРис – 130 гр\nСыр – 80 гр\nЛосось терияки – 50 гр\nОгурец – 30 гр\nКреветки тигровые – 40 гр\nВяленные томаты – 20 гр\nСвит чили – 15 гр\nКунжут – 5 гр",
+		"additional_information": [],
+		"image": "9114.png",
+		"category": ["rolls-classic"]
+	},
+	"9115": {
+		"title": "ТУНЕЦ YELLOWFIN",
+		"short_description": "",
+		"description": "Нори – 0,7\nРис – 130 гр\nСыр – 80 гр\nТунец – 100 гр\nКреветка темпура – 50 гр\nСоус угорь – 10 гр\nНити Чили – 2 гр\nАрахис – 5 гр",
+		"additional_information": [],
+		"image": "9115.png",
+		"category": ["rolls-classic"]
+	},
+	"9116": {
+		"title": "ГУНКАН СЯКЕ ИКУРА",
+		"short_description": "",
+		"description": "Рис – 25 гр\nЛосось – 30 гр\nИкра лосося – 10 гр",
+		"additional_information": [],
+		"image": "9116.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"0001": {
+		"title": "ГУНКАН СЯКЕ СПАЙСИ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nЛосось спайси – 15 гр\nСвит чили – 5 гр\nИкра лосося – 2 гр",
+		"additional_information": [],
+		"image": "0001.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"0002": {
+		"title": "ГУНКАН С УГРЕМ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nУгорь – 20 гр\nУнаги – 5 гр\nМасаго красная – 2 гр",
+		"additional_information": [],
+		"image": "0002.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"0003": {
+		"title": "СУШИ С УГРЕМ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nУгорь – 25 гр\nУнаги – 5 гр\nКунжут – 2 гр",
+		"additional_information": [],
+		"image": "0003.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"-0003": {
+		"title": "ГУНКАН С ТУНЦОМ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nТунец – 15 гр\nСвит Чили – 5 гр\nСтружка миндаля – 2 гр",
+		"additional_information": [],
+		"image": null,
+		"category": ["gunkan_and_sushi"]
+	},
+	"0004": {
+		"title": "СУШИ С КРЕВЕТКОЙ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nКреветка – 20 гр\nСоус спайси",
+		"additional_information": [],
+		"image": "0004.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"0005": {
+		"title": "ГУНКАН С ЭСКОЛАРОМ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nЭсколар – 15 гр\nБальзамик – 5 гр\nСтружка миндаля",
+		"additional_information": [],
+		"image": null,
+		"category": ["gunkan_and_sushi"],
+		"deleted": true
+	},
+	"0006": {
+		"title": "СУШИ ЛОСОСЬ ГРИЛЬ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nЛосось гриль – 30 гр\nЧерная Масаго – 2 гр\nУнаги – 2 гр\nПищевое золото",
+		"additional_information": [],
+		"image": "0006.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"-0007": {
+		"title": "ГУНКАН С КРАБОМ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nКрабовый микс – 15 гр\nСоус спайси – 5 гр\nКрасная и зеленая Масаго по 5 гр",
+		"additional_information": [],
+		"image": "-0007.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"0008": {
+		"title": "ГУНКАН С КРАБОМ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nКрабовый микс – 15 гр\nСоус спайси – 5 гр\nКрасная Масаго – 2 гр",
+		"additional_information": [],
+		"image": "0008.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"0009": {
+		"title": "СУШИ ЛОСОСЬ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nЛосось – 30 гр\nСоус спайси – 2 гр",
+		"additional_information": [],
+		"image": "0009.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"0010": {
+		"title": "СУШИ С ТУНЦОМ",
+		"short_description": "",
+		"description": "Рис – 25 гр\nТунец – 30 гр\nВасаби – 2 гр\nЧерная Масаго – 2 гр",
+		"additional_information": [],
+		"image": "0010.jpg",
+		"category": ["gunkan_and_sushi"]
+	},
+	"8282": {
+		"title": "КРАКЕН",
+		"short_description": "",
+		"description": "Sunny roll 1 шт.\nКриспи Фиш 1 шт.\nЯки эби 1 шт.\nСуши лосось чиз 2 шт.\nСуши тунец чиз 2 шт.\nСуши эби темпура 2 шт.\nГункан сяке икура 2 шт.",
+		"additional_information": [],
+		"image": "8282.jpg",
+		"category": ["sets-classic"]
+	},
+	"5656": {
+		"title": "СЕТ НАРЦИСС ВАЛЕРА",
+		"short_description": "",
+		"description": "Ролл в манго\nРолл с тунцом в золоте\nРолл в красной масаге\nТар тар из тунца и лосося в рисовых чипсах\nФруктово-ягодный микс",
+		"additional_information": [],
+		"image": "5656.jpg",
+		"category": ["sets-classic"],
+		"createdAt": "2025-10-04"
+	},
+	"3345": {
+		"title": "БУРГЕР С РВАНОЙ ГОВЯДИНОЙ",
+		"short_description": "",
+		"description": "Булочка\nСоус Бургер новый\nАйсберг\nПомидоры\nРванина\nПикули\nЛук красный\nЧеддер\nКартофель пай\nМикс салата",
+		"additional_information": [],
+		"image": "3345.png",
+		"category": ["burger"],
+		"createdAt": "2025-12-03"
+	},
+	"3346": {
+		"title": "ДАБЛ ЧИЗБУРГЕР",
+		"short_description": "",
+		"description": "Барбекю соус\nКрасный лук\nЧеддер 2 шт.\nКотлета\nЧесночный соус\nСалат айсберг\nБулочка",
+		"additional_information": [],
+		"image": "3346.png",
+		"category": ["burger"],
+		"createdAt": "2025-12-03"
+	},
+	"3344": {
+		"title": "БУРГЕР С ВИШНЕВЫМ СОУСОМ",
+		"short_description": "",
+		"description": "Булочка\nСоус Бургер новый\nАйсберг\nРванина\nПомидор\nПикули\nМикс салата\nЧеддер\nСоус вишня",
+		"additional_information": [],
+		"image": "3344.png",
+		"category": ["burger"],
+		"createdAt": "2025-12-03"
+	},
+	"3347": {
+		"title": "МАРГАРИТА КЛАССИЧЕСКАЯ",
+		"short_description": "",
+		"description": "Тесто\nСоус красный\nСыр моцарелла 2 шт.",
+		"additional_information": [],
+		"image": "3347.png",
+		"category": ["pizza"],
+		"createdAt": "2025-12-03"
+	},
+	"3350": {
+		"title": "ПИЦЦА С ОХОТНИЧЬИМИ КОЛБАСКАМИ",
+		"short_description": "",
+		"description": "Тесто\nСоус красный\nСыр моцарелла\nКарбонат\nКолбаски охотничьи\nББК соус",
+		"additional_information": [],
+		"image": "3350.png",
+		"category": ["pizza"],
+		"createdAt": "2025-12-03"
+	},
+	"3348": {
+		"title": "ФРИ С КОПЧЕННОЙ КУРОЙ",
+		"short_description": "",
+		"description": "Фри\nКопченная кура\nЧесночный соус",
+		"additional_information": [],
+		"image": "3348.png",
+		"category": ["snacks"],
+		"createdAt": "2025-12-03"
+	},
+	"3349": {
+		"title": "ФРИ С ОХОТ КОЛБАСКОЙ",
+		"short_description": "",
+		"description": "Фри\nОхотничьи колбаски колечко\nСоус bbq",
+		"additional_information": [],
+		"image": "3349.png",
+		"category": ["snacks"],
+		"createdAt": "2025-12-03"
+	},
+	"3351": {
+		"title": "САЛАТ С ХРУСТЯЩИМИ ШАМПИНЬОНАМИ",
+		"short_description": "",
+		"description": "Шампиньоны\nСоус устричный\nКрахмал\nЧерри\nСвит Чили\nМикс салата\nКинза",
+		"additional_information": [],
+		"image": "3351.png",
+		"category": ["salads"],
+		"createdAt": "2025-12-03"
+	},
+	"3352": {
+		"title": "САЛАТ С АВОКАДО КИНОА",
+		"short_description": "",
+		"description": "Авокадо\nКинула\nМикс салата либо шпинат\nЗаправка цитронет\nЧерри\nАпельсин\nКреветки",
+		"additional_information": [],
+		"image": "3352.png",
+		"category": ["salads"],
+		"createdAt": "2025-12-03"
+	},
+	"5511": {
+		"title": "КОМБО KIDS 1",
+		"short_description": "",
+		"description": "Пицца курица и грибы 1\nФри 1 п\nНаггетсы 1п\nРолл мини с огурцом 1\nСоус сырный 1\nCoyc bbq 1\nМорс 0,5 смородина 1\nМорс 0,5 клюква 1",
+		"additional_information": [],
+		"image": "5511.png",
+		"category": ["sets-lite"],
+		"createdAt": "2025-12-19"
+	},
+	"5512": {
+		"title": "КОМБО KIDS 2",
+		"short_description": "",
+		"description": "Пицца Маргарита классическая 1\nФри 1\nНаггетсы 1\nРолл мини с огурцом 1\nСоус сырный 1\nCoyc bbq 1\nМорс клюква 0,5 -1\nМорс смородина 0,5-1",
+		"additional_information": [],
+		"image": "5512.png",
+		"category": ["sets-lite"],
+		"createdAt": "2025-12-19"
+	},
+	"5513": {
+		"title": "КОМБО БПК",
+		"short_description": "",
+		"description": "Чикен бургер 2 шт\nКрылья Фрайд 1 п\nПицца курица и грибы 1\nКола 0,5 л-1",
+		"additional_information": [],
+		"image": "5513.png",
+		"category": ["sets-lite"],
+		"createdAt": "2025-12-19"
+	},
+	"5514": {
+		"title": "ИМПЕРАТОР",
+		"short_description": "",
+		"description": "Чикен Бургер 2 шт\nПицца Маргарита классическая 1\nПицца курица и грибы 1\nНаггетсы 1\nФри 1\nCoyc bbq 1\nСоус сырный 1\nМорс клюква 0,5\nМорс смородина 0,5\nМини с огурцом ролл 1\nРолл тори темпура 1\nЗапеченный сяке 1\nФила Лайт 1\nТуна спайси 1\nРолл икура 1\nЭти кранч 1\nЧиз рок 1",
+		"additional_information": [],
+		"image": "5514.png",
+		"category": ["sets-lite"],
+		"createdAt": "2025-12-19"
+	},
+	"5515": {
+		"title": "VIP",
+		"short_description": "",
+		"description": "Чикен Бургер 2 шт\nПицца маргарита классическая 1\nКола 0,5 л\nТори темпура ролл 1\nМини терияки 1\nФила Лайт 1",
+		"additional_information": [],
+		"image": "5515.png",
+		"category": ["sets-lite"],
+		"createdAt": "2025-12-19"
+	},
+	"5516": {
+		"title": "КОМБО ДЛЯ ДРУЗЕЙ",
+		"short_description": "",
+		"description": "Пицца курица и грибы 1\nКрылья фрайд 1\nМорс смородина 0,5\nРолл тори темпура 1\nРолл темпура терияки 1\nФила Лайт 1",
+		"additional_information": [],
+		"image": "5516.png",
+		"category": ["sets-lite"],
+		"createdAt": "2025-12-19"
+	},
+	"5517": {
+		"title": "СЕТ ТОКИО",
+		"short_description": "",
+		"description": "Ролл икура 1\nРолл шахматы 1\nЗапеченный сяке 1\nТуна спайси 1\nХот сяке 1\nЭти кранч 1",
+		"additional_information": [],
+		"image": "5517.png",
+		"category": ["sets-lite"],
+		"createdAt": "2025-12-19"
+	},
+	"5518": {
+		"title": "ЦУНАМИ",
+		"short_description": "",
+		"description": "Чикен бургеры 2\nКрылья фрайд 1\nКола 0,5 1\nМини с огурцом 1\nФила Лайт 1\nМини терияки 1\nТуна спайсе 1",
+		"additional_information": [],
+		"image": "5518.png",
+		"category": ["sets-lite"],
+		"createdAt": "2025-12-19"
+	},
+	"5519": {
+		"title": "САМУРАЙ",
+		"short_description": "",
+		"description": "Чикен Бургер 1\nФри с Охотничьи 1\nЗапеченный сяке 1\nЧиз рок 1\nXот cакe 1",
+		"additional_information": [],
+		"image": "5519.png",
+		"category": ["sets-lite"],
+		"createdAt": "2025-12-19"
+	},
+	"7111": {
+		"title": "ДРАКОН",
+		"short_description": "",
+		"description": "1. Етеки ролл\nРис\nНори\nСыр творожный\nОгурец\nЛосось\nИкра имитация\nЗолото\n\n2. Магуро ролл\nРис\nНори\nСыр творожный\nАпельсин\nТунец\nКлубника\nМасаго зеленая\nКокосовая стружка\n\n3. Men's roll\nРис\nНори\nСыр творожный\nОмлет\nАйсберг\nБекон ленточный\nШапка из мидий\nСоус угорь\n\n4. Мексиканский ролл\nТортилья\nСыр творожный\nКур копченная\nПомидор\nЛук зеленый\nСоус чесночный\nКляр\nПанировка",
+		"additional_information": [],
+		"image": "7111.png",
+		"category": ["sets-lite"],
+		"createdAt": "2026-01-09"
+	},
+	"7112": {
+		"title": "СЕТ ФУЮ",
+		"short_description": "",
+		"description": "1. Етеки ролл\nРис\nНори\nСыр творожный\nОгурец\nЛосось\nИкра имитация\nЗолото\n\n2. ШОК МАКИ\nРис\nНори\nСыр творожный\nАйсберг\nЛук зеленый\nЛосось\nХот соус\nКляр\nПанировка\n\n3. Атлантик ролл\nРис\nНори\nСыр творожный\nОмлет\nОгурец\nМассаго красная\nШапка из мидий\nСоус сырный\n\n4. Шримп ролл\nТортилья\nСыр творожный\nКреветка Темпура\nОгурец\nТоматы вяленые\nСвит Чили",
+		"additional_information": [],
+		"image": "7112.png",
+		"category": ["sets-lite"],
+		"createdAt": "2026-01-09"
+	},
+	"1234": {
+		"title": "СЕТ МИЮКИ",
+		"short_description": "",
+		"description": "1. Ролл тартар в кунжуте\nРис\nСыр творожный\nТартар\nКунжут\nОгурец\nСоус Hot\n\n2. Ролл Темпура в тортилье с креветкой Темпура\nЛепешка\nСыр творожный\nКреветка Темпура\nОгурец\nМасаго красная\nВяленые томаты\nСвит Чили \n\n3. Ролл в тортилье запеченный\nЛепешка\nСыр творожный\nОгурец \nКурица копченная\nмидии\nЧеддер\nСоус сырный\nСоус унаги\nЛук фри\n\n4. Ролл из черного риса с клубникой\nРис черный\nСыр творожный\nАпельсин\nТунец\nКлубника\nКокосовая стружка",
+		"additional_information": [],
+		"image": "1234.png",
+		"category": ["sets-classic"],
+		"createdAt": "2026-01-29"
+	},
+	"1235": {
+		"title": "АЮМИ",
+		"short_description": "",
+		"description": "1. Ролл из красного риса\nРис красный\nСыр творожный\nТунец\nМанго рубленный\nСоус угорь\nСтружка нори\n\n2. Ролл из черного риса с креветкой\nРис черный\nСыр творожный\nАнанас консервированный\nКреветка тигровая отварная\nИкра имитация\n\n3. Ролл Темпура в тортилье\nЛепешка\nСыр творожный\nОгурец\nАйсберг\nЛосось\nСоус Hot\n\n4. Ролл запеченный в тортилье\nЛепешка\nСыр творожный\nОгурец\nОмлет\nСоус для запекания из лосося\nСоус угорь",
+		"additional_information": [],
+		"image": "1235.png",
+		"category": ["sets-classic"],
+		"createdAt": "2026-01-29"
+	},
+	"7878": {
+		"title": "БАНАНОВЫЙ ЧИЗ РОЛЛ",
+		"short_description": "",
+		"description": "Сыр творожный\nШоколад белый\nКлубника\nБанан\nАпельсин\nЯгода\nТопинг\nАрахис\nСуб. малина\nМята",
+		"additional_information": [],
+		"image": "7878.jpg",
+		"category": ["desserts"],
+		"createdAt": "2026-04-25"
+	},
+	"7879": {
+		"title": "КЛУБНИЧНЫЙ ЧИЗ РОЛЛ",
+		"short_description": "",
+		"description": "Сыр творожный\nШоколад белый\nКлубника\nМанго\nБанан\nМята\nМиндаль\nТоппинг",
+		"additional_information": [],
+		"image": "7879.jpg",
+		"category": ["desserts"],
+		"createdAt": "2026-04-25"
+	},
+	"3567": {
+		"title": "МацуЭбиМаки",
+		"short_description": "",
+		"description": "Рис\nСыр творожный\nКреветка темпера\nЛосось\nНори\nЧукка\nЧерри\nОреховый соус",
+		"additional_information": [],
+		"image": "3567.jpg",
+		"category": ["rolls-classic"],
+		"createdAt": "2026-05-04"
+	},
+	"4141": {
+		"title": "Fuse tea 0.5 л",
+		"short_description": "",
+		"description": "Фьюс ти, Фьюзти 500 мл",
+		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
+		"image": "4141.jpg",
+		"category": ["drinks"]
+	},
+	"4142": {
+		"title": "PIKO 1Л. ПЛАСТИК",
+		"short_description": "",
+		"description": "Пико",
+		"additional_information": [{ "title": "Объем", "value": "1 л" }],
+		"image": "4142.jpg",
+		"category": ["drinks"]
+	},
+	"4143": {
+		"title": "Cola zero 0.5",
+		"short_description": "",
+		"description": "Coca-Cola Zero, Кола без сахара 500 мл",
+		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
+		"image": "4143.jpg",
+		"category": ["drinks"]
+	},
+	"4144": {
+		"title": "Piko с трубочкой 200 мл",
+		"short_description": "",
+		"description": "Пико",
+		"additional_information": [{ "title": "Объем", "value": "0.2 л" }],
+		"image": "4144.jpg",
+		"category": ["drinks"]
+	},
+	"4145": {
+		"title": "Спрайт 0.5 л",
+		"short_description": "",
+		"description": "Sprite 500 мл",
+		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
+		"image": "4145.jpg",
+		"category": ["drinks"]
+	},
+	"4146": {
+		"title": "Фанта 0.5 л",
+		"short_description": "",
+		"description": "Fanta 500 мл",
+		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
+		"image": "4146.jpg",
+		"category": ["drinks"]
+	},
+	"4147": {
+		"title": "Морс черная смородина 0.5 л",
+		"short_description": "",
+		"description": "",
+		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
+		"image": "4147.jpg",
+		"category": ["drinks"]
+	},
+	"0912": {
+		"title": "Черная КОРОЛЕВА",
+		"short_description": "",
+		"description": "Калифорния с лососем 8 шт.\nРубленный тунец с сыром 8 шт.\nЗапеченный ролл с тунцом в черной масаге 8 шт. (соус из креветки)\nЗапеченный ролл с тунцом в кокосовой стружке 8 шт. (соус из креветки)",
+		"additional_information": [],
+		"image": "0912.jpg",
+		"category": ["sets-mix"],
+		"createdAt": "2026-06-15"
+	},
+	"987754": {
+		"title": "FLASH в ассортименте",
+		"short_description": "",
+		"description": "",
+		"additional_information": [],
+		"image": "987754.jpg",
+		"category": ["drinks"]
+	},
+	"8905": {
+		"title": "Сет Островская",
+		"short_description": "",
+		"description": "МацуЭбиМаки ролл - 1\nСашими ролл - 1\nБлэк Фила - 1\nРолл с тунцом и лососем - 1\nОреховый соус",
+		"additional_information": [],
+		"image": "8905.jpg",
+		"category": ["sets-mix"],
+		"createdAt": "2026-08-26"
+	},
+	"4516": {
+		"title": "Сет Виктория",
+		"short_description": "",
+		"description": "Калифорния с лососем - 2\nЛосось Чиз Премиум - 1\nРолл с тунцом и лососем - 1\nМикс ролл премиум - 1",
+		"additional_information": [],
+		"image": "4516.jpg",
+		"category": ["sets-mix"],
+		"createdAt": "2026-08-29"
+	}
+}
+</script>
+  <script type="application/json" id="embedded-categories">{
+	"//": {
+		"title": "Название категории",
+		"categories": {
+			"//-под_категория": {
+				"title": "Название подкатегории формат categories //: (название_категории-название_подкатегории)"
+			}
+		}
+	},
+	"new": {
+		"title": "Новинки"
+	},
+	"rolls": {
+		"title": "Роллы",
+		"categories": {
+			"rolls-classic": {
+				"title": "Роллы классика"
+			},
+			"rolls-tempura": {
+				"title": "Роллы темпура"
+			},
+			"rolls-baked": {
+				"title": "Роллы запечённые"
+			},
+			"rolls-mini": {
+				"title": "Роллы мини"
+			}
+		}
+	},
+	"sets": {
+		"title": "Сеты",
+		"categories": {
+			"sets-classic": {
+				"title": "Классические сеты"
+			},
+			"sets-baked": {
+				"title": "Запеченные сеты"
+			},
+			"sets-mix": {
+				"title": "Микс сеты"
+			},
+			"sets-lite": {
+				"title": "Лайт сеты"
+			}
+		}
+	},
+	"gunkan_and_sushi": {
+		"title": "Гунканы и суши"
+	},
+	"salads": {
+		"title": "Салаты"
+	},
+	"delicious_wings": {
+		"title": "Вкуснейшие крылышки"
+	},
+	"burger": {
+		"title": "Бургеры"
+	},
+	"pizza": {
+		"title": "Пиццы"
+	},
+	"snacks": {
+		"title": "Закуски"
+	},
+	"soups": {
+		"title": "Супы"
+	},
+	"pastes": {
+		"title": "Пасты"
+	},
+	"poke": {
+		"title": "Поке"
+	},
+	"desserts": {
+		"title": "Десерты"
+	},
+	"sauces": {
+		"title": "Соусы"
+	},
+	"drinks": {
+		"title": "Напитки"
+	},
+	"other": {
+		"title": "Другое",
+		"hidden": true
+	}
+}
+</script>
+  <script type="application/json" id="embedded-ru">{
+	"common": {
+		"brand": "BOTANIKA_ROLLS",
+		"loading": "Загрузка...",
+		"metaDescription": "Закажи в компании BOTANIKA_ROLLS"
+	},
+	"breadcrumbs": {
+		"backToPrice": "Перейти в прайс",
+		"home": "Главная",
+		"products": "Товары",
+		"cart": "Корзина",
+		"checkout": "Оформление заказа",
+		"orderHistory": "История заказов"
+	},
+	"footer": {
+		"products": "Товары",
+		"cart": "Корзина",
+		"addToCart": "Добавить в корзину",
+		"orderHistory": "История заказов"
+	},
+	"category": {
+		"titleFallback": "Товары",
+		"searchPlaceholder": "Поиск...",
+		"searchAriaLabel": "Поиск по товарам",
+		"searchButtonAriaLabel": "Начать поиск",
+		"sortDefault": "Сортировка",
+		"sortPriceAsc": "Цены: по возрастанию",
+		"sortPriceDesc": "Цены: по убыванию",
+		"noResults": "Товаров, соответствующих вашему запросу, не обнаружено."
+	},
+	"product": {
+		"articul": "Артикул:",
+		"category": "Категория:",
+		"description": "Описание",
+		"additionalInfo": "Детали",
+		"metaDescription": "Закажи {title} в компании BOTANIKA_ROLLS",
+		"ogTitle": "{title} от BOTANIKA_ROLLS"
+	},
+	"cart": {
+		"title": "Корзина",
+		"empty": "Ваша корзина пока пуста.",
+		"product": "Товар",
+		"price": "Цена",
+		"amount": "Количество",
+		"total": "Итого",
+		"amountShort": "Количество:",
+		"totalShort": "Итого:",
+		"summaryTitle": "Сумма заказа",
+		"checkoutButton": "Оформить заказ"
+	},
+	"checkout": {
+		"layoutTitle": "Оформление заказа",
+		"orderTitle": "Ваш заказ",
+		"product": "Товар",
+		"total": "Итого",
+		"confirmButton": "Подтвердить заказ",
+		"recaptchaError": "Ошибка: reCAPTCHA не инициализировалась. Попробуйте обновить страницу.",
+		"genericError": "Произошла ошибка. Пожалуйста, проверьте введенные данные.",
+		"required": "обязательно",
+		"form": {
+			"name": "Имя",
+			"namePlaceholder": "Ваше имя",
+			"nameRequired": "Пожалуйста, введите ваше имя",
+			"nameMinLength": "Имя должно содержать не менее 2 символов",
+			"nameMaxLength": "Имя не должно превышать 50 символов",
+			"phone": "Телефон",
+			"phonePlaceholder": "+77XXxxxXXxx",
+			"phoneRequired": "Введите номер телефона",
+			"phoneInvalid": "Некорректный номер телефона",
+			"delivery": "Доставка",
+			"deliveryFree": "Бесплатная",
+			"deliveryPickup": "Самовывоз",
+			"street": "Улица",
+			"streetPlaceholder": "Название улицы",
+			"streetRequired": "Укажите название улицы",
+			"maxLength": "Превышена максимальная длина ({count} символов)",
+			"home": "Дом",
+			"homePlaceholder": "Номер дома",
+			"homeRequired": "Укажите номер дома",
+			"apart": "Квартира",
+			"apartPlaceholder": "Номер квартиры",
+			"apartRequired": "Укажите номер квартиры",
+			"pod": "Подъезд",
+			"podPlaceholder": "Подъезд",
+			"podRequired": "Укажите номер подъезда",
+			"et": "Этаж",
+			"etPlaceholder": "Этаж",
+			"etRequired": "Укажите номер этажа",
+			"detailsTitle": "Детали",
+			"descr": "Примечание к заказу (необязательно)",
+			"descrPlaceholder": "Примечания к вашему заказу, например, особые пожелания отделу доставки."
+		}
+	},
+	"orderReceived": {
+		"layoutTitle": "Заказ оформлен",
+		"thanks": "Спасибо ❤️",
+		"delivered": "Заказ успешно доставлен!",
+		"accepted": "Ваш заказ принят в работу",
+		"contactSoon": "В ближайшее время с вами свяжется наш специалист 🌸",
+		"statusLabel": "Статус:",
+		"updatedAt": "Обновлено {time}",
+		"orderNumber": "Номер заказа:",
+		"status": {
+			"0": "В ожидании",
+			"1": "Принят",
+			"3": "Готовится",
+			"12": "Готов",
+			"4": "Доставляется",
+			"10": "Доставлен",
+			"default": "Обработка"
+		}
+	},
+	"checkoutError": {
+		"layoutTitle": "Ошибка оформления заказа",
+		"unavailable": "Сервер временно не доступен",
+		"tryLater": "Пожалуйста попробуйте позднее",
+		"hours": "Вс-Чт с 11:00-22:40; Пт-Сб с 11:00-23:30",
+		"errorMessage": "Сообщение ошибки:"
+	},
+	"orderHistory": {
+		"layoutTitle": "История заказов",
+		"empty": "История заказов пуста.",
+		"orderNumber": "Заказ №{number}",
+		"amountUnit": "шт.",
+		"totalToPay": "Итого к оплате:",
+		"productFallback": "Товар"
+	},
+	"notFound": {
+		"title": "404 | Ой, ссылка не работает.",
+		"heading": "Ой, ссылка не работает.",
+		"description": "Страница не существует или произошла какая-то другая ошибка."
+	}
+}
+</script>
+  <script type="application/json" id="embedded-kk">{
+	"common": {
+		"brand": "BOTANIKA_ROLLS",
+		"loading": "Жүктелуде...",
+		"metaDescription": "BOTANIKA_ROLLS компаниясынан тапсырыс беріңіз"
+	},
+	"breadcrumbs": {
+		"backToPrice": "Прайске өту",
+		"home": "Басты бет",
+		"products": "Тауарлар",
+		"cart": "Себет",
+		"checkout": "Тапсырысты рәсімдеу",
+		"orderHistory": "Тапсырыстар тарихы"
+	},
+	"footer": {
+		"products": "Тауарлар",
+		"cart": "Себет",
+		"addToCart": "Себетке қосу",
+		"orderHistory": "Тапсырыстар тарихы"
+	},
+	"category": {
+		"titleFallback": "Тауарлар",
+		"searchPlaceholder": "Іздеу...",
+		"searchAriaLabel": "Тауарлар бойынша іздеу",
+		"searchButtonAriaLabel": "Іздеуді бастау",
+		"sortDefault": "Сұрыптау",
+		"sortPriceAsc": "Баға: өсу бойынша",
+		"sortPriceDesc": "Баға: кему бойынша",
+		"noResults": "Сұранысыңызға сәйкес тауарлар табылмады."
+	},
+	"product": {
+		"articul": "Артикул:",
+		"category": "Санат:",
+		"description": "Сипаттама",
+		"additionalInfo": "Толығырақ",
+		"metaDescription": "BOTANIKA_ROLLS компаниясынан {title} тапсырыс беріңіз",
+		"ogTitle": "BOTANIKA_ROLLS-тан {title}"
+	},
+	"cart": {
+		"title": "Себет",
+		"empty": "Сіздің себетіңіз әзірге бос.",
+		"product": "Тауар",
+		"price": "Баға",
+		"amount": "Саны",
+		"total": "Жиынтығы",
+		"amountShort": "Саны:",
+		"totalShort": "Жиынтығы:",
+		"summaryTitle": "Тапсырыс сомасы",
+		"checkoutButton": "Тапсырысты рәсімдеу"
+	},
+	"checkout": {
+		"layoutTitle": "Тапсырысты рәсімдеу",
+		"orderTitle": "Сіздің тапсырысыңыз",
+		"product": "Тауар",
+		"total": "Жиынтығы",
+		"confirmButton": "Тапсырысты растау",
+		"recaptchaError": "Қате: reCAPTCHA іске қосылмады. Бетті жаңартып көріңіз.",
+		"genericError": "Қате пайда болды. Енгізілген деректерді тексеріңіз.",
+		"required": "міндетті",
+		"form": {
+			"name": "Аты",
+			"namePlaceholder": "Атыңыз",
+			"nameRequired": "Атыңызды енгізіңіз",
+			"nameMinLength": "Аты кемінде 2 таңбадан тұруы керек",
+			"nameMaxLength": "Аты 50 таңбадан аспауы керек",
+			"phone": "Телефон",
+			"phonePlaceholder": "+77XXxxxXXxx",
+			"phoneRequired": "Телефон нөмірін енгізіңіз",
+			"phoneInvalid": "Телефон нөмірі қате",
+			"delivery": "Жеткізу",
+			"deliveryFree": "Тегін",
+			"deliveryPickup": "Өзі алып кету",
+			"street": "Көше",
+			"streetPlaceholder": "Көше атауы",
+			"streetRequired": "Көше атауын көрсетіңіз",
+			"maxLength": "Рұқсат етілген ұзындық асып кетті ({count} таңба)",
+			"home": "Үй",
+			"homePlaceholder": "Үй нөмірі",
+			"homeRequired": "Үй нөмірін көрсетіңіз",
+			"apart": "Пәтер",
+			"apartPlaceholder": "Пәтер нөмірі",
+			"apartRequired": "Пәтер нөмірін көрсетіңіз",
+			"pod": "Подъезд",
+			"podPlaceholder": "Подъезд",
+			"podRequired": "Подъезд нөмірін көрсетіңіз",
+			"et": "Қабат",
+			"etPlaceholder": "Қабат",
+			"etRequired": "Қабат нөмірін көрсетіңіз",
+			"detailsTitle": "Толығырақ",
+			"descr": "Тапсырысқа ескерту (міндетті емес)",
+			"descrPlaceholder": "Тапсырысыңызға қатысты ескертпелер, мысалы жеткізу қызметіне арнайы тілектер."
+		}
+	},
+	"orderReceived": {
+		"layoutTitle": "Тапсырыс рәсімделді",
+		"thanks": "Рахмет ❤️",
+		"delivered": "Тапсырыс сәтті жеткізілді!",
+		"accepted": "Тапсырысыңыз қабылданды",
+		"contactSoon": "Жақын арада маманымыз сізбен байланысады 🌸",
+		"statusLabel": "Күйі:",
+		"updatedAt": "Жаңартылды {time}",
+		"orderNumber": "Тапсырыс нөмірі:",
+		"status": {
+			"0": "Күтуде",
+			"1": "Қабылданды",
+			"3": "Дайындалуда",
+			"12": "Дайын",
+			"4": "Жеткізілуде",
+			"10": "Жеткізілді",
+			"default": "Өңделуде"
+		}
+	},
+	"checkoutError": {
+		"layoutTitle": "Тапсырысты рәсімдеу қатесі",
+		"unavailable": "Сервер уақытша қолжетімсіз",
+		"tryLater": "Кейінірек көріңіз",
+		"hours": "Жс-Бс сағат 11:00-22:40; Жм-Сб сағат 11:00-23:30",
+		"errorMessage": "Қате туралы хабарлама:"
+	},
+	"orderHistory": {
+		"layoutTitle": "Тапсырыстар тарихы",
+		"empty": "Тапсырыстар тарихы бос.",
+		"orderNumber": "Тапсырыс №{number}",
+		"amountUnit": "дана",
+		"totalToPay": "Төленетін сома:",
+		"productFallback": "Тауар"
+	},
+	"notFound": {
+		"title": "404 | Өкінішке орай, сілтеме жұмыс істемейді.",
+		"heading": "Өкінішке орай, сілтеме жұмыс істемейді.",
+		"description": "Мұндай бет жоқ немесе басқа қате орын алды."
+	}
+}
+</script>
+  <script type="application/json" id="embedded-en">{
+	"common": {
+		"brand": "BOTANIKA_ROLLS",
+		"loading": "Loading...",
+		"metaDescription": "Order from BOTANIKA_ROLLS"
+	},
+	"breadcrumbs": {
+		"backToPrice": "Go to the menu",
+		"home": "Home",
+		"products": "Products",
+		"cart": "Cart",
+		"checkout": "Checkout",
+		"orderHistory": "Order history"
+	},
+	"footer": {
+		"products": "Products",
+		"cart": "Cart",
+		"addToCart": "Add to cart",
+		"orderHistory": "Order history"
+	},
+	"category": {
+		"titleFallback": "Products",
+		"searchPlaceholder": "Search...",
+		"searchAriaLabel": "Search products",
+		"searchButtonAriaLabel": "Start search",
+		"sortDefault": "Sort",
+		"sortPriceAsc": "Price: low to high",
+		"sortPriceDesc": "Price: high to low",
+		"noResults": "No products found matching your search."
+	},
+	"product": {
+		"articul": "SKU:",
+		"category": "Category:",
+		"description": "Description",
+		"additionalInfo": "Details",
+		"metaDescription": "Order {title} from BOTANIKA_ROLLS",
+		"ogTitle": "{title} from BOTANIKA_ROLLS"
+	},
+	"cart": {
+		"title": "Cart",
+		"empty": "Your cart is empty.",
+		"product": "Product",
+		"price": "Price",
+		"amount": "Quantity",
+		"total": "Total",
+		"amountShort": "Quantity:",
+		"totalShort": "Total:",
+		"summaryTitle": "Order summary",
+		"checkoutButton": "Checkout"
+	},
+	"checkout": {
+		"layoutTitle": "Checkout",
+		"orderTitle": "Your order",
+		"product": "Product",
+		"total": "Total",
+		"confirmButton": "Confirm order",
+		"recaptchaError": "Error: reCAPTCHA failed to initialize. Try refreshing the page.",
+		"genericError": "An error occurred. Please check the entered data.",
+		"required": "required",
+		"form": {
+			"name": "Name",
+			"namePlaceholder": "Your name",
+			"nameRequired": "Please enter your name",
+			"nameMinLength": "Name must be at least 2 characters",
+			"nameMaxLength": "Name must not exceed 50 characters",
+			"phone": "Phone",
+			"phonePlaceholder": "+77XXxxxXXxx",
+			"phoneRequired": "Enter a phone number",
+			"phoneInvalid": "Invalid phone number",
+			"delivery": "Delivery",
+			"deliveryFree": "Free",
+			"deliveryPickup": "Pickup",
+			"street": "Street",
+			"streetPlaceholder": "Street name",
+			"streetRequired": "Enter the street name",
+			"maxLength": "Maximum length exceeded ({count} characters)",
+			"home": "House",
+			"homePlaceholder": "House number",
+			"homeRequired": "Enter the house number",
+			"apart": "Apartment",
+			"apartPlaceholder": "Apartment number",
+			"apartRequired": "Enter the apartment number",
+			"pod": "Entrance",
+			"podPlaceholder": "Entrance",
+			"podRequired": "Enter the entrance number",
+			"et": "Floor",
+			"etPlaceholder": "Floor",
+			"etRequired": "Enter the floor number",
+			"detailsTitle": "Details",
+			"descr": "Order note (optional)",
+			"descrPlaceholder": "Notes for your order, e.g. special requests for the delivery team."
+		}
+	},
+	"orderReceived": {
+		"layoutTitle": "Order placed",
+		"thanks": "Thank you ❤️",
+		"delivered": "Order successfully delivered!",
+		"accepted": "Your order has been accepted",
+		"contactSoon": "Our specialist will contact you shortly 🌸",
+		"statusLabel": "Status:",
+		"updatedAt": "Updated {time}",
+		"orderNumber": "Order number:",
+		"status": {
+			"0": "Pending",
+			"1": "Accepted",
+			"3": "Preparing",
+			"12": "Ready",
+			"4": "Delivering",
+			"10": "Delivered",
+			"default": "Processing"
+		}
+	},
+	"checkoutError": {
+		"layoutTitle": "Checkout error",
+		"unavailable": "Server temporarily unavailable",
+		"tryLater": "Please try again later",
+		"hours": "Sun-Thu 11:00 AM-10:40 PM; Fri-Sat 11:00 AM-11:30 PM",
+		"errorMessage": "Error message:"
+	},
+	"orderHistory": {
+		"layoutTitle": "Order history",
+		"empty": "Order history is empty.",
+		"orderNumber": "Order #{number}",
+		"amountUnit": "pcs",
+		"totalToPay": "Total to pay:",
+		"productFallback": "Product"
+	},
+	"notFound": {
+		"title": "404 | Oops, this link doesn't work.",
+		"heading": "Oops, this link doesn't work.",
+		"description": "The page doesn't exist, or another error occurred."
+	}
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  var LOCAL_PREFIX = "botanika_translate::";
+  function localStorageAvailable(){
+    try { var k = "__t__"; localStorage.setItem(k, "1"); localStorage.removeItem(k); return true; }
+    catch(e){ return false; }
+  }
+  var useNativeStorage = (typeof window.storage !== "undefined");
+  var storageOk = useNativeStorage || localStorageAvailable();
+  var saveTimer = null;
+
+  /* stop the browser from navigating to the file if it's dropped even slightly outside a dropzone */
+  ["dragover","drop"].forEach(function(evt){
+    window.addEventListener(evt, function(e){ e.preventDefault(); });
+  });
+
+  function storageGet(key){
+    if (useNativeStorage) return window.storage.get(key, false);
+    try {
+      var v = localStorage.getItem(LOCAL_PREFIX + key);
+      return Promise.resolve(v == null ? null : { key: key, value: v, shared: false });
+    } catch(e){ return Promise.reject(e); }
+  }
+  function storageSet(key, value){
+    if (useNativeStorage) return window.storage.set(key, value, false);
+    try {
+      localStorage.setItem(LOCAL_PREFIX + key, value);
+      return Promise.resolve({ key: key, value: value, shared: false });
+    } catch(e){ return Promise.reject(e); }
+  }
+
+  var SECTIONS = {
+    products:   { title:"Товары",    icon:"🛒", loaded:false, order:[], raw:null, work:{}, currentId:null },
+    categories: { title:"Категории", icon:"🗂️", loaded:false, order:[], raw:null, work:{}, currentId:null },
+    messages:   { title:"Интерфейс", icon:"🌐", loaded:false, order:[], raw:{ru:null,kk:null,en:null}, work:{}, currentId:null }
+  };
+  var activeSection = "products";
+  var enEnabled = true;
+  storageGet("settings:enEnabled").then(function(res){
+    if (res && res.value === "0"){ enEnabled = false; document.getElementById("enToggle").checked = false; renderAll(); }
+  }).catch(function(){});
+  document.getElementById("enToggle").addEventListener("change", function(e){
+    enEnabled = e.target.checked;
+    storageSet("settings:enEnabled", enEnabled ? "1" : "0").catch(function(){});
+    renderAll();
+  });
+
+  /* ---------------- generic helpers ---------------- */
+  function escapeHtml(s){
+    return String(s==null?"":s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function isLangObj(v){ return v && typeof v === "object" && !Array.isArray(v) && ("ru" in v || "kk" in v || "en" in v); }
+  function asLangObj(v){
+    if (isLangObj(v)) return { ru: v.ru || "", kk: v.kk || "", en: v.en || "", reviewed:false };
+    if (typeof v === "string") return { ru: v, kk: "", en: "", reviewed:false };
+    return { ru: "", kk: "", en: "", reviewed:false };
+  }
+  function cloneLang(o){ return { ru:o.ru||"", kk:o.kk||"", en:o.en||"" }; }
+  function deepClone(o){ return JSON.parse(JSON.stringify(o)); }
+  function setPath(obj, path, value){
+    var cur = obj;
+    for (var i=0;i<path.length-1;i++){
+      var k = path[i];
+      if (typeof cur[k] !== "object" || cur[k] === null) cur[k] = {};
+      cur = cur[k];
+    }
+    cur[path[path.length-1]] = value;
+  }
+  function readFileAsJson(file){
+    return new Promise(function(resolve, reject){
+      var r = new FileReader();
+      r.onload = function(e){ try{ resolve(JSON.parse(e.target.result)); } catch(err){ reject(new Error('Файл "'+file.name+'" — некорректный JSON.')); } };
+      r.onerror = function(){ reject(new Error('Не удалось прочитать файл "'+file.name+'".')); };
+      r.readAsText(file, "utf-8");
+    });
+  }
+  function downloadJson(obj, filename){
+    var blob = new Blob([JSON.stringify(obj, null, "\t")], {type:"application/json"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+  function flash(text){
+    var el = document.getElementById("saveIndicator");
+    document.getElementById("saveIndicatorText").textContent = text;
+    el.classList.add("show");
+    clearTimeout(el._t);
+    el._t = setTimeout(function(){ el.classList.remove("show"); }, 1400);
+  }
+
+  /* ---------------- storage ---------------- */
+  function loadFromStorage(sectionId, id){
+    if (!storageOk) return Promise.resolve(null);
+    return storageGet(sectionId+":"+id).then(function(res){
+      if (!res || !res.value) return null;
+      try { return JSON.parse(res.value); } catch(e){ return null; }
+    }).catch(function(){ return null; });
+  }
+  function serializeForStorage(sectionId, work){
+    if (sectionId === "products"){
+      return {
+        title:{ru:work.title.ru,kk:work.title.kk,en:work.title.en,reviewed:work.title.reviewed},
+        short_description:{ru:work.short_description.ru,kk:work.short_description.kk,en:work.short_description.en,reviewed:work.short_description.reviewed},
+        description:{ru:work.description.ru,kk:work.description.kk,en:work.description.en,reviewed:work.description.reviewed},
+        additional_information: work.additional_information.map(function(it){
+          return { title:{ru:it.title.ru,kk:it.title.kk,en:it.title.en,reviewed:it.title.reviewed}, value:{ru:it.value.ru,kk:it.value.kk,en:it.value.en,reviewed:it.value.reviewed} };
+        })
+      };
+    }
+    if (sectionId === "categories"){
+      var subs = {};
+      work.subKeys.forEach(function(sk){ subs[sk] = {ru:work.subs[sk].ru,kk:work.subs[sk].kk,en:work.subs[sk].en,reviewed:work.subs[sk].reviewed}; });
+      return { title:{ru:work.title.ru,kk:work.title.kk,en:work.title.en,reviewed:work.title.reviewed}, subs:subs };
+    }
+    return { fields: work.fields.map(function(f){ return {path:f.path, ru:f.ru, kk:f.kk, en:f.en, reviewed:f.reviewed}; }) };
+  }
+  function saveToStorage(sectionId, id){
+    if (!storageOk){ flash("Автосохранение недоступно — не забудьте скачать файл"); return; }
+    var payload = serializeForStorage(sectionId, SECTIONS[sectionId].work[id]);
+    storageSet(sectionId+":"+id, JSON.stringify(payload))
+      .then(function(){ flash("Сохранено"); })
+      .catch(function(){ flash("Не удалось сохранить"); });
+  }
+  function scheduleSave(sectionId, id){
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function(){ saveToStorage(sectionId, id); }, 500);
+  }
+
+  function mergeProductsStorage(work, saved){
+    if (!saved) return;
+    ["title","short_description","description"].forEach(function(f){
+      if (saved[f]){
+        if (typeof saved[f].ru === "string") work[f].ru = saved[f].ru;
+        work[f].kk = work[f].kk || saved[f].kk || "";
+        work[f].en = work[f].en || saved[f].en || "";
+        work[f].reviewed = work[f].reviewed || !!saved[f].reviewed;
+      }
+    });
+    if (Array.isArray(saved.additional_information)){
+      work.additional_information.forEach(function(item, i){
+        var s = saved.additional_information[i];
+        if (!s) return;
+        ["title","value"].forEach(function(sub){
+          if (s[sub]){
+            if (typeof s[sub].ru === "string") item[sub].ru = s[sub].ru;
+            item[sub].kk = item[sub].kk || s[sub].kk || "";
+            item[sub].en = item[sub].en || s[sub].en || "";
+            item[sub].reviewed = item[sub].reviewed || !!s[sub].reviewed;
+          }
+        });
+      });
+    }
+  }
+  function mergeCategoriesStorage(work, saved){
+    if (!saved) return;
+    if (saved.title){
+      if (typeof saved.title.ru === "string") work.title.ru = saved.title.ru;
+      work.title.kk = work.title.kk || saved.title.kk || "";
+      work.title.en = work.title.en || saved.title.en || "";
+      work.title.reviewed = work.title.reviewed || !!saved.title.reviewed;
+    }
+    if (saved.subs){
+      work.subKeys.forEach(function(sk){
+        var s = saved.subs[sk];
+        if (!s) return;
+        if (typeof s.ru === "string") work.subs[sk].ru = s.ru;
+        work.subs[sk].kk = work.subs[sk].kk || s.kk || "";
+        work.subs[sk].en = work.subs[sk].en || s.en || "";
+        work.subs[sk].reviewed = work.subs[sk].reviewed || !!s.reviewed;
+      });
+    }
+  }
+  function mergeMessagesStorage(work, saved){
+    if (!saved || !Array.isArray(saved.fields)) return;
+    work.fields.forEach(function(f){
+      var key = f.path.join(".");
+      var match = saved.fields.find(function(s){ return (s.path||[]).join(".") === key; });
+      if (match){
+        if (typeof match.ru === "string") f.ru = match.ru;
+        f.kk = f.kk || match.kk || "";
+        f.en = f.en || match.en || "";
+        f.reviewed = f.reviewed || !!match.reviewed;
+      }
+    });
+  }
+
+  /* ---------------- builders ---------------- */
+  var PRODUCT_TOP_FIELDS = ["title","short_description","description"];
+
+  function buildProductsWork(entry){
+    var w = { title: asLangObj(entry.title), short_description: asLangObj(entry.short_description), description: asLangObj(entry.description), additional_information: [] };
+    var ai = Array.isArray(entry.additional_information) ? entry.additional_information : [];
+    ai.forEach(function(item){
+      w.additional_information.push({ title: asLangObj(item && item.title), value: asLangObj(item && item.value) });
+    });
+    var rest = {};
+    for (var k in entry){ if (PRODUCT_TOP_FIELDS.indexOf(k) === -1 && k !== "additional_information") rest[k] = entry[k]; }
+    w._rest = rest;
+    return w;
+  }
+
+  function buildCategoriesWork(entry){
+    var w = { title: asLangObj(entry.title), subKeys: [], subs: {}, _rest: {} };
+    for (var k in entry){ if (k !== "title" && k !== "categories") w._rest[k] = entry[k]; }
+    if (entry.categories && typeof entry.categories === "object"){
+      Object.keys(entry.categories).forEach(function(sk){
+        if (sk === "//") return;
+        w.subKeys.push(sk);
+        w.subs[sk] = asLangObj(entry.categories[sk] && entry.categories[sk].title);
+      });
+    }
+    return w;
+  }
+
+  function flattenLeaves(ruNode, kkNode, enNode, prefix, out){
+    if (!ruNode || typeof ruNode !== "object") return;
+    Object.keys(ruNode).forEach(function(k){
+      if (k === "//") return;
+      var path = prefix.concat([k]);
+      var ruVal = ruNode[k];
+      if (ruVal !== null && typeof ruVal === "object" && !Array.isArray(ruVal)){
+        flattenLeaves(ruVal, (kkNode && kkNode[k]) || {}, (enNode && enNode[k]) || {}, path, out);
+      } else {
+        out.push({
+          path: path,
+          label: path.join(" → "),
+          ru: String(ruVal == null ? "" : ruVal),
+          kk: (kkNode && typeof kkNode[k] === "string") ? kkNode[k] : "",
+          en: (enNode && typeof enNode[k] === "string") ? enNode[k] : "",
+          reviewed: false
+        });
+      }
+    });
+  }
+
+  /* ---------------- progress ---------------- */
+  function sectionSlots(sectionId, work){
+    if (sectionId === "products"){
+      var slots = [];
+      PRODUCT_TOP_FIELDS.forEach(function(f){ if ((work[f].ru||"").trim()) slots.push(work[f]); });
+      work.additional_information.forEach(function(it){
+        if ((it.title.ru||"").trim()) slots.push(it.title);
+        if ((it.value.ru||"").trim()) slots.push(it.value);
+      });
+      return slots;
+    }
+    if (sectionId === "categories"){
+      var s = [];
+      if ((work.title.ru||"").trim()) s.push(work.title);
+      work.subKeys.forEach(function(sk){ if ((work.subs[sk].ru||"").trim()) s.push(work.subs[sk]); });
+      return s;
+    }
+    return work.fields.filter(function(f){ return (f.ru||"").trim() !== ""; });
+  }
+  function recordProgress(sectionId, work){
+    var slots = sectionSlots(sectionId, work);
+    if (!slots.length) return { translated:1, reviewed:1, total:0 };
+    var filled=0, reviewed=0;
+    slots.forEach(function(s){
+      if ((s.kk||"").trim() && (!enEnabled || (s.en||"").trim())) filled++;
+      if (s.reviewed) reviewed++;
+    });
+    return { translated: filled/slots.length, reviewed: reviewed/slots.length, total: slots.length };
+  }
+  function recordLabel(sectionId, id, work){
+    if (sectionId === "products" || sectionId === "categories") return work.title.ru || "(без названия)";
+    return id;
+  }
+
+  /* ---------------- init per section ---------------- */
+  function initSectionProducts(data){
+    var sec = SECTIONS.products;
+    sec.raw = data;
+    sec.order = Object.keys(data).filter(function(k){ return k !== "//"; });
+    sec.work = {};
+    var tasks = sec.order.map(function(id){
+      sec.work[id] = buildProductsWork(data[id]);
+      return loadFromStorage("products", id).then(function(saved){ mergeProductsStorage(sec.work[id], saved); });
+    });
+    return Promise.all(tasks).then(function(){
+      sec.loaded = true; sec.currentId = null;
+      populateCategoryFilter();
+    });
+  }
+  function initSectionCategories(data){
+    var sec = SECTIONS.categories;
+    sec.raw = data;
+    sec.order = Object.keys(data).filter(function(k){ return k !== "//"; });
+    sec.work = {};
+    var tasks = sec.order.map(function(id){
+      sec.work[id] = buildCategoriesWork(data[id]);
+      return loadFromStorage("categories", id).then(function(saved){ mergeCategoriesStorage(sec.work[id], saved); });
+    });
+    return Promise.all(tasks).then(function(){ sec.loaded = true; sec.currentId = null; });
+  }
+  function initSectionMessages(ruObj, kkObj, enObj){
+    var sec = SECTIONS.messages;
+    sec.raw = { ru: ruObj, kk: kkObj || {}, en: enObj || {} };
+    sec.order = Object.keys(ruObj).filter(function(k){ return k !== "//"; });
+    sec.work = {};
+    var tasks = sec.order.map(function(ns){
+      var fields = [];
+      flattenLeaves(ruObj[ns], (kkObj && kkObj[ns]) || {}, (enObj && enObj[ns]) || {}, [], fields);
+      sec.work[ns] = { label: ns, fields: fields };
+      return loadFromStorage("messages", ns).then(function(saved){ mergeMessagesStorage(sec.work[ns], saved); });
+    });
+    return Promise.all(tasks).then(function(){ sec.loaded = true; sec.currentId = null; });
+  }
+
+  function populateCategoryFilter(){
+    var sel = document.getElementById("categoryFilter");
+    sel.innerHTML = '<option value="">Все категории</option>';
+    var cats = {};
+    SECTIONS.products.order.forEach(function(id){
+      var c = SECTIONS.products.raw[id].category;
+      if (Array.isArray(c)) c.forEach(function(x){ cats[x] = true; });
+    });
+    Object.keys(cats).sort().forEach(function(c){
+      var opt = document.createElement("option");
+      opt.value = c; opt.textContent = c;
+      sel.appendChild(opt);
+    });
+  }
+
+  /* ---------------- top bar / tabs ---------------- */
+  var tabsEl = document.getElementById("tabs");
+  function renderTabs(){
+    tabsEl.innerHTML = "";
+    Object.keys(SECTIONS).forEach(function(id){
+      var sec = SECTIONS[id];
+      var btn = document.createElement("button");
+      btn.className = "tab-btn" + (id === activeSection ? " active" : "");
+      var badge = "не загружено";
+      if (sec.loaded){
+        var reviewed = sec.order.filter(function(rid){ return recordProgress(id, sec.work[rid]).reviewed >= 1; }).length;
+        badge = reviewed + "/" + sec.order.length;
+      }
+      btn.innerHTML = sec.icon + " " + sec.title + ' <span class="badge">' + badge + "</span>";
+      btn.addEventListener("click", function(){ activeSection = id; renderAll(); });
+      tabsEl.appendChild(btn);
+    });
+  }
+
+  function exportLabel(){
+    if (activeSection === "products") return "Скачать products.json ⤓";
+    if (activeSection === "categories") return "Скачать categories.json ⤓";
+    return enEnabled ? "Скачать ru/kk/en.json ⤓" : "Скачать ru/kk.json ⤓";
+  }
+
+  /* ---------------- upload area ---------------- */
+  var uploadArea = document.getElementById("uploadArea");
+
+  function renderUploadArea(){
+    uploadArea.classList.add("show");
+    if (activeSection === "products"){
+      uploadArea.innerHTML =
+        '<div class="landing"><div class="card">' +
+        "<h2>Товары</h2>" +
+        "<p>Загрузите <b>products.json</b> — файл с карточками товаров (название, описание, состав, доп. поля).</p>" +
+        uploadStepsHtml() +
+        '<label class="dropzone" id="dz-products"><input type="file" id="fi-products" accept="application/json,.json"/>' +
+        '<div class="dz-title">📄 Загрузить products.json</div><div class="dz-sub">нажмите или перетащите файл сюда</div></label>' +
+        '<div class="fileerr" id="err-products"></div>' +
+        "</div></div>";
+      wireSingleDropzone("dz-products", "fi-products", "err-products", initSectionProducts);
+    } else if (activeSection === "categories"){
+      uploadArea.innerHTML =
+        '<div class="landing"><div class="card">' +
+        "<h2>Категории</h2>" +
+        "<p>Загрузите <b>categories.json</b> — названия категорий и подкатегорий меню.</p>" +
+        uploadStepsHtml() +
+        '<label class="dropzone" id="dz-categories"><input type="file" id="fi-categories" accept="application/json,.json"/>' +
+        '<div class="dz-title">📄 Загрузить categories.json</div><div class="dz-sub">нажмите или перетащите файл сюда</div></label>' +
+        '<div class="fileerr" id="err-categories"></div>' +
+        "</div></div>";
+      wireSingleDropzone("dz-categories", "fi-categories", "err-categories", initSectionCategories);
+    } else {
+      uploadArea.innerHTML =
+        '<div class="landing"><div class="card">' +
+        "<h2>Интерфейс (next-intl)</h2>" +
+        "<p>Загрузите файлы переводов интерфейса из папки <b>messages</b>. Файл <b>ru.json</b> обязателен — он служит основой (порядок и состав ключей). Если у вас уже есть <b>kk.json</b> / <b>en.json</b>, загрузите их тоже — существующие переводы подставятся автоматически.</p>" +
+        uploadStepsHtml() +
+        '<div class="triple-upload">' +
+          fileSlotHtml("ru", true) +
+          fileSlotHtml("kk", false) +
+          fileSlotHtml("en", false) +
+        "</div>" +
+        '<button class="btn btn-primary" id="btnLoadMessages" style="margin-top:16px;" disabled>Загрузить</button>' +
+        '<div class="fileerr" id="err-messages"></div>' +
+        "</div></div>";
+      wireTripleUpload();
+    }
+  }
+  function uploadStepsHtml(){
+    return '<ul class="steps">' +
+      '<li><span class="num">1</span> Загрузите файл(ы) ниже — всё происходит в браузере, файлы никуда не отправляются.</li>' +
+      '<li><span class="num">2</span> Слева появится список — выбирайте пункт и заполняйте казахский и английский перевод под русским текстом.</li>' +
+      '<li><span class="num">3</span> Отмечайте галочкой «Перевод проверен», когда убедились, что перевод верный.</li>' +
+      '<li><span class="num">4</span> В любой момент нажимайте «Скачать» и отправляйте готовый файл.</li></ul>';
+  }
+  function fileSlotHtml(lang, required){
+    var flags = {ru:"🇷🇺", kk:"🇰🇿", en:"🇬🇧"};
+    return '<div class="file-slot" id="slot-'+lang+'">' +
+      '<span class="fs-lang">'+flags[lang]+' '+lang+'</span>' +
+      '<span class="fs-name" id="name-'+lang+'">'+(required?"файл не выбран":"необязательно")+"</span>" +
+      (required ? '<span class="fs-req">обязательно</span>' : "") +
+      '<label class="pick">Выбрать<input type="file" id="fi-msg-'+lang+'" accept="application/json,.json"/></label>' +
+      "</div>";
+  }
+
+  function wireSingleDropzone(dzId, inputId, errId, initFn){
+    var dz = document.getElementById(dzId);
+    var input = document.getElementById(inputId);
+    var errEl = document.getElementById(errId);
+    var dragDepth = 0;
+    input.addEventListener("change", function(e){ if (e.target.files[0]) handle(e.target.files[0]); });
+    dz.addEventListener("dragenter", function(e){ e.preventDefault(); dragDepth++; dz.classList.add("drag"); });
+    dz.addEventListener("dragover", function(e){ e.preventDefault(); });
+    dz.addEventListener("dragleave", function(e){
+      e.preventDefault();
+      dragDepth = Math.max(0, dragDepth - 1);
+      if (dragDepth === 0) dz.classList.remove("drag");
+    });
+    dz.addEventListener("drop", function(e){
+      e.preventDefault(); dragDepth = 0; dz.classList.remove("drag");
+      if (e.dataTransfer.files[0]) handle(e.dataTransfer.files[0]);
+    });
+    function handle(file){
+      errEl.style.display = "none";
+      readFileAsJson(file).then(initFn).then(function(){ renderAll(); }).catch(function(err){
+        errEl.textContent = err.message; errEl.style.display = "block";
+      });
+    }
+  }
+
+  function wireTripleUpload(){
+    var files = { ru:null, kk:null, en:null };
+    ["ru","kk","en"].forEach(function(lang){
+      document.getElementById("fi-msg-"+lang).addEventListener("change", function(e){
+        var f = e.target.files[0];
+        files[lang] = f || null;
+        document.getElementById("name-"+lang).textContent = f ? f.name : (lang==="ru" ? "файл не выбран" : "необязательно");
+        document.getElementById("btnLoadMessages").disabled = !files.ru;
+      });
+    });
+    document.getElementById("btnLoadMessages").addEventListener("click", function(){
+      var errEl = document.getElementById("err-messages");
+      errEl.style.display = "none";
+      if (!files.ru){ errEl.textContent = "Сначала выберите ru.json — он обязателен."; errEl.style.display="block"; return; }
+      Promise.all([
+        readFileAsJson(files.ru),
+        files.kk ? readFileAsJson(files.kk) : Promise.resolve({}),
+        files.en ? readFileAsJson(files.en) : Promise.resolve({})
+      ]).then(function(res){
+        return initSectionMessages(res[0], res[1], res[2]);
+      }).then(function(){ renderAll(); }).catch(function(err){
+        errEl.textContent = err.message; errEl.style.display = "block";
+      });
+    });
+  }
+
+  /* ---------------- sidebar ---------------- */
+  var searchInput = document.getElementById("searchInput");
+  var categoryFilter = document.getElementById("categoryFilter");
+  var onlyUnfinished = document.getElementById("onlyUnfinished");
+  searchInput.addEventListener("input", renderSidebar);
+  categoryFilter.addEventListener("change", renderSidebar);
+  onlyUnfinished.addEventListener("change", renderSidebar);
+
+  function matchesFilters(sectionId, id){
+    var sec = SECTIONS[sectionId];
+    var work = sec.work[id];
+    var q = searchInput.value.trim().toLowerCase();
+    if (q){
+      var label = recordLabel(sectionId, id, work).toLowerCase();
+      if (label.indexOf(q) === -1 && String(id).toLowerCase().indexOf(q) === -1) return false;
+    }
+    if (sectionId === "products"){
+      var cat = categoryFilter.value;
+      if (cat){
+        var cs = Array.isArray(sec.raw[id].category) ? sec.raw[id].category : [];
+        if (cs.indexOf(cat) === -1) return false;
+      }
+    }
+    if (onlyUnfinished.checked){
+      var p = recordProgress(sectionId, work);
+      if (p.total === 0 || p.reviewed >= 1) return false;
+    }
+    return true;
+  }
+  function visibleList(){ return SECTIONS[activeSection].order.filter(function(id){ return matchesFilters(activeSection, id); }); }
+
+  function renderSidebar(){
+    var sec = SECTIONS[activeSection];
+    var visible = visibleList();
+    var list = document.getElementById("sidebarList");
+    list.innerHTML = "";
+    visible.forEach(function(id){
+      var work = sec.work[id];
+      var prog = recordProgress(activeSection, work);
+      var dotClass = prog.total === 0 ? "done" : (prog.reviewed >= 1 ? "done" : ((prog.translated > 0 || prog.reviewed > 0) ? "partial" : ""));
+      var row = document.createElement("div");
+      row.className = "prod-item" + (id === sec.currentId ? " active" : "");
+      row.innerHTML = '<span class="prod-dot ' + dotClass + '"></span>' +
+        '<span class="prod-name">' + escapeHtml(recordLabel(activeSection, id, work)) + "</span>" +
+        '<span class="prod-id">' + escapeHtml(String(id)) + "</span>";
+      row.addEventListener("click", function(){ sec.currentId = id; renderAll(); });
+      list.appendChild(row);
+    });
+    document.getElementById("sidebarCount").textContent = visible.length + " из " + sec.order.length;
+  }
+  function refreshSidebarDot(id){
+    var list = visibleList();
+    var idx = list.indexOf(id);
+    var rows = document.getElementById("sidebarList").querySelectorAll(".prod-item");
+    if (idx > -1 && rows[idx]){
+      var prog = recordProgress(activeSection, SECTIONS[activeSection].work[id]);
+      var dotClass = prog.total === 0 ? "done" : (prog.reviewed >= 1 ? "done" : ((prog.translated > 0 || prog.reviewed > 0) ? "partial" : ""));
+      rows[idx].querySelector(".prod-dot").className = "prod-dot " + dotClass;
+    }
+  }
+
+  /* ---------------- field editor (shared) ---------------- */
+  function renderLangField(parent, label, hint, langObj, multiline, onEdit, placeholderNote){
+    var box = document.createElement("div");
+    box.className = "field-block" + (langObj.reviewed ? " is-reviewed" : "");
+    var enBlock = enEnabled ?
+      ('<div class="lang-col"><label>🇬🇧 English</label><textarea class="' + (multiline?"big":"") + '" data-lang="en" placeholder="нет текста для перевода"></textarea></div>') : "";
+    box.innerHTML =
+      "<h3>" + label + "</h3>" +
+      (hint ? '<div class="field-hint">' + hint + "</div>" : "") +
+      (placeholderNote ? '<div class="field-hint" style="color:var(--plum)">' + placeholderNote + "</div>" : "") +
+      '<div class="lang-col"><label>🇷🇺 Русский</label><textarea class="ru-edit ' + (multiline?"big":"") + '" data-lang="ru" placeholder="— пусто —"></textarea></div>' +
+      '<div class="lang-grid' + (enEnabled ? "" : " single") + '">' +
+        '<div class="lang-col"><label>🇰🇿 Казахский</label><textarea class="' + (multiline?"big":"") + '" data-lang="kk" placeholder="нет текста для перевода"></textarea></div>' +
+        enBlock +
+      "</div>" +
+      '<label class="reviewed-row"><input type="checkbox" data-role="reviewed"/> ✓ Перевод проверен</label>';
+    var ruTa = box.querySelector('[data-lang="ru"]');
+    var kkTa = box.querySelector('[data-lang="kk"]');
+    var enTa = box.querySelector('[data-lang="en"]');
+    ruTa.value = langObj.ru; kkTa.value = langObj.kk; if (enTa) enTa.value = langObj.en;
+    var revCb = box.querySelector('[data-role="reviewed"]');
+    function sync(){
+      var hasRu = !!(langObj.ru || "").trim();
+      kkTa.disabled = !hasRu;
+      if (enTa) enTa.disabled = !hasRu;
+      var ready = hasRu && (langObj.kk||"").trim() && (!enEnabled || (langObj.en||"").trim());
+      revCb.disabled = !ready;
+      if (!ready && langObj.reviewed) langObj.reviewed = false;
+      revCb.checked = !!langObj.reviewed;
+      box.classList.toggle("is-reviewed", !!langObj.reviewed);
+    }
+    revCb.addEventListener("change", function(){ langObj.reviewed = revCb.checked; sync(); onEdit(); });
+    ruTa.addEventListener("input", function(){ langObj.ru = ruTa.value; sync(); onEdit(); });
+    kkTa.addEventListener("input", function(){ langObj.kk = kkTa.value; sync(); onEdit(); });
+    if (enTa) enTa.addEventListener("input", function(){ langObj.en = enTa.value; sync(); onEdit(); });
+    sync();
+    parent.appendChild(box);
+  }
+
+  function onFieldEdit(){
+    scheduleSave(activeSection, SECTIONS[activeSection].currentId);
+    refreshSidebarDot(SECTIONS[activeSection].currentId);
+    updateGlobalProgress();
+  }
+
+  function markAllReviewed(sectionId, work){
+    sectionSlots(sectionId, work).forEach(function(s){
+      if ((s.kk||"").trim() && (!enEnabled || (s.en||"").trim())) s.reviewed = true;
+    });
+  }
+
+  /* ---------------- per-section editors ---------------- */
+  function navButtonsHtml(){
+    return '<div class="nav-btns">' +
+      '<button class="btn btn-outline btn-sm" id="btnMarkAll">Отметить всё проверенным</button>' +
+      '<button class="btn btn-outline btn-sm" id="btnPrev">← Назад</button>' +
+      '<button class="btn btn-outline btn-sm" id="btnNext">Далее →</button>' +
+      "</div>";
+  }
+  function wireNav(container, id){
+    var mark = container.querySelector("#btnMarkAll");
+    if (mark) mark.addEventListener("click", function(){
+      markAllReviewed(activeSection, SECTIONS[activeSection].work[id]);
+      renderAll();
+      scheduleSave(activeSection, id);
+    });
+    var prev = container.querySelector("#btnPrev");
+    if (prev) prev.addEventListener("click", function(){ stepRecord(-1); });
+    var next = container.querySelector("#btnNext");
+    if (next) next.addEventListener("click", function(){ stepRecord(1); });
+  }
+  function stepRecord(dir){
+    var list = visibleList();
+    var idx = list.indexOf(SECTIONS[activeSection].currentId);
+    var next = list[idx + dir];
+    if (next){ SECTIONS[activeSection].currentId = next; renderAll(); }
+  }
+
+  function renderProductEditor(main, sec, id){
+    var work = sec.work[id];
+    var entry = sec.raw[id];
+    var catStr = Array.isArray(entry.category) ? entry.category.join(", ") : "—";
+    var head = document.createElement("div");
+    head.innerHTML = '<div class="prod-head"><div><h2>' + escapeHtml(work.title.ru || "(без названия)") + "</h2>" +
+      '<div class="prod-meta"><span>Артикул: ' + id + "</span><span>Категория: " + escapeHtml(catStr) + "</span></div></div>" +
+      navButtonsHtml() + "</div>";
+    main.appendChild(head);
+    wireNav(head, id);
+
+    renderLangField(main, "Название (title)", "", work.title, false, onFieldEdit);
+    renderLangField(main, "Краткое описание (short_description)", "Показывается на карточке товара в каталоге.", work.short_description, false, onFieldEdit);
+    renderLangField(main, "Описание (description)", "Показывается на странице товара. Переносы строк сохраняются.", work.description, true, onFieldEdit);
+
+    if (work.additional_information.length){
+      var h = document.createElement("div");
+      h.className = "subhead";
+      h.textContent = "Дополнительная информация";
+      main.appendChild(h);
+      work.additional_information.forEach(function(item, i){
+        renderLangField(main, "Доп. поле " + (i+1) + " — название", "Например «Вес»", item.title, false, onFieldEdit);
+        renderLangField(main, "Доп. поле " + (i+1) + " — значение", "Например «0.310 kg»", item.value, false, onFieldEdit);
+      });
+    }
+    appendBottomNav(main, id);
+  }
+
+  function renderCategoryEditor(main, sec, id){
+    var work = sec.work[id];
+    var head = document.createElement("div");
+    head.innerHTML = '<div class="prod-head"><div><h2>' + escapeHtml(work.title.ru || "(без названия)") + "</h2>" +
+      '<div class="prod-meta"><span>Ключ категории: ' + escapeHtml(id) + "</span></div></div>" +
+      navButtonsHtml() + "</div>";
+    main.appendChild(head);
+    wireNav(head, id);
+
+    renderLangField(main, "Название категории", "", work.title, false, onFieldEdit);
+    if (work.subKeys.length){
+      var h = document.createElement("div");
+      h.className = "subhead";
+      h.textContent = "Подкатегории";
+      main.appendChild(h);
+      work.subKeys.forEach(function(sk){
+        renderLangField(main, "Подкатегория: " + escapeHtml(sk), "", work.subs[sk], false, onFieldEdit);
+      });
+    }
+    appendBottomNav(main, id);
+  }
+
+  function renderMessagesEditor(main, sec, id){
+    var work = sec.work[id];
+    var head = document.createElement("div");
+    head.innerHTML = '<div class="prod-head"><div><h2>' + escapeHtml(id) + "</h2>" +
+      '<div class="prod-meta"><span>' + work.fields.length + " строк(и) текста интерфейса</span></div></div>" +
+      navButtonsHtml() + "</div>";
+    main.appendChild(head);
+    wireNav(head, id);
+
+    work.fields.forEach(function(f){
+      var matches = (f.ru||"").match(/\{[^}]+\}/g);
+      var note = matches ? ("Не переводите и не удаляйте: " + matches.join(", ")) : null;
+      renderLangField(main, f.label, '<span class="mono">' + escapeHtml(f.path.join(".")) + "</span>", f, f.ru.length > 60, onFieldEdit, note);
+    });
+    appendBottomNav(main, id);
+  }
+
+  function appendBottomNav(main, id){
+    var bottom = document.createElement("div");
+    bottom.className = "bottom-nav";
+    bottom.innerHTML = '<button class="btn btn-outline" id="btnPrev2">← Предыдущий</button><button class="btn btn-outline" id="btnNext2">Следующий →</button>';
+    main.appendChild(bottom);
+    bottom.querySelector("#btnPrev2").addEventListener("click", function(){ stepRecord(-1); });
+    bottom.querySelector("#btnNext2").addEventListener("click", function(){ stepRecord(1); });
+  }
+
+  function renderEditor(){
+    var sec = SECTIONS[activeSection];
+    var main = document.getElementById("mainInner");
+    main.innerHTML = "";
+    var id = sec.currentId;
+    if (!id){ main.innerHTML = '<div class="empty-state">Ничего не найдено — измените фильтры слева.</div>'; return; }
+    if (activeSection === "products") renderProductEditor(main, sec, id);
+    else if (activeSection === "categories") renderCategoryEditor(main, sec, id);
+    else renderMessagesEditor(main, sec, id);
+    main.scrollTop = 0;
+  }
+
+  /* ---------------- global progress ---------------- */
+  function updateGlobalProgress(){
+    var sec = SECTIONS[activeSection];
+    var total = sec.order.length;
+    var reviewedDone = sec.order.filter(function(id){ return recordProgress(activeSection, sec.work[id]).reviewed >= 1; }).length;
+    var translatedDone = sec.order.filter(function(id){ return recordProgress(activeSection, sec.work[id]).translated >= 1; }).length;
+    document.getElementById("progressReviewed").textContent = reviewedDone + "/" + total;
+    var waiting = translatedDone - reviewedDone;
+    document.getElementById("progressTranslated").textContent = waiting > 0 ? (waiting + " переведено, ждут проверки") : "";
+    renderTabs();
+  }
+
+  /* ---------------- export ---------------- */
+  document.getElementById("btnExport").addEventListener("click", function(){
+    if (activeSection === "products") exportProducts();
+    else if (activeSection === "categories") exportCategories();
+    else exportMessages();
+  });
+  function exportProducts(){
+    var sec = SECTIONS.products;
+    var out = {};
+    if (sec.raw["//"]) out["//"] = sec.raw["//"];
+    sec.order.forEach(function(id){
+      var w = sec.work[id];
+      var o = {};
+      o.title = cloneLang(w.title);
+      o.short_description = cloneLang(w.short_description);
+      o.description = cloneLang(w.description);
+      o.additional_information = w.additional_information.map(function(it){ return { title: cloneLang(it.title), value: cloneLang(it.value) }; });
+      for (var k in w._rest) o[k] = w._rest[k];
+      out[id] = o;
+    });
+    downloadJson(out, "products.json");
+    flash("products.json скачан ✓");
+  }
+  function exportCategories(){
+    var sec = SECTIONS.categories;
+    var out = {};
+    if (sec.raw["//"]) out["//"] = sec.raw["//"];
+    sec.order.forEach(function(id){
+      var w = sec.work[id];
+      var o = {};
+      o.title = cloneLang(w.title);
+      if (w.subKeys.length){
+        o.categories = {};
+        w.subKeys.forEach(function(sk){ o.categories[sk] = { title: cloneLang(w.subs[sk]) }; });
+      }
+      for (var k in w._rest) o[k] = w._rest[k];
+      out[id] = o;
+    });
+    downloadJson(out, "categories.json");
+    flash("categories.json скачан ✓");
+  }
+  function exportMessages(){
+    var sec = SECTIONS.messages;
+    var ruOut = deepClone(sec.raw.ru);
+    var kkOut = deepClone(sec.raw.ru);
+    sec.order.forEach(function(ns){
+      sec.work[ns].fields.forEach(function(f){
+        setPath(kkOut[ns], f.path, f.kk || "");
+      });
+    });
+    downloadJson(ruOut, "ru.json");
+    setTimeout(function(){ downloadJson(kkOut, "kk.json"); }, 300);
+    if (enEnabled){
+      var enOut = deepClone(sec.raw.ru);
+      sec.order.forEach(function(ns){
+        sec.work[ns].fields.forEach(function(f){ setPath(enOut[ns], f.path, f.en || ""); });
+      });
+      setTimeout(function(){ downloadJson(enOut, "en.json"); }, 600);
+    }
+    flash("Файлы скачиваются…");
+  }
+
+  /* ---------------- reload ---------------- */
+  document.getElementById("btnReload").addEventListener("click", function(){
+    if (!confirm("Загрузить другой файл для «" + SECTIONS[activeSection].title + "»? Уже введённые переводы сохранены в браузере и не потеряются.")) return;
+    SECTIONS[activeSection].loaded = false;
+    SECTIONS[activeSection].currentId = null;
+    renderAll();
+  });
+
+  /* ---------------- master render ---------------- */
+  function renderAll(){
+    renderTabs();
+    var sec = SECTIONS[activeSection];
+    if (sec.loaded){
+      uploadArea.classList.remove("show");
+      document.getElementById("workArea").classList.add("active");
+      document.getElementById("categoryFilterWrap").style.display = activeSection === "products" ? "block" : "none";
+      document.getElementById("progressPill").style.display = "flex";
+      document.getElementById("btnReload").style.display = "inline-flex";
+      document.getElementById("btnExport").style.display = "inline-flex";
+      document.getElementById("btnExport").textContent = exportLabel();
+      if (!sec.currentId){
+        var list = visibleList();
+        sec.currentId = list[0] || sec.order[0] || null;
+      }
+      renderSidebar();
+      renderEditor();
+      updateGlobalProgress();
+    } else {
+      document.getElementById("workArea").classList.remove("active");
+      document.getElementById("progressPill").style.display = "none";
+      document.getElementById("btnReload").style.display = "none";
+      document.getElementById("btnExport").style.display = "none";
+      renderUploadArea();
+    }
+  }
+
+  /* ---------------- embedded data (pre-baked into this file) ---------------- */
+  function readEmbedded(id){
+    var el = document.getElementById(id);
+    if (!el) return null;
+    try { return JSON.parse(el.textContent); } catch(e){ return null; }
+  }
+  function autoLoadEmbedded(){
+    var tasks = [];
+    var productsData = readEmbedded("embedded-products");
+    var categoriesData = readEmbedded("embedded-categories");
+    var ruData = readEmbedded("embedded-ru");
+    var kkData = readEmbedded("embedded-kk");
+    var enData = readEmbedded("embedded-en");
+    if (productsData) tasks.push(initSectionProducts(productsData));
+    if (categoriesData) tasks.push(initSectionCategories(categoriesData));
+    if (ruData) tasks.push(initSectionMessages(ruData, kkData, enData));
+    return Promise.all(tasks);
+  }
+
+  autoLoadEmbedded().then(renderAll).catch(function(){ renderAll(); });
+})();
+</script>
+</body>
+</html>
