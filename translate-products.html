@@ -195,1594 +195,4677 @@
 
   <div class="save-indicator" id="saveIndicator"><span class="dot"></span><span id="saveIndicatorText">Сохранено</span></div>
 
-  <script type="application/json" id="embedded-products">{
-	"//": {
-		"title": "Название товара",
-		"short_description": "Краткое описание отображается только на карточке товара",
-		"description": "Описание отображается на странице товара",
-		"additional_information": [
-			{
-				"title": "Название дополнительной информации (Например \"Вес\")",
-				"value": "Значение дополнительной информации (Например 0.310 kg)"
-			}
-		],
-		"image": "Источник на изображение",
-		"category": "Категории товара. (Больше в \"./categories.json\")",
-		"createdAt": "Дата создания (для сортировки, например \"2026-01-09\" \"год-месяц-день\")",
-		"deleted": true
-	},
-	"1212": {
-		"title": "ЧИКЕН ЧИЗ С ХОЛОПЕНЬО",
-		"short_description": "",
-		"description": "Бургер булочка\nСоус бургер\nАйсберг\nКотлета в панировки\nКонсервированные огурцы\nПомидоры\nЛук красный\nСыр чеддер\nХолопеньо",
-		"additional_information": [{ "title": "Вес", "value": "0.365 kg" }],
-		"image": "1212.jpg",
-		"category": ["burger"]
-	},
-	"1114": {
-		"title": "ЧИКЕН БУРГЕР С ХОЛОПЕНЬО",
-		"short_description": "",
-		"description": "Булочка бургер\nФирменный соус\nАйсберг\nКотлета в панировке\nПомидоры\nЛук красный\nМаринованные огурчики\nХолопеньо",
-		"additional_information": [{ "title": "Вес", "value": "0.345 kg" }],
-		"image": "1114.jpg",
-		"category": ["burger"]
-	},
-	"1113": {
-		"title": "ЧИКЕН БУРГЕР",
-		"short_description": "",
-		"description": "Булочка бургер\nФирменный соус\nАйсберг\nКотлета в панировке\nПомидоры\nЛук красный\nМаринованные огурчики",
-		"additional_information": [{ "title": "Вес", "value": "0.320 kg" }],
-		"image": "1113.jpg",
-		"category": ["burger"]
-	},
-	"1111": {
-		"title": "ЧИКЕН-ЧИЗ",
-		"short_description": "",
-		"description": "Бургер булочка\nСоус бургер\nАйсберг\nКотлета в панировки\nКонсервированные огурцы\nПомидоры\nЛук красный\nСыр чеддер",
-		"additional_information": [{ "title": "Вес", "value": "0.340 kg" }],
-		"image": "1111.jpg",
-		"category": ["burger"]
-	},
-	"1115": {
-		"title": "Капаи",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nПомидор\nОгурец\nСоус унаги\nЗеленый лук",
-		"additional_information": [],
-		"image": "1115.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1116": {
-		"title": "Веган",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nАйсберг\nПерец болгарский\nПомидор\nОгурец",
-		"additional_information": [],
-		"image": "1116.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1117": {
-		"title": "Саке Премиум",
-		"short_description": "",
-		"description": "Рис\nНори\nЛосось\nТворожный сыр\nОгурец",
-		"additional_information": [],
-		"image": "1117.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1118": {
-		"title": "Сашими ролл",
-		"short_description": "",
-		"description": "Рисовая бумага\nСемга\nНори\nОгурец\nТунец\nЗеленый лук",
-		"additional_information": [],
-		"image": "1118.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1119": {
-		"title": "МИКС РОЛЛ ПРЕМИУМ",
-		"short_description": "",
-		"description": "Нори\nЛосось\nЧеддер\nМассаго красная\nОгурец",
-		"additional_information": [],
-		"image": "1119.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1110": {
-		"title": "Хаттори",
-		"short_description": "",
-		"description": "Рис красный\nОгурец\nТунец\nМассаго черная\nСыр творожный\nПищевое золото",
-		"additional_information": [],
-		"image": "1110.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1120": {
-		"title": "Лосось Премиум Чиз",
-		"short_description": "",
-		"description": "Рис\nНори\nЛосось\nОгурец\nКреветка\nЧеддер\nШапочка семги\nСырный соус\nУнаги соус",
-		"additional_information": [],
-		"image": "1120.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1121": {
-		"title": "Филадельфия Gold",
-		"short_description": "",
-		"description": "Рис\nТворожный сыр\nЛосось\nНори\nПищевое золото\nЧерная массаго",
-		"additional_information": [],
-		"image": "1121.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1122": {
-		"title": "Black Фила",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nОмлет\nАвокадо\nЛосось\nСалат чука\nСоус спайси",
-		"additional_information": [],
-		"image": "1122.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1123": {
-		"title": "ФУДЗИ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nЛосось\nОгурец\nВ кунжуте\nСалат чука",
-		"additional_information": [],
-		"image": "1123.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1124": {
-		"title": "Гайда маки",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nКреветка тигровая\nМасаго красная\nМасаго зеленая\n(4кусочка в красной 4в зеленой)",
-		"additional_information": [],
-		"image": "1124.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1125": {
-		"title": "КАЛИФОРНИЯ С ЛОСОСЕМ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nЛосось\nАвокадо\nОгурец\nМасаго красная\nКунжут",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.255 kg" }],
-		"image": "1125.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1126": {
-		"title": "КАНАДА С УГРЕМ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nУгорь шапка\nАвокадо\nОгурец\nУнаги соус\nКунжут",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.285 kg" }],
-		"image": "1126.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1127": {
-		"title": "Филадельфия КРЕВЕТКА",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nАвокадо\nКреветка тигровая\nМассаго красная",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.245 kg" }],
-		"image": "1127.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1128": {
-		"title": "ТУНА УРАМАКИ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nТунец шапка\nАвокадо\nОгурец\nКунжут унаги",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.270 kg" }],
-		"image": "1128.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1129": {
-		"title": "БЕКОН ЧИЗ ПРЕМИУМ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nБекон\nОмлет тамаго\nСыр чеддер\nСоус спайси",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.270 kg" }],
-		"image": "1129.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1130": {
-		"title": "КАЛИФОРНИЯ С КРАБОМ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nСнежный краб\nАвокадо\nОгурец\nМасаго красная\nКунжут",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.255 kg" }],
-		"image": "1130.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1131": {
-		"title": "Филадельфия премиум",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nСемга\nАвокадо\nОгурец",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.330 kg" }],
-		"image": "1131.jpg",
-		"category": ["rolls-classic"]
-	},
-	"2227": {
-		"title": "Эскалар",
-		"short_description": "",
-		"description": "Рис\nНори\nСыр\nКреветка\nОгурец\nЭскалар копченый",
-		"additional_information": [],
-		"image": "2227.jpg",
-		"category": ["rolls-classic"]
-	},
-	"2228": {
-		"title": "Одари",
-		"short_description": "",
-		"description": "Рис\nНори\nОгурец\nСыр креметте\nЛосось\nТунец\nУгорь",
-		"additional_information": [],
-		"image": "2228.jpg",
-		"category": ["rolls-classic"]
-	},
-	"2229": {
-		"title": "Бонито",
-		"short_description": "",
-		"description": "Бонито\nРис\nНори\nСыр креметте\nТенец\nОгурец\nСтружка тунца",
-		"additional_information": [],
-		"image": "2229.jpg",
-		"category": ["rolls-classic"]
-	},
-	"2230": {
-		"title": "Дорама",
-		"short_description": "",
-		"description": "Окрашенный рис\nСыр Филадельфия\nОгурец\nЛосось\nМассаго Черная\nПищевое золото",
-		"additional_information": [],
-		"image": "2230.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1132": {
-		"title": "Красный дракон",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nУгорь\nОгурец\nСоус свит Чили",
-		"additional_information": [],
-		"image": "1132.jpg",
-		"category": ["rolls-classic"]
-	},
-	"1133": {
-		"title": "ЭБИ ТЕМПУРА",
-		"short_description": "",
-		"description": "Красный рис\nСыр творожный\nОгурец\nКреветка\nНори\nПанировка",
-		"additional_information": [],
-		"image": "1133.jpg",
-		"category": ["rolls-tempura"]
-	},
-	"1134": {
-		"title": "ТЕМПУРА С УГРЕМ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nУгорь\nАвокадо",
-		"additional_information": [],
-		"image": "1134.jpg",
-		"category": ["rolls-tempura"]
-	},
-	"1135": {
-		"title": "ТЕМПУРА БАНЗАЙ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nКреветка\nМассаго\nОгурец",
-		"additional_information": [],
-		"image": "1135.jpg",
-		"category": ["rolls-tempura"]
-	},
-	"1136": {
-		"title": "ТЕМПУРА С БЕКОНОМ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nБекон\nОгурец\nСыр чеддер",
-		"additional_information": [],
-		"image": "1136.jpg",
-		"category": ["rolls-tempura"]
-	},
-	"1137": {
-		"title": "ТЕМПУРА ЦЕЗАРЬ",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nАйсберг\nОгурец\nКурочка",
-		"additional_information": [],
-		"image": "1137.jpg",
-		"category": ["rolls-tempura"]
-	},
-	"2220": {
-		"title": "Филадельфия Гриль",
-		"short_description": "",
-		"description": "Рис\nНори\nОгурец\nСыр\nЛосось гриль",
-		"additional_information": [],
-		"image": "2220.jpg",
-		"category": ["rolls-classic"]
-	},
-	"2223": {
-		"title": "Саке темпура",
-		"short_description": "",
-		"description": "Рис\nНори\nЛосось\nОгурец\nСыр",
-		"additional_information": [],
-		"image": "2223.jpg",
-		"category": ["rolls-tempura"]
-	},
-	"2224": {
-		"title": "Темпура с тунцом",
-		"short_description": "",
-		"description": "Рис\nНори\nСыр креметте\nОгурец\nТунец\nСтружка тунца",
-		"additional_information": [],
-		"image": "2224.jpg",
-		"category": ["rolls-tempura"]
-	},
-	"1138": {
-		"title": "ЗАПЕЧЕННЫЙ С ТУНЦОМ 🌶",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nТунец\nОгурец\nОмлет тамаго\nМасаго красная\nУнаги, Кунжут сверху",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.260 kg" }],
-		"image": "1138.jpg",
-		"category": ["rolls-baked"]
-	},
-	"1139": {
-		"title": "ЗАПЕЧЕННЫЙ С УГРЕМ И ЛОСОСЕМ 🌶",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nЛосось\nОгурец\nУгорь\nМасаго красная\nМоцарелла\nУнаги, Кунжут сверху",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.285 kg" }],
-		"image": "1139.jpg",
-		"category": ["rolls-baked"]
-	},
-	"1140": {
-		"title": "Запеченный цезарь 🌶",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nКурица\nОгурец\nСпайси шапка\nУнаги, Кунжут",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.285 kg" }],
-		"image": "1140.jpg",
-		"category": ["rolls-baked"]
-	},
-	"1141": {
-		"title": "ЗАПЕЧЕННЫЙ С ЛОСОСЕМ 🌶",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nЛосось\nОгурец\nОмлет тамаго\nМасаго красная\nУнаги, Кунжут",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.290 kg" }],
-		"image": "1141.jpg",
-		"category": ["rolls-baked"]
-	},
-	"1142": {
-		"title": "ЗАПЕЧЕННЫЕ С МИДИЯМИ 🌶",
-		"short_description": "",
-		"description": "Рис\nНори\nТворожный сыр\nМидии\nОмлет тамаго\nМасаго зеленая\nУнаги, Кунжут",
-		"additional_information": [{ "title": "Вес ролла", "value": "0.245 kg" }],
-		"image": "1142.jpg",
-		"category": ["rolls-baked"]
-	},
-	"2225": {
-		"title": "Запеченный в кунжуте с креветкой",
-		"short_description": "",
-		"description": "Рис\nНори\nОгурец\nСнежный краб\nСыр\nОмлет\nКреветка\nКунжут\nСоус унаги",
-		"additional_information": [],
-		"image": "2225.png",
-		"category": ["rolls-baked"]
-	},
-	"2226": {
-		"title": "ЗАПЕЧЕННЫЙ С УГРЕМ",
-		"short_description": "",
-		"description": "Рис\nНори\nУгорь\nСыр творожный\nОмлет\nМассаго\nСоус запеченный",
-		"additional_information": [],
-		"image": "2226.jpg",
-		"category": ["rolls-baked"]
-	},
-	"1143": {
-		"title": "МИНИ С МИДИЯМИ",
-		"short_description": "",
-		"description": "Рис\nНори\nМидии\nСоус шапка",
-		"additional_information": [],
-		"image": "1143.jpg",
-		"category": ["rolls-mini"]
-	},
-	"1144": {
-		"title": "МИНИ С ЛОСОСЕМ",
-		"short_description": "",
-		"description": "Рис\nНори\nЛосось\nСырная шапочка",
-		"additional_information": [],
-		"image": "1144.jpg",
-		"category": ["rolls-mini"]
-	},
-	"1145": {
-		"title": "МИНИ С УГРЕМ",
-		"short_description": "",
-		"description": "Рис\nНори\nУгорь\nУнаги\nКунжут",
-		"additional_information": [],
-		"image": "1145.jpg",
-		"category": ["rolls-mini"]
-	},
-	"1146": {
-		"title": "МИНИ С АВОКАДО",
-		"short_description": "",
-		"description": "Рис\nНори\nАвокадо\nСырная шапочка",
-		"additional_information": [],
-		"image": "1146.jpg",
-		"category": ["rolls-mini"]
-	},
-	"1147": {
-		"title": "МИНИ С ТУНЦОМ",
-		"short_description": "",
-		"description": "Рис\nНори\nТунец\nСоус шапка",
-		"additional_information": [],
-		"image": "1147.jpg",
-		"category": ["rolls-mini"]
-	},
-	"1148": {
-		"title": "МИНИ С ОГУРЦОМ",
-		"short_description": "",
-		"description": "Рис\nНори\nОгурец\nСырная шапочка",
-		"additional_information": [],
-		"image": "1148.jpg",
-		"category": ["rolls-mini"]
-	},
-	"1150": {
-		"title": "ХОКАЙДО",
-		"short_description": "",
-		"description": "Филадельфия с креветкой\nКалифорния классик\nГайда маки\nКалифорния с лососем\nТуна урамаки",
-		"additional_information": [{ "title": "Вес набора", "value": "1.260 kg" }],
-		"image": "1150.jpg",
-		"category": ["sets-classic"]
-	},
-	"1151": {
-		"title": "ГАЙДЗЕН",
-		"short_description": "",
-		"description": "Филадельфия\nКанада\nКалифорния классик\nКалифорния с лососем\nБекон чиз\nГейша",
-		"additional_information": [{ "title": "Вес набора", "value": "1.660 kg" }],
-		"image": "1151.jpg",
-		"category": ["sets-classic"]
-	},
-	"1152": {
-		"title": "Токио Люкс",
-		"short_description": "",
-		"description": "Мини с угрем 8\nМини с тунцом 8\nМини с лососем 8\nСуши лосось 2\nСуши с креветкой 2\nГункан с лососем 4\nСашими 8\nМикс ролл 8",
-		"additional_information": [],
-		"image": "1152.jpg",
-		"category": ["sets-classic"]
-	},
-	"1153": {
-		"title": "Ханами",
-		"short_description": "",
-		"description": "Филадельфия премиум 8 шт.\nBLACK фила 8 шт.\nФиладельфия GOLD 8 шт.",
-		"additional_information": [],
-		"image": "1153.jpg",
-		"category": ["sets-classic"]
-	},
-	"1154": {
-		"title": "Сет Сёгун",
-		"short_description": "",
-		"description": "Гункан с лососем в соусе спайси 10 штук\nГункан с угрём и массагой 4 штуки\nСуши с креветкой 2 шт.\nСуши с лососем 2 штуки\nСуши с угрём 2 штуки",
-		"additional_information": [],
-		"image": "1154.jpg",
-		"category": ["sets-classic"]
-	},
-	"1155": {
-		"title": "АМЕРИКА",
-		"short_description": "",
-		"description": "Филадельфия\nКанада\nКалифорния классик\nМини с лососем\nМини с мидиями",
-		"additional_information": [{ "title": "Вес набора", "value": "1.130 kg" }],
-		"image": "1155.jpg",
-		"category": ["sets-classic"]
-	},
-	"2222": {
-		"title": "Нигири",
-		"short_description": "",
-		"description": "Гунканы снежным крабом 3\nТунцом 4\nКреветкой 3\nУгорь 2\nСуши с лососем 2 шт.\nЛососем гриль 2 шт.",
-		"additional_information": [],
-		"image": "2222.jpg",
-		"category": ["sets-classic"]
-	},
-	"1156": {
-		"title": "СУМО",
-		"short_description": "",
-		"description": "Хотатэ фрай\nЦезарь\nБанзай темпура\nЗапеченный с мидиями",
-		"additional_information": [{ "title": "Вес набора", "value": "1.100 kg" }],
-		"image": "1156.jpg",
-		"category": ["sets-baked"]
-	},
-	"1157": {
-		"title": "СЕНСЕЙ",
-		"short_description": "",
-		"description": "Запеченный цезарь\nЗапеченный с лососем\nТемпура с беконом\nБанзай темпура",
-		"additional_information": [{ "title": "Вес набора", "value": "1.150 kg" }],
-		"image": "1157.jpg",
-		"category": ["sets-baked"]
-	},
-	"1158": {
-		"title": "ТЕМПУРА МЕГА",
-		"short_description": "",
-		"description": "Темпура с беконом\nТемпура с угрем\nБанзай темпура\nЦезарь темпура\nХотатэ фрай",
-		"additional_information": [],
-		"image": "1158.jpg",
-		"category": ["sets-baked"]
-	},
-	"1159": {
-		"title": "ТРИАДА",
-		"short_description": "",
-		"description": "Запеченный с лососем\nЗапеченный с мидиями\nЗапеченный с тунцом",
-		"additional_information": [],
-		"image": "1159.jpg",
-		"category": ["sets-baked"]
-	},
-	"1160": {
-		"title": "Сакура",
-		"short_description": "",
-		"description": "Black фила\nДорамма\nЗапеченный с лососем\nМини с огурцом\nТемпура бекон",
-		"additional_information": [],
-		"image": "1160.jpg",
-		"category": ["sets-mix"]
-	},
-	"1161": {
-		"title": "МАЦУО МОНРО",
-		"short_description": "",
-		"description": "Филадельфия премиум\nКанада\nЦезарь запеченный\nСуши с креветкой 2 шт.",
-		"additional_information": [{ "title": "Вес набора", "value": "0.985 kg" }],
-		"image": "1161.jpg",
-		"category": ["sets-mix"]
-	},
-	"1162": {
-		"title": "АЗИЯ",
-		"short_description": "",
-		"description": "Банзай темпура\nЗапеченный с угрем\nБекон чиз\nКанада\nМини с тунцом спайси",
-		"additional_information": [{ "title": "Вес набора", "value": "1.235 kg" }],
-		"image": "1162.jpg",
-		"category": ["sets-mix"]
-	},
-	"1163": {
-		"title": "ФУТУРАМА",
-		"short_description": "",
-		"description": "Филадельфия\nКалифорния классик\nКалифорния с лососем\nКанада\nЗапеченный с угрем\nЗапеченный с мидиями\nТемпура с беконом\nФудзи в кунжуте",
-		"additional_information": [{ "title": "Вес набора", "value": "2.210 kg" }],
-		"image": "1163.jpg",
-		"category": ["sets-mix"]
-	},
-	"1164": {
-		"title": "ФУДЗИЯМА",
-		"short_description": "",
-		"description": "Гайда маки\nТуна урамаки\nТемпура с беконом\nЦезарь\nМини авокадо",
-		"additional_information": [{ "title": "Вес набора", "value": "0.935 kg" }],
-		"image": "1164.jpg",
-		"category": ["sets-mix"]
-	},
-	"1165": {
-		"title": "ХАКУ",
-		"short_description": "",
-		"description": "Филадельфия премиум\nКалифорния мега краб\nБекон чиз премиум\nЗапеченный лосось премиум\nЦезарь ролл премиум",
-		"additional_information": [{ "title": "Вес набора", "value": "1.440 kg" }],
-		"image": "1165.jpg",
-		"category": ["sets-mix"]
-	},
-	"2221": {
-		"title": "АВЕНЮ",
-		"short_description": "",
-		"description": "Фила гриль\nТуна прайм\nЗапеченный в кунжуте с креветкой\nСуши с лососем 1\nСуши с тунцом 1\nСуши лосось гриль 1",
-		"additional_information": [],
-		"image": "2221.jpg",
-		"category": ["sets-mix"]
-	},
-	"1170": {
-		"title": "RONIN",
-		"short_description": "",
-		"description": "Фила-лайт\nТори с лососем\nСаке-темпура\nЗапеченный с лососем",
-		"additional_information": [],
-		"image": "1170.jpg",
-		"category": ["sets-lite"]
-	},
-	"1171": {
-		"title": "ДУЭТ",
-		"short_description": "",
-		"description": "Фила-лайт\nЗапеченный с курицей\nФри\nМорс 2",
-		"additional_information": [],
-		"image": "1171.jpg",
-		"category": ["sets-lite"]
-	},
-	"1172": {
-		"title": "ЛЕДИ-WHITE",
-		"short_description": "",
-		"description": "Фила-лайт\nКалифорния\nТемпура с курицей\nКаппа-маки\nПицца-маргарита",
-		"additional_information": [],
-		"image": "1172.jpg",
-		"category": ["sets-lite"]
-	},
-	"1173": {
-		"title": "ОРИ-НОРИ",
-		"short_description": "",
-		"description": "Темпура с курицей\nЗапеченный с курицей\nСаке темпура\nЗапеченный саке-маки\nФри 2 п",
-		"additional_information": [],
-		"image": "1173.jpg",
-		"category": ["sets-lite"]
-	},
-	"1174": {
-		"title": "BIG-PARTY",
-		"short_description": "",
-		"description": "Фила-лайт\nТемпура с курицей\nСаке-маки\nЗапеченный саке-маки\nТори с лососем\nНаггетсы 1п",
-		"additional_information": [],
-		"image": "1174.jpg",
-		"category": ["sets-lite"]
-	},
-	"1180": {
-		"title": "МАРГАРИТА",
-		"short_description": "",
-		"description": "Тесто\nПицца соус\nМоцарелла\nТоматы",
-		"additional_information": [],
-		"image": "1180.jpg",
-		"category": ["pizza"]
-	},
-	"1181": {
-		"title": "СТАФФ С ЛОСОСЕМ МИНИ",
-		"short_description": "",
-		"description": "Сыр рикотта\nСыр моцарелла\nШпинат\nЛосось\nЛимон",
-		"additional_information": [],
-		"image": "1181.jpg",
-		"category": ["pizza"]
-	},
-	"1182": {
-		"title": "ПИЦЦА «STAFF С ЛОСОСЕМ»",
-		"short_description": "",
-		"description": "Нежное тесто\nСыр рикотта\nСыр моцарелла\nШпинат\nЛосось\nСпеции",
-		"additional_information": [],
-		"image": "1182.jpg",
-		"category": ["pizza"]
-	},
-	"1183": {
-		"title": "ГАВАЙСКАЯ",
-		"short_description": "",
-		"description": "Тесто\nСливочный соус\nАнанас консервированный\nКурица копченая\nМоцарелла",
-		"additional_information": [],
-		"image": "1183.jpg",
-		"category": ["pizza"]
-	},
-	"1184": {
-		"title": "КУРИЦА+ГРИБЫ",
-		"short_description": "",
-		"description": "Тесто\nСливочный соус\nМоцарелла\nКурица\nШампиньоны\nСухой чеснок\nСырный соус",
-		"additional_information": [],
-		"image": "1184.jpg",
-		"category": ["pizza"]
-	},
-	"1185": {
-		"title": "ДИАБЛО",
-		"short_description": "",
-		"description": "Тесто\nПицца соус\nМоцарелла\nКурица копченая\nПепперони\nЧерри\nМаслины\nХолопеньо\nСоус",
-		"additional_information": [],
-		"image": "1185.jpg",
-		"category": ["pizza"]
-	},
-	"1186": {
-		"title": "Вегетарианская пицца",
-		"short_description": "",
-		"description": "Тесто\nТоматный соус\nБолгарский перец\nПомидоры\nШампиньоны\nБрокколи\nМаслины\nСыр моцарелла",
-		"additional_information": [],
-		"image": "1186.jpg",
-		"category": ["pizza"]
-	},
-	"1187": {
-		"title": "МОРСКОЙ КОКТЕЙЛЬ",
-		"short_description": "",
-		"description": "Тесто\nСливочный соус\nСыр моцарелла\nТигровые креветки\nНежнейшая семга\nБрокколи\nМаслины",
-		"additional_information": [],
-		"image": "1187.jpg",
-		"category": ["pizza"]
-	},
-	"1188": {
-		"title": "СОЧНЫЙ БЕКОН",
-		"short_description": "",
-		"description": "Тесто\nСыр моцарелла\nБекон\nСалями\nКрасный лук",
-		"additional_information": [],
-		"image": "1188.jpg",
-		"category": ["pizza"]
-	},
-	"1189": {
-		"title": "ЧЕТЫРЕ СЫРА",
-		"short_description": "",
-		"description": "Тесто\nСливочный соус\nМоцарелла\nСыр пармезан\nСыр сливочный\nСыр чеддер",
-		"additional_information": [],
-		"image": "1189.jpg",
-		"category": ["pizza"]
-	},
-	"1190": {
-		"title": "ПИКАНТНАЯ КУРОЧКА",
-		"short_description": "",
-		"description": "Тесто\nПицца соус\nМоцарелла\nФиле курочки\nШампиньоны\nТоматы\nБрокколи\nПикантное масло",
-		"additional_information": [],
-		"image": "1190.jpg",
-		"category": ["pizza"]
-	},
-	"1191": {
-		"title": "ПЕПЕРОНИ",
-		"short_description": "",
-		"description": "Тесто\nПицца соус\nМоцарелла\nКолбаски салями\nМаслины",
-		"additional_information": [],
-		"image": "1191.jpg",
-		"category": ["pizza"]
-	},
-	"2231": {
-		"title": "КУРИЦА БЕКОН",
-		"short_description": "",
-		"description": "Белый соус\nМоцарелла\nКопченная грудка\nБекон «шашки»\nСоус сливочно чесночный",
-		"additional_information": [],
-		"image": "2231.jpg",
-		"category": ["pizza"]
-	},
-	"2232": {
-		"title": "ЦАРСКАЯ",
-		"short_description": "",
-		"description": "Томатный соус\nМоцарелла\nШампиньоны\nПепперони\nБолгарский перец\nКопченная грудка\nСоус bbq",
-		"additional_information": [],
-		"image": "2232.jpg",
-		"category": ["pizza"]
-	},
-	"1192": {
-		"title": "КРЕВЕТКИ В КЛЯРЕ",
-		"short_description": "",
-		"description": "Тигровые креветки в хрустящей панировки\nС соусом сладкий чили\n6 шт.",
-		"additional_information": [],
-		"image": "1192.jpg",
-		"category": ["snacks"]
-	},
-	"1193": {
-		"title": "НАГГЕТСЫ",
-		"short_description": "",
-		"description": "Сочные куриное филе в панировке\nПорция 6 кусочков",
-		"additional_information": [],
-		"image": "1193.jpg",
-		"category": ["snacks"]
-	},
-	"1194": {
-		"title": "ФРИ",
-		"short_description": "",
-		"description": "Манящий вкус картофеля, порадует не только детишек, но и взрослых",
-		"additional_information": [{ "title": "Вес", "value": "0.150 kg" }],
-		"image": "1194.jpg",
-		"category": ["snacks"]
-	},
-	"1195": {
-		"title": "ТОМ ЯМ С МОРЕПРОДУКТАМИ",
-		"short_description": "",
-		"description": "Бульон том ям\nШампиньоны\nПомидоры черри\nКальмары\nТигровые креветки\nЛистики лайма\nДополнения рис",
-		"additional_information": [],
-		"image": "1195.jpg",
-		"category": ["soups"]
-	},
-	"1196": {
-		"title": "ТОМ ЯМ С КУРИЦЕЙ",
-		"short_description": "",
-		"description": "Бульон том ям\nШампиньоны\nТоматы черри\nФиле курочки\nЛистики лайма\nДополнения рис",
-		"additional_information": [],
-		"image": "1196.jpg",
-		"category": ["soups"]
-	},
-	"1197": {
-		"title": "Удон с говядиной в соусе терияки",
-		"short_description": "",
-		"description": "Лапша Удон\nВырезка говядины\nБолгарский перец\nМорковь\nЛук репчатый\nСоус Терияки",
-		"additional_information": [],
-		"image": "1197.jpg",
-		"category": ["pastes"]
-	},
-	"1198": {
-		"title": "Вок в кунжутном соусе с курицей и овощами",
-		"short_description": "",
-		"description": "Лапша Удон\nКуриное филе\nБолгарский перец\nМорковь\nРепчатый лук\nСоус орехово-кунжутный",
-		"additional_information": [],
-		"image": "1198.jpg",
-		"category": ["pastes"]
-	},
-	"1199": {
-		"title": "Вок в сливочном соусе с курицей и грибами",
-		"short_description": "",
-		"description": "Лапша удон\nКуриное филе\nШампиньоны\nСливки\nРепчатый лук",
-		"additional_information": [],
-		"image": "1199.jpg",
-		"category": ["pastes"]
-	},
-	"1210": {
-		"title": "Поке",
-		"short_description": "",
-		"description": "Рис\nЛосось\nАвокадо\nОгурец\nТоматы черри\nРедис\nСалат чука\nМикрозелень\nСоус",
-		"additional_information": [],
-		"image": "1210.jpg",
-		"category": ["poke"]
-	},
-	"1211": {
-		"title": "ПОКЕ НА ЗАВТРАК",
-		"short_description": "",
-		"description": "РИС\nБЕЛАЯ ФАСОЛЬ\nЖАРЕННОЕ ЯЙЦО\nБЕКОН\nТоматы\nСоус\nОГУРЕЦ\nСАЛАТ «ЧУКА»",
-		"additional_information": [],
-		"image": "1211.png",
-		"category": ["poke"]
-	},
-	"4444": {
-		"title": "Фруктовая пицца",
-		"short_description": "",
-		"description": "Сладкая клубника\nТропический ананас\nНежный банан\nСочная клюква",
-		"additional_information": [],
-		"image": "4444.jpg",
-		"category": ["desserts"]
-	},
-	"4441": {
-		"title": "НАСЛАЖДЕНИЯ",
-		"short_description": "",
-		"description": "Рисовая бумага\nНежнейший шоколадный крем\nБанан\nАпельсин\nКлюква",
-		"additional_information": [],
-		"image": "4441.jpg",
-		"category": ["desserts"]
-	},
-	"4443": {
-		"title": "ВОДА БЕЗ ГАЗА",
-		"short_description": "",
-		"description": "",
-		"additional_information": [{ "title": "Объем", "value": "0.5 литра" }],
-		"image": "4443.jpg",
-		"category": ["drinks"]
-	},
-	"4445": {
-		"title": "ГАЗИРОВАННАЯ ВОДА",
-		"short_description": "",
-		"description": "",
-		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
-		"image": "4445.jpg",
-		"category": ["drinks"]
-	},
-	"4446": {
-		"title": "КОЛА",
-		"short_description": "",
-		"description": "Напиток Coca-Cola газированный",
-		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
-		"image": "4446.jpg",
-		"category": ["drinks"]
-	},
-	"4447": {
-		"title": "МОРС КЛЮКВА",
-		"short_description": "",
-		"description": "МОРС КЛЮКА НАТУРАЛЬНЫЙ",
-		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
-		"image": "4447.jpg",
-		"category": ["drinks"]
-	},
-	"4448": {
-		"title": "МОРС ОБЛЕПИХА",
-		"short_description": "",
-		"description": "МОРС ИЗ ЯГОД ОБЛЕПИХИ",
-		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
-		"image": "4448.jpg",
-		"category": ["drinks"]
-	},
-	"4449": {
-		"title": "СОК АПЕЛЬСИНОВЫЙ PIKO",
-		"short_description": "",
-		"description": "АПЕЛЬСИН",
-		"additional_information": [{ "title": "Объем", "value": "1 л" }],
-		"image": "4449.jpg",
-		"category": ["drinks"]
-	},
-	"4451": {
-		"title": "СОК ЯБЛОКО PIKO",
-		"short_description": "",
-		"description": "ЯБЛОКО",
-		"additional_information": [{ "title": "Объем", "value": "1 л" }],
-		"image": "4451.jpg",
-		"category": ["drinks"]
-	},
-	"4452": {
-		"title": "СОК МУЛЬТИФРУКТ PIKO MINI",
-		"short_description": "",
-		"description": "МУЛЬТИФРУКТ",
-		"additional_information": [{ "title": "Объем", "value": "0.2 л" }],
-		"image": "4452.jpg",
-		"category": ["drinks"]
-	},
-	"4453": {
-		"title": "СОК ЯБЛОКО PIKO MINI",
-		"short_description": "",
-		"description": "ЯБЛОКО",
-		"additional_information": [{ "title": "Объем", "value": "0.2 л" }],
-		"image": "4453.jpg",
-		"category": ["drinks"]
-	},
-	"4454": {
-		"title": "BBQ СОУС",
-		"short_description": "",
-		"description": "СОУС BBQ",
-		"additional_information": [],
-		"image": "4454.jpg",
-		"category": ["sauces"]
-	},
-	"4455": {
-		"title": "СОУС ТОМАТНЫЙ",
-		"short_description": "",
-		"description": "СОУС ТОМАТНЫЙ КЕТЧУП",
-		"additional_information": [],
-		"image": "4455.jpg",
-		"category": ["sauces"]
-	},
-	"4456": {
-		"title": "ОРЕХОВО-КУНЖУТНЫЙ СОУС",
-		"short_description": "",
-		"description": "",
-		"additional_information": [],
-		"image": "4456.jpg",
-		"category": ["sauces"]
-	},
-	"4457": {
-		"title": "СЛАДКИЙ ЧИЛИ",
-		"short_description": "",
-		"description": "",
-		"additional_information": [],
-		"image": "4457.jpg",
-		"category": ["sauces"]
-	},
-	"4458": {
-		"title": "СОУС СЫРНЫЙ",
-		"short_description": "",
-		"description": "СЫРНЫЙ СОУС НА РАЗЛИВ",
-		"additional_information": [{ "title": "Объем", "value": "0.03 л" }],
-		"image": "4458.jpg",
-		"category": ["sauces"]
-	},
-	"4459": {
-		"title": "ТЕРИЯКИ СОУС",
-		"short_description": "",
-		"description": "",
-		"additional_information": [],
-		"image": "4459.jpg",
-		"category": ["sauces"]
-	},
-	"4460": {
-		"title": "УНАГИ СОУС",
-		"short_description": "",
-		"description": "",
-		"additional_information": [],
-		"image": "4460.jpg",
-		"category": ["sauces"]
-	},
-	"4461": {
-		"title": "ШИРАЧА СОУС",
-		"short_description": "",
-		"description": "",
-		"additional_information": [],
-		"image": "4461.jpg",
-		"category": ["sauces"]
-	},
-	"8000": {
-		"title": "ИНЬ - ЯНЬ",
-		"short_description": "",
-		"description": "Нори – 2\nРис – 0,200\nКраситель черн.красн.– 0,004\nЛосось терияки – 0,030\nМикрозелень – 0,002\nКунжут микс – 0,005\nСыр твор. Красный – 0,020\nУнаги – 0,005",
-		"additional_information": [],
-		"image": "8000.jpg",
-		"category": ["rolls-classic"]
-	},
-	"8001": {
-		"title": "С АПЕЛЬСИНОМ И ЛОСОСЕМ",
-		"short_description": "",
-		"description": "Нори – 1\nРис – 0,130\nСыр творожный – 0,040\nЛосось – 0,050\nАпельсин – 0,040\nСоус манго-айоли – 0,020\nИкра имитация – 0,015\nМикро зелень – 0,005",
-		"additional_information": [],
-		"image": "8001.jpg",
-		"category": ["rolls-classic"]
-	},
-	"8002": {
-		"title": "С КРЕВЕТКОЙ ТЕМПУРА",
-		"short_description": "",
-		"description": "Рис – 0,130\nНори – 0,7\nОгурец – 0,040\nАвокадо – 0,030\nКреветка темпура – 0,085\nСоус манго-айоли – 0,010\nМикрозелень – 0,005\nПищевое золото – 0,001",
-		"additional_information": [],
-		"image": "8002.jpg",
-		"category": ["rolls-classic"]
-	},
-	"8003": {
-		"title": "С ТУНЦОМ И ЛОСОСЕМ",
-		"short_description": "",
-		"description": "Нори – 0,5\nРис – 0,130\nСыр творожный – 0,020\nУгорь – 0,030\nОгурец0,020\nЛосось – 0,030\nТунец – 0,050\nАпельсин – 0,20\nСтружка тунца – 0,010\nТобико – 0,005\nУнаги – 0,010\nМикрозелень – 0,005",
-		"additional_information": [],
-		"image": "8003.jpg",
-		"category": ["rolls-classic"]
-	},
-	"8004": {
-		"title": "МИНИ ЛОСОСЬ ТЕРИЯКИ",
-		"short_description": "",
-		"description": "Нори – 1\nРис – 0,100\nЛосось терияки – 0,040\nСпайси – 0,015\nСтружка тунца – 0,005\nКунжут микс  – 0,005\nМикро зелень – 0,005",
-		"additional_information": [],
-		"image": "8004.jpg",
-		"category": ["rolls-mini"]
-	},
-	"8005": {
-		"title": "С УГРЕМ И КРЕВЕТКОЙ",
-		"short_description": "",
-		"description": "Нори – 0,7\nРис – 0,130\nЛосось – 0,040\nИкра тобико – 0,010\nАвокадо – 0,030\nУгорь – 0,060(слайсы)\nСоус унаги – 0,010\nАрахис дробленный – 0,005\nСоус манго-айоли – 0,010\nМикрозелень – 0,005",
-		"additional_information": [],
-		"image": "8005.jpg",
-		"category": ["rolls-classic"]
-	},
-	"8006": {
-		"title": "КРЫЛО 6 ШТ СОУС БАФФАЛО 🌶",
-		"short_description": "",
-		"description": "Крылья 6 шт.\nПанировка – 0,100\nВода – 0,300\nСоус баффало – 0,100",
-		"additional_information": [],
-		"image": "8006.jpg",
-		"category": ["delicious_wings"]
-	},
-	"8007": {
-		"title": "КРЫЛЬЯ ФРАЙД",
-		"short_description": "",
-		"description": "Крыло 6 шт.\nВода – 0,300\nПанировка – 0,100\nКетчуп – 0,040",
-		"additional_information": [],
-		"image": "8007.jpg",
-		"category": ["delicious_wings"]
-	},
-	"8008": {
-		"title": "КРЫЛЬЯ BBQ",
-		"short_description": "",
-		"description": "Крыло 6 шт.\nВода – 0,300\nПанировка – 0,100\nСоус bbq – 0,100",
-		"additional_information": [],
-		"image": "8008.jpg",
-		"category": ["delicious_wings"]
-	},
-	"9000": {
-		"title": "САЛАТ С КОПЧЕННЫМ УГРЕМ И АПЕЛЬСИНОМ",
-		"short_description": "",
-		"description": "Микс зелени – 0,030\nЧерри – 0,030\nУгорь – 0,045\nАпельсин чист.– 0,050\nСоус свит чили – 0,040\nСтружка миндаля – 0,005",
-		"additional_information": [],
-		"image": "9000.jpg",
-		"category": ["salads"]
-	},
-	"9001": {
-		"title": "САЛАТ С ЛОСОСЕМ И АВОКАДО",
-		"short_description": "",
-		"description": "Микс зелени – 0,030\nЛосось с/с кубик – 0,050\nАвокадо кубик – 0,40\nЧерри – 0,040\nАрахис дробленный – 0,010\nСоус бальзамический – 0,050\nРедис – 0,005",
-		"additional_information": [],
-		"image": "9001.jpg",
-		"category": ["salads"]
-	},
-	"9002": {
-		"title": "САЛАТ ХРУСТ. БАКЛАЖАНЫ",
-		"short_description": "",
-		"description": "Баклажан – 0,150\nКрахмал – 0,080\nЧЕрри – 0,050\nМикс салата – 0,015\nСыр творож – 0,030\nСвит чили – 0,050\nЗемля из маслин – 0,001",
-		"additional_information": [],
-		"image": "9002.jpg",
-		"category": ["salads"]
-	},
-	"9003": {
-		"title": "САЛАТ ЧУККА",
-		"short_description": "",
-		"description": "Чукка водоросли – 0,150\nКунжутно–ореховый с. – 0,050\nЧерри – 0,030\nКунжут – 0,005",
-		"additional_information": [],
-		"image": "9003.jpg",
-		"category": ["salads"]
-	},
-	"9111": {
-		"title": "САНШАЙН СЕТ",
-		"short_description": "",
-		"description": "ТУНЕЦ YELLOWFIN\nТЕРИЯКИ SALMON\nАМАТЕРАСУ\nФЬЮЖИН",
-		"additional_information": [],
-		"image": "9111.png",
-		"category": ["sets-classic"]
-	},
-	"9112": {
-		"title": "ФЬЮЖИН",
-		"short_description": "",
-		"description": "Нори – 0.7\nРис – 130 гр\nСыр – 80 гр\nОгурец – 30 гр\nЛосось – 100 гр\nСыр Чеддер – 40 гр\nСоус угорь – 10 гр\nСоус сырный – 10 гр\nСоус Унаги – 10 гр\nСтружка нори – 2 гр",
-		"additional_information": [],
-		"image": "9112.png",
-		"category": ["rolls-classic"]
-	},
-	"9113": {
-		"title": "АМАТЕРАСУ",
-		"short_description": "",
-		"description": "Нори – 0.7\nРис – 130 гр\nСыр – 80 гр\nЛосось – 50 гр\nМанго – 30 гр\nПищевое золото – 2 листа\nСоус угорь – 10 гр\nНити Чили – 2 гр\nСтружка нори – 2 гр",
-		"additional_information": [],
-		"image": "9113.png",
-		"category": ["rolls-classic"]
-	},
-	"9114": {
-		"title": "ТЕРИЯКИ SALMON",
-		"short_description": "",
-		"description": "Нори – 0,7\nРис – 130 гр\nСыр – 80 гр\nЛосось терияки – 50 гр\nОгурец – 30 гр\nКреветки тигровые – 40 гр\nВяленные томаты – 20 гр\nСвит чили – 15 гр\nКунжут – 5 гр",
-		"additional_information": [],
-		"image": "9114.png",
-		"category": ["rolls-classic"]
-	},
-	"9115": {
-		"title": "ТУНЕЦ YELLOWFIN",
-		"short_description": "",
-		"description": "Нори – 0,7\nРис – 130 гр\nСыр – 80 гр\nТунец – 100 гр\nКреветка темпура – 50 гр\nСоус угорь – 10 гр\nНити Чили – 2 гр\nАрахис – 5 гр",
-		"additional_information": [],
-		"image": "9115.png",
-		"category": ["rolls-classic"]
-	},
-	"9116": {
-		"title": "ГУНКАН СЯКЕ ИКУРА",
-		"short_description": "",
-		"description": "Рис – 25 гр\nЛосось – 30 гр\nИкра лосося – 10 гр",
-		"additional_information": [],
-		"image": "9116.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"0001": {
-		"title": "ГУНКАН СЯКЕ СПАЙСИ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nЛосось спайси – 15 гр\nСвит чили – 5 гр\nИкра лосося – 2 гр",
-		"additional_information": [],
-		"image": "0001.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"0002": {
-		"title": "ГУНКАН С УГРЕМ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nУгорь – 20 гр\nУнаги – 5 гр\nМасаго красная – 2 гр",
-		"additional_information": [],
-		"image": "0002.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"0003": {
-		"title": "СУШИ С УГРЕМ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nУгорь – 25 гр\nУнаги – 5 гр\nКунжут – 2 гр",
-		"additional_information": [],
-		"image": "0003.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"-0003": {
-		"title": "ГУНКАН С ТУНЦОМ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nТунец – 15 гр\nСвит Чили – 5 гр\nСтружка миндаля – 2 гр",
-		"additional_information": [],
-		"image": null,
-		"category": ["gunkan_and_sushi"]
-	},
-	"0004": {
-		"title": "СУШИ С КРЕВЕТКОЙ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nКреветка – 20 гр\nСоус спайси",
-		"additional_information": [],
-		"image": "0004.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"0005": {
-		"title": "ГУНКАН С ЭСКОЛАРОМ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nЭсколар – 15 гр\nБальзамик – 5 гр\nСтружка миндаля",
-		"additional_information": [],
-		"image": null,
-		"category": ["gunkan_and_sushi"],
-		"deleted": true
-	},
-	"0006": {
-		"title": "СУШИ ЛОСОСЬ ГРИЛЬ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nЛосось гриль – 30 гр\nЧерная Масаго – 2 гр\nУнаги – 2 гр\nПищевое золото",
-		"additional_information": [],
-		"image": "0006.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"-0007": {
-		"title": "ГУНКАН С КРАБОМ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nКрабовый микс – 15 гр\nСоус спайси – 5 гр\nКрасная и зеленая Масаго по 5 гр",
-		"additional_information": [],
-		"image": "-0007.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"0008": {
-		"title": "ГУНКАН С КРАБОМ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nКрабовый микс – 15 гр\nСоус спайси – 5 гр\nКрасная Масаго – 2 гр",
-		"additional_information": [],
-		"image": "0008.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"0009": {
-		"title": "СУШИ ЛОСОСЬ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nЛосось – 30 гр\nСоус спайси – 2 гр",
-		"additional_information": [],
-		"image": "0009.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"0010": {
-		"title": "СУШИ С ТУНЦОМ",
-		"short_description": "",
-		"description": "Рис – 25 гр\nТунец – 30 гр\nВасаби – 2 гр\nЧерная Масаго – 2 гр",
-		"additional_information": [],
-		"image": "0010.jpg",
-		"category": ["gunkan_and_sushi"]
-	},
-	"8282": {
-		"title": "КРАКЕН",
-		"short_description": "",
-		"description": "Sunny roll 1 шт.\nКриспи Фиш 1 шт.\nЯки эби 1 шт.\nСуши лосось чиз 2 шт.\nСуши тунец чиз 2 шт.\nСуши эби темпура 2 шт.\nГункан сяке икура 2 шт.",
-		"additional_information": [],
-		"image": "8282.jpg",
-		"category": ["sets-classic"]
-	},
-	"5656": {
-		"title": "СЕТ НАРЦИСС ВАЛЕРА",
-		"short_description": "",
-		"description": "Ролл в манго\nРолл с тунцом в золоте\nРолл в красной масаге\nТар тар из тунца и лосося в рисовых чипсах\nФруктово-ягодный микс",
-		"additional_information": [],
-		"image": "5656.jpg",
-		"category": ["sets-classic"],
-		"createdAt": "2025-10-04"
-	},
-	"3345": {
-		"title": "БУРГЕР С РВАНОЙ ГОВЯДИНОЙ",
-		"short_description": "",
-		"description": "Булочка\nСоус Бургер новый\nАйсберг\nПомидоры\nРванина\nПикули\nЛук красный\nЧеддер\nКартофель пай\nМикс салата",
-		"additional_information": [],
-		"image": "3345.png",
-		"category": ["burger"],
-		"createdAt": "2025-12-03"
-	},
-	"3346": {
-		"title": "ДАБЛ ЧИЗБУРГЕР",
-		"short_description": "",
-		"description": "Барбекю соус\nКрасный лук\nЧеддер 2 шт.\nКотлета\nЧесночный соус\nСалат айсберг\nБулочка",
-		"additional_information": [],
-		"image": "3346.png",
-		"category": ["burger"],
-		"createdAt": "2025-12-03"
-	},
-	"3344": {
-		"title": "БУРГЕР С ВИШНЕВЫМ СОУСОМ",
-		"short_description": "",
-		"description": "Булочка\nСоус Бургер новый\nАйсберг\nРванина\nПомидор\nПикули\nМикс салата\nЧеддер\nСоус вишня",
-		"additional_information": [],
-		"image": "3344.png",
-		"category": ["burger"],
-		"createdAt": "2025-12-03"
-	},
-	"3347": {
-		"title": "МАРГАРИТА КЛАССИЧЕСКАЯ",
-		"short_description": "",
-		"description": "Тесто\nСоус красный\nСыр моцарелла 2 шт.",
-		"additional_information": [],
-		"image": "3347.png",
-		"category": ["pizza"],
-		"createdAt": "2025-12-03"
-	},
-	"3350": {
-		"title": "ПИЦЦА С ОХОТНИЧЬИМИ КОЛБАСКАМИ",
-		"short_description": "",
-		"description": "Тесто\nСоус красный\nСыр моцарелла\nКарбонат\nКолбаски охотничьи\nББК соус",
-		"additional_information": [],
-		"image": "3350.png",
-		"category": ["pizza"],
-		"createdAt": "2025-12-03"
-	},
-	"3348": {
-		"title": "ФРИ С КОПЧЕННОЙ КУРОЙ",
-		"short_description": "",
-		"description": "Фри\nКопченная кура\nЧесночный соус",
-		"additional_information": [],
-		"image": "3348.png",
-		"category": ["snacks"],
-		"createdAt": "2025-12-03"
-	},
-	"3349": {
-		"title": "ФРИ С ОХОТ КОЛБАСКОЙ",
-		"short_description": "",
-		"description": "Фри\nОхотничьи колбаски колечко\nСоус bbq",
-		"additional_information": [],
-		"image": "3349.png",
-		"category": ["snacks"],
-		"createdAt": "2025-12-03"
-	},
-	"3351": {
-		"title": "САЛАТ С ХРУСТЯЩИМИ ШАМПИНЬОНАМИ",
-		"short_description": "",
-		"description": "Шампиньоны\nСоус устричный\nКрахмал\nЧерри\nСвит Чили\nМикс салата\nКинза",
-		"additional_information": [],
-		"image": "3351.png",
-		"category": ["salads"],
-		"createdAt": "2025-12-03"
-	},
-	"3352": {
-		"title": "САЛАТ С АВОКАДО КИНОА",
-		"short_description": "",
-		"description": "Авокадо\nКинула\nМикс салата либо шпинат\nЗаправка цитронет\nЧерри\nАпельсин\nКреветки",
-		"additional_information": [],
-		"image": "3352.png",
-		"category": ["salads"],
-		"createdAt": "2025-12-03"
-	},
-	"5511": {
-		"title": "КОМБО KIDS 1",
-		"short_description": "",
-		"description": "Пицца курица и грибы 1\nФри 1 п\nНаггетсы 1п\nРолл мини с огурцом 1\nСоус сырный 1\nCoyc bbq 1\nМорс 0,5 смородина 1\nМорс 0,5 клюква 1",
-		"additional_information": [],
-		"image": "5511.png",
-		"category": ["sets-lite"],
-		"createdAt": "2025-12-19"
-	},
-	"5512": {
-		"title": "КОМБО KIDS 2",
-		"short_description": "",
-		"description": "Пицца Маргарита классическая 1\nФри 1\nНаггетсы 1\nРолл мини с огурцом 1\nСоус сырный 1\nCoyc bbq 1\nМорс клюква 0,5 -1\nМорс смородина 0,5-1",
-		"additional_information": [],
-		"image": "5512.png",
-		"category": ["sets-lite"],
-		"createdAt": "2025-12-19"
-	},
-	"5513": {
-		"title": "КОМБО БПК",
-		"short_description": "",
-		"description": "Чикен бургер 2 шт\nКрылья Фрайд 1 п\nПицца курица и грибы 1\nКола 0,5 л-1",
-		"additional_information": [],
-		"image": "5513.png",
-		"category": ["sets-lite"],
-		"createdAt": "2025-12-19"
-	},
-	"5514": {
-		"title": "ИМПЕРАТОР",
-		"short_description": "",
-		"description": "Чикен Бургер 2 шт\nПицца Маргарита классическая 1\nПицца курица и грибы 1\nНаггетсы 1\nФри 1\nCoyc bbq 1\nСоус сырный 1\nМорс клюква 0,5\nМорс смородина 0,5\nМини с огурцом ролл 1\nРолл тори темпура 1\nЗапеченный сяке 1\nФила Лайт 1\nТуна спайси 1\nРолл икура 1\nЭти кранч 1\nЧиз рок 1",
-		"additional_information": [],
-		"image": "5514.png",
-		"category": ["sets-lite"],
-		"createdAt": "2025-12-19"
-	},
-	"5515": {
-		"title": "VIP",
-		"short_description": "",
-		"description": "Чикен Бургер 2 шт\nПицца маргарита классическая 1\nКола 0,5 л\nТори темпура ролл 1\nМини терияки 1\nФила Лайт 1",
-		"additional_information": [],
-		"image": "5515.png",
-		"category": ["sets-lite"],
-		"createdAt": "2025-12-19"
-	},
-	"5516": {
-		"title": "КОМБО ДЛЯ ДРУЗЕЙ",
-		"short_description": "",
-		"description": "Пицца курица и грибы 1\nКрылья фрайд 1\nМорс смородина 0,5\nРолл тори темпура 1\nРолл темпура терияки 1\nФила Лайт 1",
-		"additional_information": [],
-		"image": "5516.png",
-		"category": ["sets-lite"],
-		"createdAt": "2025-12-19"
-	},
-	"5517": {
-		"title": "СЕТ ТОКИО",
-		"short_description": "",
-		"description": "Ролл икура 1\nРолл шахматы 1\nЗапеченный сяке 1\nТуна спайси 1\nХот сяке 1\nЭти кранч 1",
-		"additional_information": [],
-		"image": "5517.png",
-		"category": ["sets-lite"],
-		"createdAt": "2025-12-19"
-	},
-	"5518": {
-		"title": "ЦУНАМИ",
-		"short_description": "",
-		"description": "Чикен бургеры 2\nКрылья фрайд 1\nКола 0,5 1\nМини с огурцом 1\nФила Лайт 1\nМини терияки 1\nТуна спайсе 1",
-		"additional_information": [],
-		"image": "5518.png",
-		"category": ["sets-lite"],
-		"createdAt": "2025-12-19"
-	},
-	"5519": {
-		"title": "САМУРАЙ",
-		"short_description": "",
-		"description": "Чикен Бургер 1\nФри с Охотничьи 1\nЗапеченный сяке 1\nЧиз рок 1\nXот cакe 1",
-		"additional_information": [],
-		"image": "5519.png",
-		"category": ["sets-lite"],
-		"createdAt": "2025-12-19"
-	},
-	"7111": {
-		"title": "ДРАКОН",
-		"short_description": "",
-		"description": "1. Етеки ролл\nРис\nНори\nСыр творожный\nОгурец\nЛосось\nИкра имитация\nЗолото\n\n2. Магуро ролл\nРис\nНори\nСыр творожный\nАпельсин\nТунец\nКлубника\nМасаго зеленая\nКокосовая стружка\n\n3. Men's roll\nРис\nНори\nСыр творожный\nОмлет\nАйсберг\nБекон ленточный\nШапка из мидий\nСоус угорь\n\n4. Мексиканский ролл\nТортилья\nСыр творожный\nКур копченная\nПомидор\nЛук зеленый\nСоус чесночный\nКляр\nПанировка",
-		"additional_information": [],
-		"image": "7111.png",
-		"category": ["sets-lite"],
-		"createdAt": "2026-01-09"
-	},
-	"7112": {
-		"title": "СЕТ ФУЮ",
-		"short_description": "",
-		"description": "1. Етеки ролл\nРис\nНори\nСыр творожный\nОгурец\nЛосось\nИкра имитация\nЗолото\n\n2. ШОК МАКИ\nРис\nНори\nСыр творожный\nАйсберг\nЛук зеленый\nЛосось\nХот соус\nКляр\nПанировка\n\n3. Атлантик ролл\nРис\nНори\nСыр творожный\nОмлет\nОгурец\nМассаго красная\nШапка из мидий\nСоус сырный\n\n4. Шримп ролл\nТортилья\nСыр творожный\nКреветка Темпура\nОгурец\nТоматы вяленые\nСвит Чили",
-		"additional_information": [],
-		"image": "7112.png",
-		"category": ["sets-lite"],
-		"createdAt": "2026-01-09"
-	},
-	"1234": {
-		"title": "СЕТ МИЮКИ",
-		"short_description": "",
-		"description": "1. Ролл тартар в кунжуте\nРис\nСыр творожный\nТартар\nКунжут\nОгурец\nСоус Hot\n\n2. Ролл Темпура в тортилье с креветкой Темпура\nЛепешка\nСыр творожный\nКреветка Темпура\nОгурец\nМасаго красная\nВяленые томаты\nСвит Чили \n\n3. Ролл в тортилье запеченный\nЛепешка\nСыр творожный\nОгурец \nКурица копченная\nмидии\nЧеддер\nСоус сырный\nСоус унаги\nЛук фри\n\n4. Ролл из черного риса с клубникой\nРис черный\nСыр творожный\nАпельсин\nТунец\nКлубника\nКокосовая стружка",
-		"additional_information": [],
-		"image": "1234.png",
-		"category": ["sets-classic"],
-		"createdAt": "2026-01-29"
-	},
-	"1235": {
-		"title": "АЮМИ",
-		"short_description": "",
-		"description": "1. Ролл из красного риса\nРис красный\nСыр творожный\nТунец\nМанго рубленный\nСоус угорь\nСтружка нори\n\n2. Ролл из черного риса с креветкой\nРис черный\nСыр творожный\nАнанас консервированный\nКреветка тигровая отварная\nИкра имитация\n\n3. Ролл Темпура в тортилье\nЛепешка\nСыр творожный\nОгурец\nАйсберг\nЛосось\nСоус Hot\n\n4. Ролл запеченный в тортилье\nЛепешка\nСыр творожный\nОгурец\nОмлет\nСоус для запекания из лосося\nСоус угорь",
-		"additional_information": [],
-		"image": "1235.png",
-		"category": ["sets-classic"],
-		"createdAt": "2026-01-29"
-	},
-	"7878": {
-		"title": "БАНАНОВЫЙ ЧИЗ РОЛЛ",
-		"short_description": "",
-		"description": "Сыр творожный\nШоколад белый\nКлубника\nБанан\nАпельсин\nЯгода\nТопинг\nАрахис\nСуб. малина\nМята",
-		"additional_information": [],
-		"image": "7878.jpg",
-		"category": ["desserts"],
-		"createdAt": "2026-04-25"
-	},
-	"7879": {
-		"title": "КЛУБНИЧНЫЙ ЧИЗ РОЛЛ",
-		"short_description": "",
-		"description": "Сыр творожный\nШоколад белый\nКлубника\nМанго\nБанан\nМята\nМиндаль\nТоппинг",
-		"additional_information": [],
-		"image": "7879.jpg",
-		"category": ["desserts"],
-		"createdAt": "2026-04-25"
-	},
-	"3567": {
-		"title": "МацуЭбиМаки",
-		"short_description": "",
-		"description": "Рис\nСыр творожный\nКреветка темпера\nЛосось\nНори\nЧукка\nЧерри\nОреховый соус",
-		"additional_information": [],
-		"image": "3567.jpg",
-		"category": ["rolls-classic"],
-		"createdAt": "2026-05-04"
-	},
-	"4141": {
-		"title": "Fuse tea 0.5 л",
-		"short_description": "",
-		"description": "Фьюс ти, Фьюзти 500 мл",
-		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
-		"image": "4141.jpg",
-		"category": ["drinks"]
-	},
-	"4142": {
-		"title": "PIKO 1Л. ПЛАСТИК",
-		"short_description": "",
-		"description": "Пико",
-		"additional_information": [{ "title": "Объем", "value": "1 л" }],
-		"image": "4142.jpg",
-		"category": ["drinks"]
-	},
-	"4143": {
-		"title": "Cola zero 0.5",
-		"short_description": "",
-		"description": "Coca-Cola Zero, Кола без сахара 500 мл",
-		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
-		"image": "4143.jpg",
-		"category": ["drinks"]
-	},
-	"4144": {
-		"title": "Piko с трубочкой 200 мл",
-		"short_description": "",
-		"description": "Пико",
-		"additional_information": [{ "title": "Объем", "value": "0.2 л" }],
-		"image": "4144.jpg",
-		"category": ["drinks"]
-	},
-	"4145": {
-		"title": "Спрайт 0.5 л",
-		"short_description": "",
-		"description": "Sprite 500 мл",
-		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
-		"image": "4145.jpg",
-		"category": ["drinks"]
-	},
-	"4146": {
-		"title": "Фанта 0.5 л",
-		"short_description": "",
-		"description": "Fanta 500 мл",
-		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
-		"image": "4146.jpg",
-		"category": ["drinks"]
-	},
-	"4147": {
-		"title": "Морс черная смородина 0.5 л",
-		"short_description": "",
-		"description": "",
-		"additional_information": [{ "title": "Объем", "value": "0.5 л" }],
-		"image": "4147.jpg",
-		"category": ["drinks"]
-	},
-	"0912": {
-		"title": "Черная КОРОЛЕВА",
-		"short_description": "",
-		"description": "Калифорния с лососем 8 шт.\nРубленный тунец с сыром 8 шт.\nЗапеченный ролл с тунцом в черной масаге 8 шт. (соус из креветки)\nЗапеченный ролл с тунцом в кокосовой стружке 8 шт. (соус из креветки)",
-		"additional_information": [],
-		"image": "0912.jpg",
-		"category": ["sets-mix"],
-		"createdAt": "2026-06-15"
-	},
-	"987754": {
-		"title": "FLASH в ассортименте",
-		"short_description": "",
-		"description": "",
-		"additional_information": [],
-		"image": "987754.jpg",
-		"category": ["drinks"]
-	},
-	"8905": {
-		"title": "Сет Островская",
-		"short_description": "",
-		"description": "МацуЭбиМаки ролл - 1\nСашими ролл - 1\nБлэк Фила - 1\nРолл с тунцом и лососем - 1\nОреховый соус",
-		"additional_information": [],
-		"image": "8905.jpg",
-		"category": ["sets-mix"],
-		"createdAt": "2026-08-26"
-	},
-	"4516": {
-		"title": "Сет Виктория",
-		"short_description": "",
-		"description": "Калифорния с лососем - 2\nЛосось Чиз Премиум - 1\nРолл с тунцом и лососем - 1\nМикс ролл премиум - 1",
-		"additional_information": [],
-		"image": "4516.jpg",
-		"category": ["sets-mix"],
-		"createdAt": "2026-08-29"
-	}
+  <script type="application/json" id="embedded-products">
+{
+ "1212": {
+  "title": {
+   "ru": "ЧИКЕН ЧИЗ С ХОЛОПЕНЬО",
+   "kk": "ХАЛАПЕНЬОМЕН ЧИКЕН ЧИЗ",
+   "en": "CHICKEN CHEESE WITH JALAPEÑO"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Бургер булочка\nСоус бургер\nАйсберг\nКотлета в панировки\nКонсервированные огурцы\nПомидоры\nЛук красный\nСыр чеддер\nХолопеньо",
+   "kk": "Бургер бөлкесі\nБургер соусы\nАйсберг салаты\nПанировкадағы котлет\nТұздалған қиярлар\nҚызанақтар\nҚызыл пияз\nЧеддер ірімшігі\nХалапеньо",
+   "en": "Burger bun\nBurger sauce\nIceberg lettuce\nBreaded patty\nPickled cucumbers\nTomatoes\nRed onion\nCheddar cheese\nJalapeño"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес",
+     "kk": "Салмағы",
+     "en": "Weight"
+    },
+    "value": {
+     "ru": "0.365 kg",
+     "kk": "0.365 kg",
+     "en": "0.365 kg"
+    }
+   }
+  ],
+  "image": "1212.jpg",
+  "category": [
+   "burger"
+  ]
+ },
+ "1114": {
+  "title": {
+   "ru": "ЧИКЕН БУРГЕР С ХОЛОПЕНЬО",
+   "kk": "ХАЛАПЕНЬОМЕН ЧИКЕН БУРГЕР",
+   "en": "CHICKEN BURGER WITH JALAPEÑO"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Булочка бургер\nФирменный соус\nАйсберг\nКотлета в панировке\nПомидоры\nЛук красный\nМаринованные огурчики\nХолопеньо",
+   "kk": "Бургер бөлкесі\nФирмалық соус\nАйсберг салаты\nПанировкадағы котлет\nҚызанақтар\nҚызыл пияз\nТұздалған қиярлар\nХалапеньо",
+   "en": "Burger bun\nSignature sauce\nIceberg lettuce\nBreaded patty\nTomatoes\nRed onion\nPickled cucumbers\nJalapeño"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес",
+     "kk": "Салмағы",
+     "en": "Weight"
+    },
+    "value": {
+     "ru": "0.345 kg",
+     "kk": "0.345 kg",
+     "en": "0.345 kg"
+    }
+   }
+  ],
+  "image": "1114.jpg",
+  "category": [
+   "burger"
+  ]
+ },
+ "1113": {
+  "title": {
+   "ru": "ЧИКЕН БУРГЕР",
+   "kk": "ЧИКЕН БУРГЕР",
+   "en": "CHICKEN BURGER"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Булочка бургер\nФирменный соус\nАйсберг\nКотлета в панировке\nПомидоры\nЛук красный\nМаринованные огурчики",
+   "kk": "Бургер бөлкесі\nФирмалық соус\nАйсберг салаты\nПанировкадағы котлет\nҚызанақтар\nҚызыл пияз\nТұздалған қиярлар",
+   "en": "Burger bun\nSignature sauce\nIceberg lettuce\nBreaded patty\nTomatoes\nRed onion\nPickled cucumbers"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес",
+     "kk": "Салмағы",
+     "en": "Weight"
+    },
+    "value": {
+     "ru": "0.320 kg",
+     "kk": "0.320 kg",
+     "en": "0.320 kg"
+    }
+   }
+  ],
+  "image": "1113.jpg",
+  "category": [
+   "burger"
+  ]
+ },
+ "1111": {
+  "title": {
+   "ru": "ЧИКЕН-ЧИЗ",
+   "kk": "ЧИКЕН-ЧИЗ",
+   "en": "CHICKEN-CHEESE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Бургер булочка\nСоус бургер\nАйсберг\nКотлета в панировки\nКонсервированные огурцы\nПомидоры\nЛук красный\nСыр чеддер",
+   "kk": "Бургер бөлкесі\nБургер соусы\nАйсберг салаты\nПанировкадағы котлет\nТұздалған қиярлар\nҚызанақтар\nҚызыл пияз\nЧеддер ірімшігі",
+   "en": "Burger bun\nBurger sauce\nIceberg lettuce\nBreaded patty\nPickled cucumbers\nTomatoes\nRed onion\nCheddar cheese"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес",
+     "kk": "Салмағы",
+     "en": "Weight"
+    },
+    "value": {
+     "ru": "0.340 kg",
+     "kk": "0.340 kg",
+     "en": "0.340 kg"
+    }
+   }
+  ],
+  "image": "1111.jpg",
+  "category": [
+   "burger"
+  ]
+ },
+ "1115": {
+  "title": {
+   "ru": "Капаи",
+   "kk": "Капаи",
+   "en": "Kapai"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nПомидор\nОгурец\nСоус унаги\nЗеленый лук",
+   "kk": "Күріш\nНори\nМай ірімшік\nҚызанақ\nҚияр\nУнаги соусы\nЖасыл пияз",
+   "en": "Rice\nNori\nCream cheese\nTomato\nCucumber\nUnagi sauce\nGreen onion"
+  },
+  "additional_information": [],
+  "image": "1115.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1116": {
+  "title": {
+   "ru": "Веган",
+   "kk": "Веган",
+   "en": "Vegan"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nАйсберг\nПерец болгарский\nПомидор\nОгурец",
+   "kk": "Күріш\nНори\nМай ірімшік\nАйсберг салаты\nБолгар бұрышы\nҚызанақ\nҚияр",
+   "en": "Rice\nNori\nCream cheese\nIceberg lettuce\nBell pepper\nTomato\nCucumber"
+  },
+  "additional_information": [],
+  "image": "1116.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1117": {
+  "title": {
+   "ru": "Саке Премиум",
+   "kk": "Сяке Премиум",
+   "en": "Salmon Premium"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nЛосось\nТворожный сыр\nОгурец",
+   "kk": "Күріш\nНори\nЛосось\nМай ірімшік\nҚияр",
+   "en": "Rice\nNori\nSalmon\nCream cheese\nCucumber"
+  },
+  "additional_information": [],
+  "image": "1117.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1118": {
+  "title": {
+   "ru": "Сашими ролл",
+   "kk": "Сашими ролл",
+   "en": "Sashimi roll"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рисовая бумага\nСемга\nНори\nОгурец\nТунец\nЗеленый лук",
+   "kk": "Күріш қағазы\nСемга\nНори\nҚияр\nТунец\nЖасыл пияз",
+   "en": "Rice paper\nSalmon\nNori\nCucumber\nTuna\nGreen onion"
+  },
+  "additional_information": [],
+  "image": "1118.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1119": {
+  "title": {
+   "ru": "МИКС РОЛЛ ПРЕМИУМ",
+   "kk": "МИКС РОЛЛ ПРЕМИУМ",
+   "en": "MIX ROLL PREMIUM"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори\nЛосось\nЧеддер\nМассаго красная\nОгурец",
+   "kk": "Нори\nЛосось\nЧеддер\nҚызыл масаго\nҚияр",
+   "en": "Nori\nSalmon\nCheddar\nRed masago\nCucumber"
+  },
+  "additional_information": [],
+  "image": "1119.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1110": {
+  "title": {
+   "ru": "Хаттори",
+   "kk": "Хаттори",
+   "en": "Hattori"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис красный\nОгурец\nТунец\nМассаго черная\nСыр творожный\nПищевое золото",
+   "kk": "Қызыл күріш\nҚияр\nТунец\nҚара масаго\nМай ірімшік\nТағамдық алтын",
+   "en": "Red rice\nCucumber\nTuna\nBlack masago\nCream cheese\nEdible gold"
+  },
+  "additional_information": [],
+  "image": "1110.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1120": {
+  "title": {
+   "ru": "Лосось Премиум Чиз",
+   "kk": "Лосось Премиум Чиз",
+   "en": "Salmon Premium Cheese"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nЛосось\nОгурец\nКреветка\nЧеддер\nШапочка семги\nСырный соус\nУнаги соус",
+   "kk": "Күріш\nНори\nЛосось\nҚияр\nАсшаян\nЧеддер\nСемга қалпағы\nІрімшік соусы\nУнаги соусы",
+   "en": "Rice\nNori\nSalmon\nCucumber\nShrimp\nCheddar\nSalmon topping\nCheese sauce\nUnagi sauce"
+  },
+  "additional_information": [],
+  "image": "1120.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1121": {
+  "title": {
+   "ru": "Филадельфия Gold",
+   "kk": "Филадельфия Gold",
+   "en": "Philadelphia Gold"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nТворожный сыр\nЛосось\nНори\nПищевое золото\nЧерная массаго",
+   "kk": "Күріш\nМай ірімшік\nЛосось\nНори\nТағамдық алтын\nҚара масаго",
+   "en": "Rice\nCream cheese\nSalmon\nNori\nEdible gold\nBlack masago"
+  },
+  "additional_information": [],
+  "image": "1121.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1122": {
+  "title": {
+   "ru": "Black Фила",
+   "kk": "Black Фила",
+   "en": "Black Phila"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nОмлет\nАвокадо\nЛосось\nСалат чука\nСоус спайси",
+   "kk": "Күріш\nНори\nМай ірімшік\nОмлет\nАвокадо\nЛосось\nЧука салаты\nСпайси соус",
+   "en": "Rice\nNori\nCream cheese\nOmelet\nAvocado\nSalmon\nChuka salad\nSpicy sauce"
+  },
+  "additional_information": [],
+  "image": "1122.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1123": {
+  "title": {
+   "ru": "ФУДЗИ",
+   "kk": "ФУДЗИ",
+   "en": "FUJI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nЛосось\nОгурец\nВ кунжуте\nСалат чука",
+   "kk": "Күріш\nНори\nМай ірімшік\nЛосось\nҚияр\nКүнжітте\nЧука салаты",
+   "en": "Rice\nNori\nCream cheese\nSalmon\nCucumber\nIn sesame\nChuka salad"
+  },
+  "additional_information": [],
+  "image": "1123.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1124": {
+  "title": {
+   "ru": "Гайда маки",
+   "kk": "Гайда маки",
+   "en": "Gaida maki"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nКреветка тигровая\nМасаго красная\nМасаго зеленая\n(4кусочка в красной 4в зеленой)",
+   "kk": "Күріш\nНори\nМай ірімшік\nЖолбарыс асшаяны\nҚызыл масаго\nЖасыл масаго\n(қызылында 4 дана, жасылында 4 дана)",
+   "en": "Rice\nNori\nCream cheese\nTiger shrimp\nRed masago\nGreen masago\n(4 pieces in red, 4 in green)"
+  },
+  "additional_information": [],
+  "image": "1124.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1125": {
+  "title": {
+   "ru": "КАЛИФОРНИЯ С ЛОСОСЕМ",
+   "kk": "ЛОСОСЬТЫ КАЛИФОРНИЯ",
+   "en": "CALIFORNIA WITH SALMON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nЛосось\nАвокадо\nОгурец\nМасаго красная\nКунжут",
+   "kk": "Күріш\nНори\nМай ірімшік\nЛосось\nАвокадо\nҚияр\nҚызыл масаго\nКүнжіт",
+   "en": "Rice\nNori\nCream cheese\nSalmon\nAvocado\nCucumber\nRed masago\nSesame seeds"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.255 kg",
+     "kk": "0.255 kg",
+     "en": "0.255 kg"
+    }
+   }
+  ],
+  "image": "1125.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1126": {
+  "title": {
+   "ru": "КАНАДА С УГРЕМ",
+   "kk": "ЖЫЛАНБАЛЫҚТЫ КАНАДА",
+   "en": "CANADA WITH EEL"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nУгорь шапка\nАвокадо\nОгурец\nУнаги соус\nКунжут",
+   "kk": "Күріш\nНори\nМай ірімшік\nЖыланбалық қалпағы\nАвокадо\nҚияр\nУнаги соусы\nКүнжіт",
+   "en": "Rice\nNori\nCream cheese\nEel topping\nAvocado\nCucumber\nUnagi sauce\nSesame seeds"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.285 kg",
+     "kk": "0.285 kg",
+     "en": "0.285 kg"
+    }
+   }
+  ],
+  "image": "1126.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1127": {
+  "title": {
+   "ru": "Филадельфия КРЕВЕТКА",
+   "kk": "Филадельфия АСШАЯН",
+   "en": "Philadelphia SHRIMP"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nАвокадо\nКреветка тигровая\nМассаго красная",
+   "kk": "Күріш\nНори\nМай ірімшік\nАвокадо\nЖолбарыс асшаяны\nҚызыл масаго",
+   "en": "Rice\nNori\nCream cheese\nAvocado\nTiger shrimp\nRed masago"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.245 kg",
+     "kk": "0.245 kg",
+     "en": "0.245 kg"
+    }
+   }
+  ],
+  "image": "1127.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1128": {
+  "title": {
+   "ru": "ТУНА УРАМАКИ",
+   "kk": "ТУНЕЦ УРАМАКИ",
+   "en": "TUNA URAMAKI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nТунец шапка\nАвокадо\nОгурец\nКунжут унаги",
+   "kk": "Күріш\nНори\nМай ірімшік\nТунец қалпағы\nАвокадо\nҚияр\nКүнжіт-унаги",
+   "en": "Rice\nNori\nCream cheese\nTuna topping\nAvocado\nCucumber\nSesame & unagi sauce"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.270 kg",
+     "kk": "0.270 kg",
+     "en": "0.270 kg"
+    }
+   }
+  ],
+  "image": "1128.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1129": {
+  "title": {
+   "ru": "БЕКОН ЧИЗ ПРЕМИУМ",
+   "kk": "БЕКОН ЧИЗ ПРЕМИУМ",
+   "en": "BACON CHEESE PREMIUM"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nБекон\nОмлет тамаго\nСыр чеддер\nСоус спайси",
+   "kk": "Күріш\nНори\nМай ірімшік\nБекон\nТамаго омлет\nЧеддер ірімшігі\nСпайси соус",
+   "en": "Rice\nNori\nCream cheese\nBacon\nTamago omelet\nCheddar cheese\nSpicy sauce"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.270 kg",
+     "kk": "0.270 kg",
+     "en": "0.270 kg"
+    }
+   }
+  ],
+  "image": "1129.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1130": {
+  "title": {
+   "ru": "КАЛИФОРНИЯ С КРАБОМ",
+   "kk": "КРАБТЫ КАЛИФОРНИЯ",
+   "en": "CALIFORNIA WITH CRAB"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nСнежный краб\nАвокадо\nОгурец\nМасаго красная\nКунжут",
+   "kk": "Күріш\nНори\nМай ірімшік\nҚар крабы\nАвокадо\nҚияр\nҚызыл масаго\nКүнжіт",
+   "en": "Rice\nNori\nCream cheese\nSnow crab\nAvocado\nCucumber\nRed masago\nSesame seeds"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.255 kg",
+     "kk": "0.255 kg",
+     "en": "0.255 kg"
+    }
+   }
+  ],
+  "image": "1130.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1131": {
+  "title": {
+   "ru": "Филадельфия премиум",
+   "kk": "Филадельфия премиум",
+   "en": "Philadelphia premium"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nСемга\nАвокадо\nОгурец",
+   "kk": "Күріш\nНори\nМай ірімшік\nСемга\nАвокадо\nҚияр",
+   "en": "Rice\nNori\nCream cheese\nSalmon\nAvocado\nCucumber"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.330 kg",
+     "kk": "0.330 kg",
+     "en": "0.330 kg"
+    }
+   }
+  ],
+  "image": "1131.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "2227": {
+  "title": {
+   "ru": "Эскалар",
+   "kk": "Эскалар",
+   "en": "Escolar"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nСыр\nКреветка\nОгурец\nЭскалар копченый",
+   "kk": "Күріш\nНори\nІрімшік\nАсшаян\nҚияр\nЫсталған эскалар",
+   "en": "Rice\nNori\nCheese\nShrimp\nCucumber\nSmoked escolar"
+  },
+  "additional_information": [],
+  "image": "2227.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "2228": {
+  "title": {
+   "ru": "Одари",
+   "kk": "Одари",
+   "en": "Odari"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nОгурец\nСыр креметте\nЛосось\nТунец\nУгорь",
+   "kk": "Күріш\nНори\nҚияр\nКрем ірімшік\nЛосось\nТунец\nЖыланбалық",
+   "en": "Rice\nNori\nCucumber\nCream cheese\nSalmon\nTuna\nEel"
+  },
+  "additional_information": [],
+  "image": "2228.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "2229": {
+  "title": {
+   "ru": "Бонито",
+   "kk": "Бонито",
+   "en": "Bonito"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Бонито\nРис\nНори\nСыр креметте\nТенец\nОгурец\nСтружка тунца",
+   "kk": "Бонито\nКүріш\nНори\nКрем ірімшік\nТунец\nҚияр\nТунец үгіндісі",
+   "en": "Bonito flakes\nRice\nNori\nCream cheese\nTuna\nCucumber\nTuna flakes"
+  },
+  "additional_information": [],
+  "image": "2229.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "2230": {
+  "title": {
+   "ru": "Дорама",
+   "kk": "Дорама",
+   "en": "Dorama"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Окрашенный рис\nСыр Филадельфия\nОгурец\nЛосось\nМассаго Черная\nПищевое золото",
+   "kk": "Боялған күріш\nФиладельфия ірімшігі\nҚияр\nЛосось\nҚара масаго\nТағамдық алтын",
+   "en": "Colored rice\nPhiladelphia cheese\nCucumber\nSalmon\nBlack masago\nEdible gold"
+  },
+  "additional_information": [],
+  "image": "2230.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1132": {
+  "title": {
+   "ru": "Красный дракон",
+   "kk": "Қызыл айдаһар",
+   "en": "Red dragon"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nУгорь\nОгурец\nСоус свит Чили",
+   "kk": "Күріш\nНори\nМай ірімшік\nЖыланбалық\nҚияр\nТәтті чили соусы",
+   "en": "Rice\nNori\nCream cheese\nEel\nCucumber\nSweet chili sauce"
+  },
+  "additional_information": [],
+  "image": "1132.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "1133": {
+  "title": {
+   "ru": "ЭБИ ТЕМПУРА",
+   "kk": "ЭБИ ТЕМПУРА",
+   "en": "EBI TEMPURA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Красный рис\nСыр творожный\nОгурец\nКреветка\nНори\nПанировка",
+   "kk": "Қызыл күріш\nМай ірімшік\nҚияр\nАсшаян\nНори\nПанировка",
+   "en": "Red rice\nCream cheese\nCucumber\nShrimp\nNori\nBreading"
+  },
+  "additional_information": [],
+  "image": "1133.jpg",
+  "category": [
+   "rolls-tempura"
+  ]
+ },
+ "1134": {
+  "title": {
+   "ru": "ТЕМПУРА С УГРЕМ",
+   "kk": "ЖЫЛАНБАЛЫҚТЫ ТЕМПУРА",
+   "en": "TEMPURA WITH EEL"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nУгорь\nАвокадо",
+   "kk": "Күріш\nНори\nМай ірімшік\nЖыланбалық\nАвокадо",
+   "en": "Rice\nNori\nCream cheese\nEel\nAvocado"
+  },
+  "additional_information": [],
+  "image": "1134.jpg",
+  "category": [
+   "rolls-tempura"
+  ]
+ },
+ "1135": {
+  "title": {
+   "ru": "ТЕМПУРА БАНЗАЙ",
+   "kk": "БАНЗАЙ ТЕМПУРА",
+   "en": "BANZAI TEMPURA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nКреветка\nМассаго\nОгурец",
+   "kk": "Күріш\nНори\nМай ірімшік\nАсшаян\nМасаго\nҚияр",
+   "en": "Rice\nNori\nCream cheese\nShrimp\nMasago\nCucumber"
+  },
+  "additional_information": [],
+  "image": "1135.jpg",
+  "category": [
+   "rolls-tempura"
+  ]
+ },
+ "1136": {
+  "title": {
+   "ru": "ТЕМПУРА С БЕКОНОМ",
+   "kk": "БЕКОНДЫ ТЕМПУРА",
+   "en": "TEMPURA WITH BACON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nБекон\nОгурец\nСыр чеддер",
+   "kk": "Күріш\nНори\nМай ірімшік\nБекон\nҚияр\nЧеддер ірімшігі",
+   "en": "Rice\nNori\nCream cheese\nBacon\nCucumber\nCheddar cheese"
+  },
+  "additional_information": [],
+  "image": "1136.jpg",
+  "category": [
+   "rolls-tempura"
+  ]
+ },
+ "1137": {
+  "title": {
+   "ru": "ТЕМПУРА ЦЕЗАРЬ",
+   "kk": "ЦЕЗАРЬ ТЕМПУРА",
+   "en": "CAESAR TEMPURA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nАйсберг\nОгурец\nКурочка",
+   "kk": "Күріш\nНори\nМай ірімшік\nАйсберг салаты\nҚияр\nТауық",
+   "en": "Rice\nNori\nCream cheese\nIceberg lettuce\nCucumber\nChicken"
+  },
+  "additional_information": [],
+  "image": "1137.jpg",
+  "category": [
+   "rolls-tempura"
+  ]
+ },
+ "2220": {
+  "title": {
+   "ru": "Филадельфия Гриль",
+   "kk": "Филадельфия Гриль",
+   "en": "Philadelphia Grill"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nОгурец\nСыр\nЛосось гриль",
+   "kk": "Күріш\nНори\nҚияр\nІрімшік\nГрильдегі лосось",
+   "en": "Rice\nNori\nCucumber\nCheese\nGrilled salmon"
+  },
+  "additional_information": [],
+  "image": "2220.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "2223": {
+  "title": {
+   "ru": "Саке темпура",
+   "kk": "Сяке темпура",
+   "en": "Salmon tempura"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nЛосось\nОгурец\nСыр",
+   "kk": "Күріш\nНори\nЛосось\nҚияр\nІрімшік",
+   "en": "Rice\nNori\nSalmon\nCucumber\nCheese"
+  },
+  "additional_information": [],
+  "image": "2223.jpg",
+  "category": [
+   "rolls-tempura"
+  ]
+ },
+ "2224": {
+  "title": {
+   "ru": "Темпура с тунцом",
+   "kk": "Тунецті темпура",
+   "en": "Tempura with tuna"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nСыр креметте\nОгурец\nТунец\nСтружка тунца",
+   "kk": "Күріш\nНори\nКрем ірімшік\nҚияр\nТунец\nТунец үгіндісі",
+   "en": "Rice\nNori\nCream cheese\nCucumber\nTuna\nTuna flakes"
+  },
+  "additional_information": [],
+  "image": "2224.jpg",
+  "category": [
+   "rolls-tempura"
+  ]
+ },
+ "1138": {
+  "title": {
+   "ru": "ЗАПЕЧЕННЫЙ С ТУНЦОМ 🌶",
+   "kk": "ТУНЕЦПЕН ПІСІРІЛГЕН 🌶",
+   "en": "BAKED WITH TUNA 🌶"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nТунец\nОгурец\nОмлет тамаго\nМасаго красная\nУнаги, Кунжут сверху",
+   "kk": "Күріш\nНори\nМай ірімшік\nТунец\nҚияр\nТамаго омлет\nҚызыл масаго\nҮстінен унаги, күнжіт",
+   "en": "Rice\nNori\nCream cheese\nTuna\nCucumber\nTamago omelet\nRed masago\nUnagi sauce, sesame on top"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.260 kg",
+     "kk": "0.260 kg",
+     "en": "0.260 kg"
+    }
+   }
+  ],
+  "image": "1138.jpg",
+  "category": [
+   "rolls-baked"
+  ]
+ },
+ "1139": {
+  "title": {
+   "ru": "ЗАПЕЧЕННЫЙ С УГРЕМ И ЛОСОСЕМ 🌶",
+   "kk": "ЖЫЛАНБАЛЫҚ ПЕН ЛОСОСЬМЕН ПІСІРІЛГЕН 🌶",
+   "en": "BAKED WITH EEL AND SALMON 🌶"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nЛосось\nОгурец\nУгорь\nМасаго красная\nМоцарелла\nУнаги, Кунжут сверху",
+   "kk": "Күріш\nНори\nМай ірімшік\nЛосось\nҚияр\nЖыланбалық\nҚызыл масаго\nМоцарелла\nҮстінен унаги, күнжіт",
+   "en": "Rice\nNori\nCream cheese\nSalmon\nCucumber\nEel\nRed masago\nMozzarella\nUnagi sauce, sesame on top"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.285 kg",
+     "kk": "0.285 kg",
+     "en": "0.285 kg"
+    }
+   }
+  ],
+  "image": "1139.jpg",
+  "category": [
+   "rolls-baked"
+  ]
+ },
+ "1140": {
+  "title": {
+   "ru": "Запеченный цезарь 🌶",
+   "kk": "Пісірілген Цезарь 🌶",
+   "en": "Baked Caesar 🌶"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nКурица\nОгурец\nСпайси шапка\nУнаги, Кунжут",
+   "kk": "Күріш\nНори\nМай ірімшік\nТауық еті\nҚияр\nСпайси қалпақ\nУнаги, күнжіт",
+   "en": "Rice\nNori\nCream cheese\nChicken\nCucumber\nSpicy topping\nUnagi sauce, sesame"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.285 kg",
+     "kk": "0.285 kg",
+     "en": "0.285 kg"
+    }
+   }
+  ],
+  "image": "1140.jpg",
+  "category": [
+   "rolls-baked"
+  ]
+ },
+ "1141": {
+  "title": {
+   "ru": "ЗАПЕЧЕННЫЙ С ЛОСОСЕМ 🌶",
+   "kk": "ЛОСОСЬМЕН ПІСІРІЛГЕН 🌶",
+   "en": "BAKED WITH SALMON 🌶"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nЛосось\nОгурец\nОмлет тамаго\nМасаго красная\nУнаги, Кунжут",
+   "kk": "Күріш\nНори\nМай ірімшік\nЛосось\nҚияр\nТамаго омлет\nҚызыл масаго\nУнаги, күнжіт",
+   "en": "Rice\nNori\nCream cheese\nSalmon\nCucumber\nTamago omelet\nRed masago\nUnagi sauce, sesame"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.290 kg",
+     "kk": "0.290 kg",
+     "en": "0.290 kg"
+    }
+   }
+  ],
+  "image": "1141.jpg",
+  "category": [
+   "rolls-baked"
+  ]
+ },
+ "1142": {
+  "title": {
+   "ru": "ЗАПЕЧЕННЫЕ С МИДИЯМИ 🌶",
+   "kk": "МИДИЯМЕН ПІСІРІЛГЕН 🌶",
+   "en": "BAKED WITH MUSSELS 🌶"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТворожный сыр\nМидии\nОмлет тамаго\nМасаго зеленая\nУнаги, Кунжут",
+   "kk": "Күріш\nНори\nМай ірімшік\nМидия\nТамаго омлет\nЖасыл масаго\nУнаги, күнжіт",
+   "en": "Rice\nNori\nCream cheese\nMussels\nTamago omelet\nGreen masago\nUnagi sauce, sesame"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес ролла",
+     "kk": "Ролл салмағы",
+     "en": "Roll weight"
+    },
+    "value": {
+     "ru": "0.245 kg",
+     "kk": "0.245 kg",
+     "en": "0.245 kg"
+    }
+   }
+  ],
+  "image": "1142.jpg",
+  "category": [
+   "rolls-baked"
+  ]
+ },
+ "2225": {
+  "title": {
+   "ru": "Запеченный в кунжуте с креветкой",
+   "kk": "Күнжітте асшаянмен пісірілген",
+   "en": "Baked in sesame with shrimp"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nОгурец\nСнежный краб\nСыр\nОмлет\nКреветка\nКунжут\nСоус унаги",
+   "kk": "Күріш\nНори\nҚияр\nҚар крабы\nІрімшік\nОмлет\nАсшаян\nКүнжіт\nУнаги соусы",
+   "en": "Rice\nNori\nCucumber\nSnow crab\nCheese\nOmelet\nShrimp\nSesame seeds\nUnagi sauce"
+  },
+  "additional_information": [],
+  "image": "2225.png",
+  "category": [
+   "rolls-baked"
+  ]
+ },
+ "2226": {
+  "title": {
+   "ru": "ЗАПЕЧЕННЫЙ С УГРЕМ",
+   "kk": "ЖЫЛАНБАЛЫҚПЕН ПІСІРІЛГЕН",
+   "en": "BAKED WITH EEL"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nУгорь\nСыр творожный\nОмлет\nМассаго\nСоус запеченный",
+   "kk": "Күріш\nНори\nЖыланбалық\nМай ірімшік\nОмлет\nМасаго\nПісіру соусы",
+   "en": "Rice\nNori\nEel\nCream cheese\nOmelet\nMasago\nBaking sauce"
+  },
+  "additional_information": [],
+  "image": "2226.jpg",
+  "category": [
+   "rolls-baked"
+  ]
+ },
+ "1143": {
+  "title": {
+   "ru": "МИНИ С МИДИЯМИ",
+   "kk": "МИДИЯЛЫ МИНИ",
+   "en": "MINI WITH MUSSELS"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nМидии\nСоус шапка",
+   "kk": "Күріш\nНори\nМидия\nСоус қалпағы",
+   "en": "Rice\nNori\nMussels\nSauce topping"
+  },
+  "additional_information": [],
+  "image": "1143.jpg",
+  "category": [
+   "rolls-mini"
+  ]
+ },
+ "1144": {
+  "title": {
+   "ru": "МИНИ С ЛОСОСЕМ",
+   "kk": "ЛОСОСЬТЫ МИНИ",
+   "en": "MINI WITH SALMON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nЛосось\nСырная шапочка",
+   "kk": "Күріш\nНори\nЛосось\nІрімшік қалпақ",
+   "en": "Rice\nNori\nSalmon\nCheese topping"
+  },
+  "additional_information": [],
+  "image": "1144.jpg",
+  "category": [
+   "rolls-mini"
+  ]
+ },
+ "1145": {
+  "title": {
+   "ru": "МИНИ С УГРЕМ",
+   "kk": "ЖЫЛАНБАЛЫҚТЫ МИНИ",
+   "en": "MINI WITH EEL"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nУгорь\nУнаги\nКунжут",
+   "kk": "Күріш\nНори\nЖыланбалық\nУнаги\nКүнжіт",
+   "en": "Rice\nNori\nEel\nUnagi\nSesame seeds"
+  },
+  "additional_information": [],
+  "image": "1145.jpg",
+  "category": [
+   "rolls-mini"
+  ]
+ },
+ "1146": {
+  "title": {
+   "ru": "МИНИ С АВОКАДО",
+   "kk": "АВОКАДОЛЫ МИНИ",
+   "en": "MINI WITH AVOCADO"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nАвокадо\nСырная шапочка",
+   "kk": "Күріш\nНори\nАвокадо\nІрімшік қалпақ",
+   "en": "Rice\nNori\nAvocado\nCheese topping"
+  },
+  "additional_information": [],
+  "image": "1146.jpg",
+  "category": [
+   "rolls-mini"
+  ]
+ },
+ "1147": {
+  "title": {
+   "ru": "МИНИ С ТУНЦОМ",
+   "kk": "ТУНЕЦТІ МИНИ",
+   "en": "MINI WITH TUNA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nТунец\nСоус шапка",
+   "kk": "Күріш\nНори\nТунец\nСоус қалпағы",
+   "en": "Rice\nNori\nTuna\nSauce topping"
+  },
+  "additional_information": [],
+  "image": "1147.jpg",
+  "category": [
+   "rolls-mini"
+  ]
+ },
+ "1148": {
+  "title": {
+   "ru": "МИНИ С ОГУРЦОМ",
+   "kk": "ҚИЯРЛЫ МИНИ",
+   "en": "MINI WITH CUCUMBER"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nНори\nОгурец\nСырная шапочка",
+   "kk": "Күріш\nНори\nҚияр\nІрімшік қалпақ",
+   "en": "Rice\nNori\nCucumber\nCheese topping"
+  },
+  "additional_information": [],
+  "image": "1148.jpg",
+  "category": [
+   "rolls-mini"
+  ]
+ },
+ "1150": {
+  "title": {
+   "ru": "ХОКАЙДО",
+   "kk": "ХОКАЙДО",
+   "en": "HOKKAIDO"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Филадельфия с креветкой\nКалифорния классик\nГайда маки\nКалифорния с лососем\nТуна урамаки",
+   "kk": "Асшаянды Филадельфия\nКалифорния классик\nГайда маки\nЛососьты Калифорния\nТунец урамаки",
+   "en": "Philadelphia with shrimp\nCalifornia classic\nGaida maki\nCalifornia with salmon\nTuna uramaki"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "1.260 kg",
+     "kk": "1.260 kg",
+     "en": "1.260 kg"
+    }
+   }
+  ],
+  "image": "1150.jpg",
+  "category": [
+   "sets-classic"
+  ]
+ },
+ "1151": {
+  "title": {
+   "ru": "ГАЙДЗЕН",
+   "kk": "ГАЙДЗЕН",
+   "en": "GAIDZEN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Филадельфия\nКанада\nКалифорния классик\nКалифорния с лососем\nБекон чиз\nГейша",
+   "kk": "Филадельфия\nКанада ролл\nКалифорния классик\nЛососьты Калифорния\nБекон чиз\nГейша",
+   "en": "Philadelphia\nCanada roll\nCalifornia classic\nCalifornia with salmon\nBacon cheese\nGeisha"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "1.660 kg",
+     "kk": "1.660 kg",
+     "en": "1.660 kg"
+    }
+   }
+  ],
+  "image": "1151.jpg",
+  "category": [
+   "sets-classic"
+  ]
+ },
+ "1152": {
+  "title": {
+   "ru": "Токио Люкс",
+   "kk": "Токио Люкс",
+   "en": "Tokyo Lux"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Мини с угрем 8\nМини с тунцом 8\nМини с лососем 8\nСуши лосось 2\nСуши с креветкой 2\nГункан с лососем 4\nСашими 8\nМикс ролл 8",
+   "kk": "Жыланбалықты мини 8\nТунецті мини 8\nЛососьты мини 8\nЛососьты суши 2\nАсшаянды суши 2\nЛососьты гункан 4\nСашими 8\nМикс ролл 8",
+   "en": "Mini with eel 8\nMini with tuna 8\nMini with salmon 8\nSalmon sushi 2\nShrimp sushi 2\nSalmon gunkan 4\nSashimi 8\nMix roll 8"
+  },
+  "additional_information": [],
+  "image": "1152.jpg",
+  "category": [
+   "sets-classic"
+  ]
+ },
+ "1153": {
+  "title": {
+   "ru": "Ханами",
+   "kk": "Ханами",
+   "en": "Hanami"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Филадельфия премиум 8 шт.\nBLACK фила 8 шт.\nФиладельфия GOLD 8 шт.",
+   "kk": "Филадельфия премиум 8 дана\nBLACK Фила 8 дана\nФиладельфия GOLD 8 дана",
+   "en": "Philadelphia premium 8 pcs\nBLACK Phila 8 pcs\nPhiladelphia GOLD 8 pcs"
+  },
+  "additional_information": [],
+  "image": "1153.jpg",
+  "category": [
+   "sets-classic"
+  ]
+ },
+ "1154": {
+  "title": {
+   "ru": "Сет Сёгун",
+   "kk": "Сёгун сеті",
+   "en": "Shogun Set"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Гункан с лососем в соусе спайси 10 штук\nГункан с угрём и массагой 4 штуки\nСуши с креветкой 2 шт.\nСуши с лососем 2 штуки\nСуши с угрём 2 штуки",
+   "kk": "Спайси соустағы лососьты гункан, 10 дана\nЖыланбалық пен масаголы гункан, 4 дана\nАсшаянды суши 2 дана\nЛососьты суши, 2 дана\nЖыланбалықты суши, 2 дана",
+   "en": "Salmon gunkan in spicy sauce, 10 pcs\nEel and masago gunkan, 4 pcs\nShrimp sushi 2 pcs\nSalmon sushi, 2 pcs\nEel sushi, 2 pcs"
+  },
+  "additional_information": [],
+  "image": "1154.jpg",
+  "category": [
+   "sets-classic"
+  ]
+ },
+ "1155": {
+  "title": {
+   "ru": "АМЕРИКА",
+   "kk": "АМЕРИКА",
+   "en": "AMERICA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Филадельфия\nКанада\nКалифорния классик\nМини с лососем\nМини с мидиями",
+   "kk": "Филадельфия\nКанада ролл\nКалифорния классик\nЛососьты мини\nМидиялы мини",
+   "en": "Philadelphia\nCanada roll\nCalifornia classic\nMini with salmon\nMini with mussels"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "1.130 kg",
+     "kk": "1.130 kg",
+     "en": "1.130 kg"
+    }
+   }
+  ],
+  "image": "1155.jpg",
+  "category": [
+   "sets-classic"
+  ]
+ },
+ "2222": {
+  "title": {
+   "ru": "Нигири",
+   "kk": "Нигири",
+   "en": "Nigiri"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Гунканы снежным крабом 3\nТунцом 4\nКреветкой 3\nУгорь 2\nСуши с лососем 2 шт.\nЛососем гриль 2 шт.",
+   "kk": "Қар крабты гункан 3\nТунецпен 4\nАсшаянмен 3\nЖыланбалық 2\nЛососьты суши 2 дана\nГрильде пісірілген лосось 2 дана",
+   "en": "Snow crab gunkan 3\nTuna 4\nShrimp 3\nEel 2\nSalmon sushi 2 pcs\nGrilled salmon 2 pcs"
+  },
+  "additional_information": [],
+  "image": "2222.jpg",
+  "category": [
+   "sets-classic"
+  ]
+ },
+ "1156": {
+  "title": {
+   "ru": "СУМО",
+   "kk": "СУМО",
+   "en": "SUMO"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Хотатэ фрай\nЦезарь\nБанзай темпура\nЗапеченный с мидиями",
+   "kk": "Қуырылған хотатэ\nЦезарь\nБанзай темпура\nМидиямен пісірілген",
+   "en": "Fried scallop\nCaesar\nBanzai tempura\nBaked with mussels"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "1.100 kg",
+     "kk": "1.100 kg",
+     "en": "1.100 kg"
+    }
+   }
+  ],
+  "image": "1156.jpg",
+  "category": [
+   "sets-baked"
+  ]
+ },
+ "1157": {
+  "title": {
+   "ru": "СЕНСЕЙ",
+   "kk": "СЕНСЕЙ",
+   "en": "SENSEI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Запеченный цезарь\nЗапеченный с лососем\nТемпура с беконом\nБанзай темпура",
+   "kk": "Пісірілген Цезарь\nЛососьпен пісірілген\nБеконды темпура\nБанзай темпура",
+   "en": "Baked Caesar\nBaked with salmon\nTempura with bacon\nBanzai tempura"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "1.150 kg",
+     "kk": "1.150 kg",
+     "en": "1.150 kg"
+    }
+   }
+  ],
+  "image": "1157.jpg",
+  "category": [
+   "sets-baked"
+  ]
+ },
+ "1158": {
+  "title": {
+   "ru": "ТЕМПУРА МЕГА",
+   "kk": "МЕГА ТЕМПУРА",
+   "en": "MEGA TEMPURA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Темпура с беконом\nТемпура с угрем\nБанзай темпура\nЦезарь темпура\nХотатэ фрай",
+   "kk": "Беконды темпура\nЖыланбалықты темпура\nБанзай темпура\nЦезарь темпура\nҚуырылған хотатэ",
+   "en": "Tempura with bacon\nTempura with eel\nBanzai tempura\nCaesar tempura\nFried scallop"
+  },
+  "additional_information": [],
+  "image": "1158.jpg",
+  "category": [
+   "sets-baked"
+  ]
+ },
+ "1159": {
+  "title": {
+   "ru": "ТРИАДА",
+   "kk": "ТРИАДА",
+   "en": "TRIAD"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Запеченный с лососем\nЗапеченный с мидиями\nЗапеченный с тунцом",
+   "kk": "Лососьпен пісірілген\nМидиямен пісірілген\nТунецпен пісірілген",
+   "en": "Baked with salmon\nBaked with mussels\nBaked with tuna"
+  },
+  "additional_information": [],
+  "image": "1159.jpg",
+  "category": [
+   "sets-baked"
+  ]
+ },
+ "1160": {
+  "title": {
+   "ru": "Сакура",
+   "kk": "Сакура",
+   "en": "Sakura"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Black фила\nДорамма\nЗапеченный с лососем\nМини с огурцом\nТемпура бекон",
+   "kk": "Black Фила\nДорамма\nЛососьпен пісірілген\nҚиярлы мини\nТемпура бекон",
+   "en": "Black Phila\nDorama\nBaked with salmon\nMini with cucumber\nTempura bacon"
+  },
+  "additional_information": [],
+  "image": "1160.jpg",
+  "category": [
+   "sets-mix"
+  ]
+ },
+ "1161": {
+  "title": {
+   "ru": "МАЦУО МОНРО",
+   "kk": "МАЦУО МОНРО",
+   "en": "MATSUO MONROE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Филадельфия премиум\nКанада\nЦезарь запеченный\nСуши с креветкой 2 шт.",
+   "kk": "Филадельфия премиум\nКанада ролл\nПісірілген Цезарь\nАсшаянды суши 2 дана",
+   "en": "Philadelphia premium\nCanada roll\nBaked Caesar\nShrimp sushi 2 pcs"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "0.985 kg",
+     "kk": "0.985 kg",
+     "en": "0.985 kg"
+    }
+   }
+  ],
+  "image": "1161.jpg",
+  "category": [
+   "sets-mix"
+  ]
+ },
+ "1162": {
+  "title": {
+   "ru": "АЗИЯ",
+   "kk": "АЗИЯ",
+   "en": "ASIA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Банзай темпура\nЗапеченный с угрем\nБекон чиз\nКанада\nМини с тунцом спайси",
+   "kk": "Банзай темпура\nЖыланбалықпен пісірілген\nБекон чиз\nКанада ролл\nСпайси тунецті мини",
+   "en": "Banzai tempura\nBaked with eel\nBacon cheese\nCanada roll\nMini spicy tuna"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "1.235 kg",
+     "kk": "1.235 kg",
+     "en": "1.235 kg"
+    }
+   }
+  ],
+  "image": "1162.jpg",
+  "category": [
+   "sets-mix"
+  ]
+ },
+ "1163": {
+  "title": {
+   "ru": "ФУТУРАМА",
+   "kk": "ФУТУРАМА",
+   "en": "FUTURAMA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Филадельфия\nКалифорния классик\nКалифорния с лососем\nКанада\nЗапеченный с угрем\nЗапеченный с мидиями\nТемпура с беконом\nФудзи в кунжуте",
+   "kk": "Филадельфия\nКалифорния классик\nЛососьты Калифорния\nКанада ролл\nЖыланбалықпен пісірілген\nМидиямен пісірілген\nБеконды темпура\nКүнжіттегі Фудзи",
+   "en": "Philadelphia\nCalifornia classic\nCalifornia with salmon\nCanada roll\nBaked with eel\nBaked with mussels\nTempura with bacon\nFuji in sesame"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "2.210 kg",
+     "kk": "2.210 kg",
+     "en": "2.210 kg"
+    }
+   }
+  ],
+  "image": "1163.jpg",
+  "category": [
+   "sets-mix"
+  ]
+ },
+ "1164": {
+  "title": {
+   "ru": "ФУДЗИЯМА",
+   "kk": "ФУДЗИЯМА",
+   "en": "FUJIYAMA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Гайда маки\nТуна урамаки\nТемпура с беконом\nЦезарь\nМини авокадо",
+   "kk": "Гайда маки\nТунец урамаки\nБеконды темпура\nЦезарь\nМини авокадо",
+   "en": "Gaida maki\nTuna uramaki\nTempura with bacon\nCaesar\nMini avocado"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "0.935 kg",
+     "kk": "0.935 kg",
+     "en": "0.935 kg"
+    }
+   }
+  ],
+  "image": "1164.jpg",
+  "category": [
+   "sets-mix"
+  ]
+ },
+ "1165": {
+  "title": {
+   "ru": "ХАКУ",
+   "kk": "ХАКУ",
+   "en": "HAKU"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Филадельфия премиум\nКалифорния мега краб\nБекон чиз премиум\nЗапеченный лосось премиум\nЦезарь ролл премиум",
+   "kk": "Филадельфия премиум\nКалифорния мега краб\nБекон чиз премиум\nПісірілген лосось премиум\nЦезарь ролл премиум",
+   "en": "Philadelphia premium\nCalifornia mega crab\nBacon cheese premium\nBaked salmon premium\nCaesar roll premium"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес набора",
+     "kk": "Жинақ салмағы",
+     "en": "Set weight"
+    },
+    "value": {
+     "ru": "1.440 kg",
+     "kk": "1.440 kg",
+     "en": "1.440 kg"
+    }
+   }
+  ],
+  "image": "1165.jpg",
+  "category": [
+   "sets-mix"
+  ]
+ },
+ "2221": {
+  "title": {
+   "ru": "АВЕНЮ",
+   "kk": "АВЕНЮ",
+   "en": "AVENUE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Фила гриль\nТуна прайм\nЗапеченный в кунжуте с креветкой\nСуши с лососем 1\nСуши с тунцом 1\nСуши лосось гриль 1",
+   "kk": "Фила гриль\nТуна прайм\nКүнжітте пісірілген, асшаяны бар\nЛососьты суши 1\nТунецті суши 1\nГрильдегі лососьты суши 1",
+   "en": "Phila grill\nTuna prime\nBaked in sesame with shrimp\nSalmon sushi 1\nTuna sushi 1\nGrilled salmon sushi 1"
+  },
+  "additional_information": [],
+  "image": "2221.jpg",
+  "category": [
+   "sets-mix"
+  ]
+ },
+ "1170": {
+  "title": {
+   "ru": "RONIN",
+   "kk": "RONIN",
+   "en": "RONIN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Фила-лайт\nТори с лососем\nСаке-темпура\nЗапеченный с лососем",
+   "kk": "Фила-лайт\nЛососьты тори\nСяке-темпура\nЛососьпен пісірілген",
+   "en": "Phila-light\nTori with salmon\nSalmon tempura\nBaked with salmon"
+  },
+  "additional_information": [],
+  "image": "1170.jpg",
+  "category": [
+   "sets-lite"
+  ]
+ },
+ "1171": {
+  "title": {
+   "ru": "ДУЭТ",
+   "kk": "ДУЭТ",
+   "en": "DUET"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Фила-лайт\nЗапеченный с курицей\nФри\nМорс 2",
+   "kk": "Фила-лайт\nТауық етімен пісірілген\nФри\nМорс 2",
+   "en": "Phila-light\nBaked with chicken\nFries\nFruit drink 2"
+  },
+  "additional_information": [],
+  "image": "1171.jpg",
+  "category": [
+   "sets-lite"
+  ]
+ },
+ "1172": {
+  "title": {
+   "ru": "ЛЕДИ-WHITE",
+   "kk": "ЛЕДИ-WHITE",
+   "en": "LADY-WHITE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Фила-лайт\nКалифорния\nТемпура с курицей\nКаппа-маки\nПицца-маргарита",
+   "kk": "Фила-лайт\nКалифорния\nТауықты темпура\nКаппа-маки\nМаргарита пиццасы",
+   "en": "Phila-light\nCalifornia\nTempura with chicken\nKappa maki\nMargherita pizza"
+  },
+  "additional_information": [],
+  "image": "1172.jpg",
+  "category": [
+   "sets-lite"
+  ]
+ },
+ "1173": {
+  "title": {
+   "ru": "ОРИ-НОРИ",
+   "kk": "ОРИ-НОРИ",
+   "en": "ORI-NORI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Темпура с курицей\nЗапеченный с курицей\nСаке темпура\nЗапеченный саке-маки\nФри 2 п",
+   "kk": "Тауықты темпура\nТауық етімен пісірілген\nСяке темпура\nПісірілген сяке-маки\nФри 2 дана",
+   "en": "Tempura with chicken\nBaked with chicken\nSalmon tempura\nBaked sake-maki\nFries 2 pcs"
+  },
+  "additional_information": [],
+  "image": "1173.jpg",
+  "category": [
+   "sets-lite"
+  ]
+ },
+ "1174": {
+  "title": {
+   "ru": "BIG-PARTY",
+   "kk": "BIG-PARTY",
+   "en": "BIG-PARTY"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Фила-лайт\nТемпура с курицей\nСаке-маки\nЗапеченный саке-маки\nТори с лососем\nНаггетсы 1п",
+   "kk": "Фила-лайт\nТауықты темпура\nСяке-маки\nПісірілген сяке-маки\nЛососьты тори\nНаггетстер 1 дана",
+   "en": "Phila-light\nTempura with chicken\nSake-maki\nBaked sake-maki\nTori with salmon\nNuggets 1 pcs"
+  },
+  "additional_information": [],
+  "image": "1174.jpg",
+  "category": [
+   "sets-lite"
+  ]
+ },
+ "1180": {
+  "title": {
+   "ru": "МАРГАРИТА",
+   "kk": "МАРГАРИТА",
+   "en": "MARGHERITA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nПицца соус\nМоцарелла\nТоматы",
+   "kk": "Қамыр\nПицца соусы\nМоцарелла\nҚызанақтар",
+   "en": "Dough\nPizza sauce\nMozzarella\nTomatoes"
+  },
+  "additional_information": [],
+  "image": "1180.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1181": {
+  "title": {
+   "ru": "СТАФФ С ЛОСОСЕМ МИНИ",
+   "kk": "СТАФФ ЛОСОСЬМЕН МИНИ",
+   "en": "STAFF WITH SALMON MINI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Сыр рикотта\nСыр моцарелла\nШпинат\nЛосось\nЛимон",
+   "kk": "Рикотта ірімшігі\nМоцарелла ірімшігі\nШпинат\nЛосось\nЛимон",
+   "en": "Ricotta cheese\nMozzarella cheese\nSpinach\nSalmon\nLemon"
+  },
+  "additional_information": [],
+  "image": "1181.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1182": {
+  "title": {
+   "ru": "ПИЦЦА «STAFF С ЛОСОСЕМ»",
+   "kk": "«STAFF ЛОСОСЬМЕН» ПИЦЦАСЫ",
+   "en": "«STAFF WITH SALMON» PIZZA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нежное тесто\nСыр рикотта\nСыр моцарелла\nШпинат\nЛосось\nСпеции",
+   "kk": "Нәзік қамыр\nРикотта ірімшігі\nМоцарелла ірімшігі\nШпинат\nЛосось\nДәмдеуіштер",
+   "en": "Delicate dough\nRicotta cheese\nMozzarella cheese\nSpinach\nSalmon\nSpices"
+  },
+  "additional_information": [],
+  "image": "1182.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1183": {
+  "title": {
+   "ru": "ГАВАЙСКАЯ",
+   "kk": "ГАВАЙИ",
+   "en": "HAWAIIAN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nСливочный соус\nАнанас консервированный\nКурица копченая\nМоцарелла",
+   "kk": "Қамыр\nҚаймақты соус\nКонсервіленген ананас\nЫсталған тауық\nМоцарелла",
+   "en": "Dough\nCreamy sauce\nCanned pineapple\nSmoked chicken\nMozzarella"
+  },
+  "additional_information": [],
+  "image": "1183.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1184": {
+  "title": {
+   "ru": "КУРИЦА+ГРИБЫ",
+   "kk": "ТАУЫҚ + САҢЫРАУҚҰЛАҚ",
+   "en": "CHICKEN + MUSHROOMS"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nСливочный соус\nМоцарелла\nКурица\nШампиньоны\nСухой чеснок\nСырный соус",
+   "kk": "Қамыр\nҚаймақты соус\nМоцарелла\nТауық еті\nШампиньон\nҚұрғақ сарымсақ\nІрімшік соусы",
+   "en": "Dough\nCreamy sauce\nMozzarella\nChicken\nMushrooms\nDried garlic\nCheese sauce"
+  },
+  "additional_information": [],
+  "image": "1184.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1185": {
+  "title": {
+   "ru": "ДИАБЛО",
+   "kk": "ДИАБЛО",
+   "en": "DIABLO"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nПицца соус\nМоцарелла\nКурица копченая\nПепперони\nЧерри\nМаслины\nХолопеньо\nСоус",
+   "kk": "Қамыр\nПицца соусы\nМоцарелла\nЫсталған тауық\nПепперони\nШери\nЗәйтүн\nХалапеньо\nСоус",
+   "en": "Dough\nPizza sauce\nMozzarella\nSmoked chicken\nPepperoni\nCherry tomato\nOlives\nJalapeño\nSauce"
+  },
+  "additional_information": [],
+  "image": "1185.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1186": {
+  "title": {
+   "ru": "Вегетарианская пицца",
+   "kk": "Вегетариандық пицца",
+   "en": "Vegetarian pizza"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nТоматный соус\nБолгарский перец\nПомидоры\nШампиньоны\nБрокколи\nМаслины\nСыр моцарелла",
+   "kk": "Қамыр\nҚызанақ соусы\nБолгар бұрышы\nҚызанақтар\nШампиньон\nБрокколи\nЗәйтүн\nМоцарелла ірімшігі",
+   "en": "Dough\nTomato sauce\nBell pepper\nTomatoes\nMushrooms\nBroccoli\nOlives\nMozzarella cheese"
+  },
+  "additional_information": [],
+  "image": "1186.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1187": {
+  "title": {
+   "ru": "МОРСКОЙ КОКТЕЙЛЬ",
+   "kk": "ТЕҢІЗ КОКТЕЙЛІ",
+   "en": "SEAFOOD COCKTAIL"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nСливочный соус\nСыр моцарелла\nТигровые креветки\nНежнейшая семга\nБрокколи\nМаслины",
+   "kk": "Қамыр\nҚаймақты соус\nМоцарелла ірімшігі\nЖолбарыс асшаяндары\nНәзік семга\nБрокколи\nЗәйтүн",
+   "en": "Dough\nCreamy sauce\nMozzarella cheese\nTiger shrimp\nDelicate salmon\nBroccoli\nOlives"
+  },
+  "additional_information": [],
+  "image": "1187.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1188": {
+  "title": {
+   "ru": "СОЧНЫЙ БЕКОН",
+   "kk": "ШЫРЫНДЫ БЕКОН",
+   "en": "JUICY BACON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nСыр моцарелла\nБекон\nСалями\nКрасный лук",
+   "kk": "Қамыр\nМоцарелла ірімшігі\nБекон\nСалями\nҚызыл пияз",
+   "en": "Dough\nMozzarella cheese\nBacon\nSalami\nRed onion"
+  },
+  "additional_information": [],
+  "image": "1188.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1189": {
+  "title": {
+   "ru": "ЧЕТЫРЕ СЫРА",
+   "kk": "ТӨРТ ІРІМШІК",
+   "en": "FOUR CHEESE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nСливочный соус\nМоцарелла\nСыр пармезан\nСыр сливочный\nСыр чеддер",
+   "kk": "Қамыр\nҚаймақты соус\nМоцарелла\nПармезан ірімшігі\nМай ірімшік\nЧеддер ірімшігі",
+   "en": "Dough\nCreamy sauce\nMozzarella\nParmesan cheese\nCream cheese\nCheddar cheese"
+  },
+  "additional_information": [],
+  "image": "1189.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1190": {
+  "title": {
+   "ru": "ПИКАНТНАЯ КУРОЧКА",
+   "kk": "ДӘМДІ ТАУЫҚ",
+   "en": "SPICY CHICKEN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nПицца соус\nМоцарелла\nФиле курочки\nШампиньоны\nТоматы\nБрокколи\nПикантное масло",
+   "kk": "Қамыр\nПицца соусы\nМоцарелла\nТауық филесі\nШампиньон\nҚызанақтар\nБрокколи\nДәмдендірілген май",
+   "en": "Dough\nPizza sauce\nMozzarella\nChicken fillet\nMushrooms\nTomatoes\nBroccoli\nSpicy oil"
+  },
+  "additional_information": [],
+  "image": "1190.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1191": {
+  "title": {
+   "ru": "ПЕПЕРОНИ",
+   "kk": "ПЕППЕРОНИ",
+   "en": "PEPPERONI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nПицца соус\nМоцарелла\nКолбаски салями\nМаслины",
+   "kk": "Қамыр\nПицца соусы\nМоцарелла\nСалями шұжықтары\nЗәйтүн",
+   "en": "Dough\nPizza sauce\nMozzarella\nSalami sausages\nOlives"
+  },
+  "additional_information": [],
+  "image": "1191.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "2231": {
+  "title": {
+   "ru": "КУРИЦА БЕКОН",
+   "kk": "ТАУЫҚ БЕКОН",
+   "en": "CHICKEN BACON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Белый соус\nМоцарелла\nКопченная грудка\nБекон «шашки»\nСоус сливочно чесночный",
+   "kk": "Ақ соус\nМоцарелла\nЫсталған төс\nБекон текшелер\nҚаймақты сарымсақ соусы",
+   "en": "White sauce\nMozzarella\nSmoked breast\nBacon, diced\nCreamy garlic sauce"
+  },
+  "additional_information": [],
+  "image": "2231.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "2232": {
+  "title": {
+   "ru": "ЦАРСКАЯ",
+   "kk": "ПАТШАЛЫҚ",
+   "en": "ROYAL"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Томатный соус\nМоцарелла\nШампиньоны\nПепперони\nБолгарский перец\nКопченная грудка\nСоус bbq",
+   "kk": "Қызанақ соусы\nМоцарелла\nШампиньон\nПепперони\nБолгар бұрышы\nЫсталған төс\nBBQ соусы",
+   "en": "Tomato sauce\nMozzarella\nMushrooms\nPepperoni\nBell pepper\nSmoked breast\nBBQ sauce"
+  },
+  "additional_information": [],
+  "image": "2232.jpg",
+  "category": [
+   "pizza"
+  ]
+ },
+ "1192": {
+  "title": {
+   "ru": "КРЕВЕТКИ В КЛЯРЕ",
+   "kk": "ҚАМЫРДАҒЫ АСШАЯН",
+   "en": "SHRIMP IN BATTER"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тигровые креветки в хрустящей панировки\nС соусом сладкий чили\n6 шт.",
+   "kk": "Қытырлақ панировкадағы жолбарыс асшаяндары\nТәтті чили соусымен\n6 дана",
+   "en": "Tiger shrimp in crispy breading\nWith sweet chili sauce\n6 pcs"
+  },
+  "additional_information": [],
+  "image": "1192.jpg",
+  "category": [
+   "snacks"
+  ]
+ },
+ "1193": {
+  "title": {
+   "ru": "НАГГЕТСЫ",
+   "kk": "НАГГЕТСТЕР",
+   "en": "NUGGETS"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Сочные куриное филе в панировке\nПорция 6 кусочков",
+   "kk": "Шырынды панировкадағы тауық филесі\n6 дана порция",
+   "en": "Juicy breaded chicken fillet\nPortion of 6 pieces"
+  },
+  "additional_information": [],
+  "image": "1193.jpg",
+  "category": [
+   "snacks"
+  ]
+ },
+ "1194": {
+  "title": {
+   "ru": "ФРИ",
+   "kk": "ФРИ",
+   "en": "FRIES"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Манящий вкус картофеля, порадует не только детишек, но и взрослых",
+   "kk": "Картоптың тартымды дәмі тек балаларды ғана емес, ересектерді де қуантады",
+   "en": "An irresistible potato flavor that will delight kids and adults alike"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Вес",
+     "kk": "Салмағы",
+     "en": "Weight"
+    },
+    "value": {
+     "ru": "0.150 kg",
+     "kk": "0.150 kg",
+     "en": "0.150 kg"
+    }
+   }
+  ],
+  "image": "1194.jpg",
+  "category": [
+   "snacks"
+  ]
+ },
+ "1195": {
+  "title": {
+   "ru": "ТОМ ЯМ С МОРЕПРОДУКТАМИ",
+   "kk": "ТЕҢІЗ ӨНІМДЕРІМЕН ТОМ ЯМ",
+   "en": "TOM YUM WITH SEAFOOD"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Бульон том ям\nШампиньоны\nПомидоры черри\nКальмары\nТигровые креветки\nЛистики лайма\nДополнения рис",
+   "kk": "Том ям сорпасы\nШампиньон\nШери қызанақ\nКальмар\nЖолбарыс асшаяндары\nЛайм жапырақтары\nҚосымша күріш",
+   "en": "Tom yum broth\nMushrooms\nCherry tomatoes\nSquid\nTiger shrimp\nLime leaves\nExtra rice"
+  },
+  "additional_information": [],
+  "image": "1195.jpg",
+  "category": [
+   "soups"
+  ]
+ },
+ "1196": {
+  "title": {
+   "ru": "ТОМ ЯМ С КУРИЦЕЙ",
+   "kk": "ТАУЫҚ ЕТІМЕН ТОМ ЯМ",
+   "en": "TOM YUM WITH CHICKEN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Бульон том ям\nШампиньоны\nТоматы черри\nФиле курочки\nЛистики лайма\nДополнения рис",
+   "kk": "Том ям сорпасы\nШампиньон\nШери қызанақ\nТауық филесі\nЛайм жапырақтары\nҚосымша күріш",
+   "en": "Tom yum broth\nMushrooms\nCherry tomatoes\nChicken fillet\nLime leaves\nExtra rice"
+  },
+  "additional_information": [],
+  "image": "1196.jpg",
+  "category": [
+   "soups"
+  ]
+ },
+ "1197": {
+  "title": {
+   "ru": "Удон с говядиной в соусе терияки",
+   "kk": "Терияки соусындағы сиыр етті удон",
+   "en": "Udon with beef in teriyaki sauce"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Лапша Удон\nВырезка говядины\nБолгарский перец\nМорковь\nЛук репчатый\nСоус Терияки",
+   "kk": "Удон кеспесі\nСиыр етінің ұзын жон еті\nБолгар бұрышы\nСәбіз\nПияз\nТерияки соусы",
+   "en": "Udon noodles\nBeef tenderloin\nBell pepper\nCarrot\nYellow onion\nTeriyaki sauce"
+  },
+  "additional_information": [],
+  "image": "1197.jpg",
+  "category": [
+   "pastes"
+  ]
+ },
+ "1198": {
+  "title": {
+   "ru": "Вок в кунжутном соусе с курицей и овощами",
+   "kk": "Тауық еті мен көкөністі күнжіт соусындағы вок",
+   "en": "Wok with chicken and vegetables in sesame sauce"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Лапша Удон\nКуриное филе\nБолгарский перец\nМорковь\nРепчатый лук\nСоус орехово-кунжутный",
+   "kk": "Удон кеспесі\nТауық филесі\nБолгар бұрышы\nСәбіз\nПияз\nЖаңғақ-күнжіт соусы",
+   "en": "Udon noodles\nChicken fillet\nBell pepper\nCarrot\nOnion\nNut-sesame sauce"
+  },
+  "additional_information": [],
+  "image": "1198.jpg",
+  "category": [
+   "pastes"
+  ]
+ },
+ "1199": {
+  "title": {
+   "ru": "Вок в сливочном соусе с курицей и грибами",
+   "kk": "Тауық еті мен саңырауқұлақты қаймақ соусындағы вок",
+   "en": "Wok with chicken and mushrooms in creamy sauce"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Лапша удон\nКуриное филе\nШампиньоны\nСливки\nРепчатый лук",
+   "kk": "Удон кеспесі\nТауық филесі\nШампиньон\nҚаймақ\nПияз",
+   "en": "Udon noodles\nChicken fillet\nMushrooms\nCream\nOnion"
+  },
+  "additional_information": [],
+  "image": "1199.jpg",
+  "category": [
+   "pastes"
+  ]
+ },
+ "1210": {
+  "title": {
+   "ru": "Поке",
+   "kk": "Поке",
+   "en": "Poke"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nЛосось\nАвокадо\nОгурец\nТоматы черри\nРедис\nСалат чука\nМикрозелень\nСоус",
+   "kk": "Күріш\nЛосось\nАвокадо\nҚияр\nШери қызанақ\nШалғам\nЧука салаты\nМикрожасыл\nСоус",
+   "en": "Rice\nSalmon\nAvocado\nCucumber\nCherry tomatoes\nRadish\nChuka salad\nMicrogreens\nSauce"
+  },
+  "additional_information": [],
+  "image": "1210.jpg",
+  "category": [
+   "poke"
+  ]
+ },
+ "1211": {
+  "title": {
+   "ru": "ПОКЕ НА ЗАВТРАК",
+   "kk": "ТАҢҒЫ АСҚА ПОКЕ",
+   "en": "POKE FOR BREAKFAST"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "РИС\nБЕЛАЯ ФАСОЛЬ\nЖАРЕННОЕ ЯЙЦО\nБЕКОН\nТоматы\nСоус\nОГУРЕЦ\nСАЛАТ «ЧУКА»",
+   "kk": "КҮРІШ\nАҚ БҰРШАҚ\nҚУЫРЫЛҒАН ЖҰМЫРТҚА\nБЕКОН\nҚызанақтар\nСоус\nҚИЯР\n«ЧУКА» САЛАТЫ",
+   "en": "RICE\nWHITE BEANS\nFRIED EGG\nBACON\nTomatoes\nSauce\nCUCUMBER\nCHUKA SALAD"
+  },
+  "additional_information": [],
+  "image": "1211.png",
+  "category": [
+   "poke"
+  ]
+ },
+ "4444": {
+  "title": {
+   "ru": "Фруктовая пицца",
+   "kk": "Жеміс пиццасы",
+   "en": "Fruit pizza"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Сладкая клубника\nТропический ананас\nНежный банан\nСочная клюква",
+   "kk": "Тәтті құлпынай\nТропикалық ананас\nНәзік банан\nШырынды мүкжидек",
+   "en": "Sweet strawberry\nTropical pineapple\nDelicate banana\nJuicy cranberry"
+  },
+  "additional_information": [],
+  "image": "4444.jpg",
+  "category": [
+   "desserts"
+  ]
+ },
+ "4441": {
+  "title": {
+   "ru": "НАСЛАЖДЕНИЯ",
+   "kk": "ЛӘЗЗАТ",
+   "en": "DELIGHT"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рисовая бумага\nНежнейший шоколадный крем\nБанан\nАпельсин\nКлюква",
+   "kk": "Күріш қағазы\nНәзік шоколад крем\nБанан\nАпельсин\nМүкжидек",
+   "en": "Rice paper\nDelicate chocolate cream\nBanana\nOrange\nCranberry"
+  },
+  "additional_information": [],
+  "image": "4441.jpg",
+  "category": [
+   "desserts"
+  ]
+ },
+ "4443": {
+  "title": {
+   "ru": "ВОДА БЕЗ ГАЗА",
+   "kk": "ГАЗСЫЗ СУ",
+   "en": "STILL WATER"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 литра",
+     "kk": "0.5 литр",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4443.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4445": {
+  "title": {
+   "ru": "ГАЗИРОВАННАЯ ВОДА",
+   "kk": "ГАЗДАЛҒАН СУ",
+   "en": "SPARKLING WATER"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 л",
+     "kk": "0.5 л",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4445.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4446": {
+  "title": {
+   "ru": "КОЛА",
+   "kk": "КОЛА",
+   "en": "COLA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Напиток Coca-Cola газированный",
+   "kk": "Coca-Cola газдалған сусыны",
+   "en": "Coca-Cola carbonated drink"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 л",
+     "kk": "0.5 л",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4446.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4447": {
+  "title": {
+   "ru": "МОРС КЛЮКВА",
+   "kk": "МҮКЖИДЕК МОРСЫ",
+   "en": "CRANBERRY FRUIT DRINK"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "МОРС КЛЮКА НАТУРАЛЬНЫЙ",
+   "kk": "ТАБИҒИ МҮКЖИДЕК МОРСЫ",
+   "en": "NATURAL CRANBERRY DRINK"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 л",
+     "kk": "0.5 л",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4447.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4448": {
+  "title": {
+   "ru": "МОРС ОБЛЕПИХА",
+   "kk": "ШЫРҒАНАҚ МОРСЫ",
+   "en": "SEA BUCKTHORN FRUIT DRINK"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "МОРС ИЗ ЯГОД ОБЛЕПИХИ",
+   "kk": "ШЫРҒАНАҚ МОРСЫ",
+   "en": "SEA BUCKTHORN FRUIT DRINK"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 л",
+     "kk": "0.5 л",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4448.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4449": {
+  "title": {
+   "ru": "СОК АПЕЛЬСИНОВЫЙ PIKO",
+   "kk": "PIKO АПЕЛЬСИН ШЫРЫНЫ",
+   "en": "PIKO ORANGE JUICE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "АПЕЛЬСИН",
+   "kk": "АПЕЛЬСИН",
+   "en": "ORANGE"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "1 л",
+     "kk": "1 л",
+     "en": "1 l"
+    }
+   }
+  ],
+  "image": "4449.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4451": {
+  "title": {
+   "ru": "СОК ЯБЛОКО PIKO",
+   "kk": "PIKO АЛМА ШЫРЫНЫ",
+   "en": "PIKO APPLE JUICE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "ЯБЛОКО",
+   "kk": "АЛМА",
+   "en": "APPLE"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "1 л",
+     "kk": "1 л",
+     "en": "1 l"
+    }
+   }
+  ],
+  "image": "4451.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4452": {
+  "title": {
+   "ru": "СОК МУЛЬТИФРУКТ PIKO MINI",
+   "kk": "PIKO MINI МУЛЬТИФРУКТ ШЫРЫНЫ",
+   "en": "PIKO MINI MULTIFRUIT JUICE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "МУЛЬТИФРУКТ",
+   "kk": "МУЛЬТИФРУКТ",
+   "en": "MULTIFRUIT"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.2 л",
+     "kk": "0.2 л",
+     "en": "0.2 l"
+    }
+   }
+  ],
+  "image": "4452.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4453": {
+  "title": {
+   "ru": "СОК ЯБЛОКО PIKO MINI",
+   "kk": "PIKO MINI АЛМА ШЫРЫНЫ",
+   "en": "PIKO MINI APPLE JUICE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "ЯБЛОКО",
+   "kk": "АЛМА",
+   "en": "APPLE"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.2 л",
+     "kk": "0.2 л",
+     "en": "0.2 l"
+    }
+   }
+  ],
+  "image": "4453.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4454": {
+  "title": {
+   "ru": "BBQ СОУС",
+   "kk": "BBQ СОУСЫ",
+   "en": "BBQ SAUCE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "СОУС BBQ",
+   "kk": "BBQ СОУСЫ",
+   "en": "BBQ SAUCE"
+  },
+  "additional_information": [],
+  "image": "4454.jpg",
+  "category": [
+   "sauces"
+  ]
+ },
+ "4455": {
+  "title": {
+   "ru": "СОУС ТОМАТНЫЙ",
+   "kk": "ҚЫЗАНАҚ СОУСЫ",
+   "en": "TOMATO SAUCE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "СОУС ТОМАТНЫЙ КЕТЧУП",
+   "kk": "ҚЫЗАНАҚ КЕТЧУП СОУСЫ",
+   "en": "TOMATO KETCHUP SAUCE"
+  },
+  "additional_information": [],
+  "image": "4455.jpg",
+  "category": [
+   "sauces"
+  ]
+ },
+ "4456": {
+  "title": {
+   "ru": "ОРЕХОВО-КУНЖУТНЫЙ СОУС",
+   "kk": "ЖАҢҒАҚ-КҮНЖІТ СОУСЫ",
+   "en": "NUT-SESAME SAUCE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [],
+  "image": "4456.jpg",
+  "category": [
+   "sauces"
+  ]
+ },
+ "4457": {
+  "title": {
+   "ru": "СЛАДКИЙ ЧИЛИ",
+   "kk": "ТӘТТІ ЧИЛИ",
+   "en": "SWEET CHILI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [],
+  "image": "4457.jpg",
+  "category": [
+   "sauces"
+  ]
+ },
+ "4458": {
+  "title": {
+   "ru": "СОУС СЫРНЫЙ",
+   "kk": "ІРІМШІК СОУСЫ",
+   "en": "CHEESE SAUCE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "СЫРНЫЙ СОУС НА РАЗЛИВ",
+   "kk": "ҚҰЙМА ІРІМШІК СОУСЫ",
+   "en": "CHEESE SAUCE (ON TAP)"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.03 л",
+     "kk": "0.03 л",
+     "en": "0.03 l"
+    }
+   }
+  ],
+  "image": "4458.jpg",
+  "category": [
+   "sauces"
+  ]
+ },
+ "4459": {
+  "title": {
+   "ru": "ТЕРИЯКИ СОУС",
+   "kk": "ТЕРИЯКИ СОУСЫ",
+   "en": "TERIYAKI SAUCE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [],
+  "image": "4459.jpg",
+  "category": [
+   "sauces"
+  ]
+ },
+ "4460": {
+  "title": {
+   "ru": "УНАГИ СОУС",
+   "kk": "УНАГИ СОУСЫ",
+   "en": "UNAGI SAUCE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [],
+  "image": "4460.jpg",
+  "category": [
+   "sauces"
+  ]
+ },
+ "4461": {
+  "title": {
+   "ru": "ШИРАЧА СОУС",
+   "kk": "ШИРАЧА СОУСЫ",
+   "en": "SRIRACHA SAUCE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [],
+  "image": "4461.jpg",
+  "category": [
+   "sauces"
+  ]
+ },
+ "8000": {
+  "title": {
+   "ru": "ИНЬ - ЯНЬ",
+   "kk": "ИНЬ - ЯНЬ",
+   "en": "YIN - YANG"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори – 2\nРис – 0,200\nКраситель черн.красн.– 0,004\nЛосось терияки – 0,030\nМикрозелень – 0,002\nКунжут микс – 0,005\nСыр твор. Красный – 0,020\nУнаги – 0,005",
+   "kk": "Нори – 2\nКүріш – 0,200\nҚара-қызыл бояғыш – 0,004\nТерияки лосось – 0,030\nМикрожасыл – 0,002\nКүнжіт микс – 0,005\nҚызыл май ірімшік – 0,020\nУнаги – 0,005",
+   "en": "Nori – 2\nRice – 0,200\nBlack-red food coloring – 0,004\nTeriyaki salmon – 0,030\nMicrogreens – 0,002\nSesame mix – 0,005\nRed cream cheese – 0,020\nUnagi – 0,005"
+  },
+  "additional_information": [],
+  "image": "8000.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "8001": {
+  "title": {
+   "ru": "С АПЕЛЬСИНОМ И ЛОСОСЕМ",
+   "kk": "АПЕЛЬСИН МЕН ЛОСОСЬПЕН",
+   "en": "WITH ORANGE AND SALMON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори – 1\nРис – 0,130\nСыр творожный – 0,040\nЛосось – 0,050\nАпельсин – 0,040\nСоус манго-айоли – 0,020\nИкра имитация – 0,015\nМикро зелень – 0,005",
+   "kk": "Нори – 1\nКүріш – 0,130\nМай ірімшік – 0,040\nЛосось – 0,050\nАпельсин – 0,040\nМанго-айоли соусы – 0,020\nИмитацияланған уылдырық – 0,015\nМикрожасыл – 0,005",
+   "en": "Nori – 1\nRice – 0,130\nCream cheese – 0,040\nSalmon – 0,050\nOrange – 0,040\nMango aioli sauce – 0,020\nImitation caviar – 0,015\nMicrogreens – 0,005"
+  },
+  "additional_information": [],
+  "image": "8001.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "8002": {
+  "title": {
+   "ru": "С КРЕВЕТКОЙ ТЕМПУРА",
+   "kk": "ТЕМПУРА АСШАЯНМЕН",
+   "en": "WITH TEMPURA SHRIMP"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 0,130\nНори – 0,7\nОгурец – 0,040\nАвокадо – 0,030\nКреветка темпура – 0,085\nСоус манго-айоли – 0,010\nМикрозелень – 0,005\nПищевое золото – 0,001",
+   "kk": "Күріш – 0,130\nНори – 0,7\nҚияр – 0,040\nАвокадо – 0,030\nТемпура асшаян – 0,085\nМанго-айоли соусы – 0,010\nМикрожасыл – 0,005\nТағамдық алтын – 0,001",
+   "en": "Rice – 0,130\nNori – 0,7\nCucumber – 0,040\nAvocado – 0,030\nTempura shrimp – 0,085\nMango aioli sauce – 0,010\nMicrogreens – 0,005\nEdible gold – 0,001"
+  },
+  "additional_information": [],
+  "image": "8002.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "8003": {
+  "title": {
+   "ru": "С ТУНЦОМ И ЛОСОСЕМ",
+   "kk": "ТУНЕЦ ПЕН ЛОСОСЬПЕН",
+   "en": "WITH TUNA AND SALMON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори – 0,5\nРис – 0,130\nСыр творожный – 0,020\nУгорь – 0,030\nОгурец0,020\nЛосось – 0,030\nТунец – 0,050\nАпельсин – 0,20\nСтружка тунца – 0,010\nТобико – 0,005\nУнаги – 0,010\nМикрозелень – 0,005",
+   "kk": "Нори – 0,5\nКүріш – 0,130\nМай ірімшік – 0,020\nЖыланбалық – 0,030\nҚияр\nЛосось – 0,030\nТунец – 0,050\nАпельсин – 0,20\nТунец үгіндісі – 0,010\nТобико – 0,005\nУнаги – 0,010\nМикрожасыл – 0,005",
+   "en": "Nori – 0,5\nRice – 0,130\nCream cheese – 0,020\nEel – 0,030\nCucumber\nSalmon – 0,030\nTuna – 0,050\nOrange – 0,20\nTuna flakes – 0,010\nTobiko – 0,005\nUnagi – 0,010\nMicrogreens – 0,005"
+  },
+  "additional_information": [],
+  "image": "8003.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "8004": {
+  "title": {
+   "ru": "МИНИ ЛОСОСЬ ТЕРИЯКИ",
+   "kk": "МИНИ ТЕРИЯКИ ЛОСОСЬ",
+   "en": "MINI TERIYAKI SALMON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори – 1\nРис – 0,100\nЛосось терияки – 0,040\nСпайси – 0,015\nСтружка тунца – 0,005\nКунжут микс  – 0,005\nМикро зелень – 0,005",
+   "kk": "Нори – 1\nКүріш – 0,100\nТерияки лосось – 0,040\nСпайси – 0,015\nТунец үгіндісі – 0,005\nКүнжіт микс – 0,005\nМикрожасыл – 0,005",
+   "en": "Nori – 1\nRice – 0,100\nTeriyaki salmon – 0,040\nSpicy – 0,015\nTuna flakes – 0,005\nSesame mix – 0,005\nMicrogreens – 0,005"
+  },
+  "additional_information": [],
+  "image": "8004.jpg",
+  "category": [
+   "rolls-mini"
+  ]
+ },
+ "8005": {
+  "title": {
+   "ru": "С УГРЕМ И КРЕВЕТКОЙ",
+   "kk": "ЖЫЛАНБАЛЫҚ ПЕН АСШАЯНМЕН",
+   "en": "WITH EEL AND SHRIMP"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори – 0,7\nРис – 0,130\nЛосось – 0,040\nИкра тобико – 0,010\nАвокадо – 0,030\nУгорь – 0,060(слайсы)\nСоус унаги – 0,010\nАрахис дробленный – 0,005\nСоус манго-айоли – 0,010\nМикрозелень – 0,005",
+   "kk": "Нори – 0,7\nКүріш – 0,130\nЛосось – 0,040\nТобико уылдырығы – 0,010\nАвокадо – 0,030\nЖыланбалық – 0,060 (слайсы)\nУнаги соусы – 0,010\nҰсатылған жержаңғақ – 0,005\nМанго-айоли соусы – 0,010\nМикрожасыл – 0,005",
+   "en": "Nori – 0,7\nRice – 0,130\nSalmon – 0,040\nTobiko caviar – 0,010\nAvocado – 0,030\nEel – 0,060 (слайсы)\nUnagi sauce – 0,010\nCrushed peanuts – 0,005\nMango aioli sauce – 0,010\nMicrogreens – 0,005"
+  },
+  "additional_information": [],
+  "image": "8005.jpg",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "8006": {
+  "title": {
+   "ru": "КРЫЛО 6 ШТ СОУС БАФФАЛО 🌶",
+   "kk": "ҚАНАТ 6 ДАНА, БУФФАЛО СОУСЫ 🌶",
+   "en": "WING 6 PCS, BUFFALO SAUCE 🌶"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Крылья 6 шт.\nПанировка – 0,100\nВода – 0,300\nСоус баффало – 0,100",
+   "kk": "Қанаттар 6 дана\nПанировка – 0,100\nСу – 0,300\nБуффало соусы – 0,100",
+   "en": "Wings 6 pcs\nBreading – 0,100\nWater – 0,300\nBuffalo sauce – 0,100"
+  },
+  "additional_information": [],
+  "image": "8006.jpg",
+  "category": [
+   "delicious_wings"
+  ]
+ },
+ "8007": {
+  "title": {
+   "ru": "КРЫЛЬЯ ФРАЙД",
+   "kk": "ҚУЫРЫЛҒАН ҚАНАТТАР",
+   "en": "FRIED WINGS"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Крыло 6 шт.\nВода – 0,300\nПанировка – 0,100\nКетчуп – 0,040",
+   "kk": "Қанат 6 дана\nСу – 0,300\nПанировка – 0,100\nКетчуп – 0,040",
+   "en": "Wing 6 pcs\nWater – 0,300\nBreading – 0,100\nKetchup – 0,040"
+  },
+  "additional_information": [],
+  "image": "8007.jpg",
+  "category": [
+   "delicious_wings"
+  ]
+ },
+ "8008": {
+  "title": {
+   "ru": "КРЫЛЬЯ BBQ",
+   "kk": "BBQ ҚАНАТТАР",
+   "en": "BBQ WINGS"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Крыло 6 шт.\nВода – 0,300\nПанировка – 0,100\nСоус bbq – 0,100",
+   "kk": "Қанат 6 дана\nСу – 0,300\nПанировка – 0,100\nBBQ соусы – 0,100",
+   "en": "Wing 6 pcs\nWater – 0,300\nBreading – 0,100\nBBQ sauce – 0,100"
+  },
+  "additional_information": [],
+  "image": "8008.jpg",
+  "category": [
+   "delicious_wings"
+  ]
+ },
+ "9000": {
+  "title": {
+   "ru": "САЛАТ С КОПЧЕННЫМ УГРЕМ И АПЕЛЬСИНОМ",
+   "kk": "ЫСТАЛҒАН ЖЫЛАНБАЛЫҚ ПЕН АПЕЛЬСИНІ БАР САЛАТ",
+   "en": "SALAD WITH SMOKED EEL AND ORANGE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Микс зелени – 0,030\nЧерри – 0,030\nУгорь – 0,045\nАпельсин чист.– 0,050\nСоус свит чили – 0,040\nСтружка миндаля – 0,005",
+   "kk": "Көкөніс микс – 0,030\nШери – 0,030\nЖыланбалық – 0,045\nТазаланған апельсин – 0,050\nТәтті чили соусы – 0,040\nБадам үгіндісі – 0,005",
+   "en": "Herb mix – 0,030\nCherry tomato – 0,030\nEel – 0,045\nPeeled orange – 0,050\nSweet chili sauce – 0,040\nAlmond flakes – 0,005"
+  },
+  "additional_information": [],
+  "image": "9000.jpg",
+  "category": [
+   "salads"
+  ]
+ },
+ "9001": {
+  "title": {
+   "ru": "САЛАТ С ЛОСОСЕМ И АВОКАДО",
+   "kk": "ЛОСОСЬ МЕН АВОКАДОСЫ БАР САЛАТ",
+   "en": "SALAD WITH SALMON AND AVOCADO"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Микс зелени – 0,030\nЛосось с/с кубик – 0,050\nАвокадо кубик – 0,40\nЧерри – 0,040\nАрахис дробленный – 0,010\nСоус бальзамический – 0,050\nРедис – 0,005",
+   "kk": "Көкөніс микс – 0,030\nЛосось текше – 0,050\nАвокадо текше – 0,40\nШери – 0,040\nҰсатылған жержаңғақ – 0,010\nБальзамик соус – 0,050\nШалғам – 0,005",
+   "en": "Herb mix – 0,030\nSalmon, diced – 0,050\nAvocado, diced – 0,40\nCherry tomato – 0,040\nCrushed peanuts – 0,010\nBalsamic sauce – 0,050\nRadish – 0,005"
+  },
+  "additional_information": [],
+  "image": "9001.jpg",
+  "category": [
+   "salads"
+  ]
+ },
+ "9002": {
+  "title": {
+   "ru": "САЛАТ ХРУСТ. БАКЛАЖАНЫ",
+   "kk": "ҚЫТЫРЛАҚ БАКЛАЖАНЫ БАР САЛАТ",
+   "en": "SALAD WITH CRISPY EGGPLANT"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Баклажан – 0,150\nКрахмал – 0,080\nЧЕрри – 0,050\nМикс салата – 0,015\nСыр творож – 0,030\nСвит чили – 0,050\nЗемля из маслин – 0,001",
+   "kk": "Баклажан – 0,150\nКрахмал – 0,080\nШери – 0,050\nСалат микс – 0,015\nМай ірімшік – 0,030\nТәтті чили – 0,050\nЗәйтүн үгіндісі – 0,001",
+   "en": "Eggplant – 0,150\nStarch – 0,080\nCherry tomato – 0,050\nSalad mix – 0,015\nCream cheese – 0,030\nSweet chili – 0,050\nOlive crumble – 0,001"
+  },
+  "additional_information": [],
+  "image": "9002.jpg",
+  "category": [
+   "salads"
+  ]
+ },
+ "9003": {
+  "title": {
+   "ru": "САЛАТ ЧУККА",
+   "kk": "ЧУКА САЛАТЫ",
+   "en": "CHUKA SALAD"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Чукка водоросли – 0,150\nКунжутно–ореховый с. – 0,050\nЧерри – 0,030\nКунжут – 0,005",
+   "kk": "Чука балдыры – 0,150\nКүнжіт-жаңғақ соусы – 0,050\nШери – 0,030\nКүнжіт – 0,005",
+   "en": "Chuka seaweed – 0,150\nSesame-nut sauce – 0,050\nCherry tomato – 0,030\nSesame seeds – 0,005"
+  },
+  "additional_information": [],
+  "image": "9003.jpg",
+  "category": [
+   "salads"
+  ]
+ },
+ "9111": {
+  "title": {
+   "ru": "САНШАЙН СЕТ",
+   "kk": "САНШАЙН СЕТ",
+   "en": "SUNSHINE SET"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "ТУНЕЦ YELLOWFIN\nТЕРИЯКИ SALMON\nАМАТЕРАСУ\nФЬЮЖИН",
+   "kk": "YELLOWFIN ТУНЕЦ\nТЕРИЯКИ ЛОСОСЬ\nАМАТЕРАСУ\nФЬЮЖИН",
+   "en": "YELLOWFIN TUNA\nTERIYAKI SALMON\nAMATERASU\nFUSION"
+  },
+  "additional_information": [],
+  "image": "9111.png",
+  "category": [
+   "sets-classic"
+  ]
+ },
+ "9112": {
+  "title": {
+   "ru": "ФЬЮЖИН",
+   "kk": "ФЬЮЖИН",
+   "en": "FUSION"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори – 0.7\nРис – 130 гр\nСыр – 80 гр\nОгурец – 30 гр\nЛосось – 100 гр\nСыр Чеддер – 40 гр\nСоус угорь – 10 гр\nСоус сырный – 10 гр\nСоус Унаги – 10 гр\nСтружка нори – 2 гр",
+   "kk": "Нори – 0.7\nКүріш – 130 г\nІрімшік – 80 г\nҚияр – 30 г\nЛосось – 100 г\nЧеддер ірімшігі – 40 г\nЖыланбалық соусы – 10 г\nІрімшік соусы – 10 г\nУнаги соусы – 10 г\nНори үгіндісі – 2 г",
+   "en": "Nori – 0.7\nRice – 130 g\nCheese – 80 g\nCucumber – 30 g\nSalmon – 100 g\nCheddar cheese – 40 g\nEel sauce – 10 g\nCheese sauce – 10 g\nUnagi sauce – 10 g\nNori flakes – 2 g"
+  },
+  "additional_information": [],
+  "image": "9112.png",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "9113": {
+  "title": {
+   "ru": "АМАТЕРАСУ",
+   "kk": "АМАТЕРАСУ",
+   "en": "AMATERASU"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори – 0.7\nРис – 130 гр\nСыр – 80 гр\nЛосось – 50 гр\nМанго – 30 гр\nПищевое золото – 2 листа\nСоус угорь – 10 гр\nНити Чили – 2 гр\nСтружка нори – 2 гр",
+   "kk": "Нори – 0.7\nКүріш – 130 г\nІрімшік – 80 г\nЛосось – 50 г\nМанго – 30 г\nТағамдық алтын, 2 парақ\nЖыланбалық соусы – 10 г\nЧили жіпшелері – 2 г\nНори үгіндісі – 2 г",
+   "en": "Nori – 0.7\nRice – 130 g\nCheese – 80 g\nSalmon – 50 g\nMango – 30 g\nEdible gold, 2 sheets\nEel sauce – 10 g\nChili threads – 2 g\nNori flakes – 2 g"
+  },
+  "additional_information": [],
+  "image": "9113.png",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "9114": {
+  "title": {
+   "ru": "ТЕРИЯКИ SALMON",
+   "kk": "ТЕРИЯКИ ЛОСОСЬ",
+   "en": "TERIYAKI SALMON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори – 0,7\nРис – 130 гр\nСыр – 80 гр\nЛосось терияки – 50 гр\nОгурец – 30 гр\nКреветки тигровые – 40 гр\nВяленные томаты – 20 гр\nСвит чили – 15 гр\nКунжут – 5 гр",
+   "kk": "Нори – 0,7\nКүріш – 130 г\nІрімшік – 80 г\nТерияки лосось – 50 г\nҚияр – 30 г\nЖолбарыс асшаяндары – 40 г\nКептірілген қызанақ – 20 г\nТәтті чили – 15 г\nКүнжіт – 5 г",
+   "en": "Nori – 0,7\nRice – 130 g\nCheese – 80 g\nTeriyaki salmon – 50 g\nCucumber – 30 g\nTiger shrimp – 40 g\nSun-dried tomatoes – 20 g\nSweet chili – 15 g\nSesame seeds – 5 g"
+  },
+  "additional_information": [],
+  "image": "9114.png",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "9115": {
+  "title": {
+   "ru": "ТУНЕЦ YELLOWFIN",
+   "kk": "YELLOWFIN ТУНЕЦ",
+   "en": "YELLOWFIN TUNA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Нори – 0,7\nРис – 130 гр\nСыр – 80 гр\nТунец – 100 гр\nКреветка темпура – 50 гр\nСоус угорь – 10 гр\nНити Чили – 2 гр\nАрахис – 5 гр",
+   "kk": "Нори – 0,7\nКүріш – 130 г\nІрімшік – 80 г\nТунец – 100 г\nТемпура асшаян – 50 г\nЖыланбалық соусы – 10 г\nЧили жіпшелері – 2 г\nЖержаңғақ – 5 г",
+   "en": "Nori – 0,7\nRice – 130 g\nCheese – 80 g\nTuna – 100 g\nTempura shrimp – 50 g\nEel sauce – 10 g\nChili threads – 2 g\nPeanuts – 5 g"
+  },
+  "additional_information": [],
+  "image": "9115.png",
+  "category": [
+   "rolls-classic"
+  ]
+ },
+ "9116": {
+  "title": {
+   "ru": "ГУНКАН СЯКЕ ИКУРА",
+   "kk": "СЯКЕ ИКУРА ГУНКАН",
+   "en": "SALMON & IKURA GUNKAN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nЛосось – 30 гр\nИкра лосося – 10 гр",
+   "kk": "Күріш – 25 г\nЛосось – 30 г\nЛосось уылдырығы – 10 г",
+   "en": "Rice – 25 g\nSalmon – 30 g\nSalmon roe – 10 g"
+  },
+  "additional_information": [],
+  "image": "9116.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "0001": {
+  "title": {
+   "ru": "ГУНКАН СЯКЕ СПАЙСИ",
+   "kk": "СПАЙСИ СЯКЕ ГУНКАН",
+   "en": "SPICY SALMON GUNKAN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nЛосось спайси – 15 гр\nСвит чили – 5 гр\nИкра лосося – 2 гр",
+   "kk": "Күріш – 25 г\nСпайси лосось – 15 г\nТәтті чили – 5 г\nЛосось уылдырығы – 2 г",
+   "en": "Rice – 25 g\nSpicy salmon – 15 g\nSweet chili – 5 g\nSalmon roe – 2 g"
+  },
+  "additional_information": [],
+  "image": "0001.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "0002": {
+  "title": {
+   "ru": "ГУНКАН С УГРЕМ",
+   "kk": "ЖЫЛАНБАЛЫҚТЫ ГУНКАН",
+   "en": "EEL GUNKAN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nУгорь – 20 гр\nУнаги – 5 гр\nМасаго красная – 2 гр",
+   "kk": "Күріш – 25 г\nЖыланбалық – 20 г\nУнаги – 5 г\nҚызыл масаго – 2 г",
+   "en": "Rice – 25 g\nEel – 20 g\nUnagi – 5 g\nRed masago – 2 g"
+  },
+  "additional_information": [],
+  "image": "0002.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "0003": {
+  "title": {
+   "ru": "СУШИ С УГРЕМ",
+   "kk": "ЖЫЛАНБАЛЫҚ СУШИ",
+   "en": "EEL SUSHI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nУгорь – 25 гр\nУнаги – 5 гр\nКунжут – 2 гр",
+   "kk": "Күріш – 25 г\nЖыланбалық – 25 г\nУнаги – 5 г\nКүнжіт – 2 г",
+   "en": "Rice – 25 g\nEel – 25 g\nUnagi – 5 g\nSesame seeds – 2 g"
+  },
+  "additional_information": [],
+  "image": "0003.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "-0003": {
+  "title": {
+   "ru": "ГУНКАН С ТУНЦОМ",
+   "kk": "ТУНЕЦТІ ГУНКАН",
+   "en": "TUNA GUNKAN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nТунец – 15 гр\nСвит Чили – 5 гр\nСтружка миндаля – 2 гр",
+   "kk": "Күріш – 25 г\nТунец – 15 г\nТәтті чили – 5 г\nБадам үгіндісі – 2 г",
+   "en": "Rice – 25 g\nTuna – 15 g\nSweet chili – 5 g\nAlmond flakes – 2 g"
+  },
+  "additional_information": [],
+  "image": null,
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "0004": {
+  "title": {
+   "ru": "СУШИ С КРЕВЕТКОЙ",
+   "kk": "АСШАЯН СУШИ",
+   "en": "SHRIMP SUSHI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nКреветка – 20 гр\nСоус спайси",
+   "kk": "Күріш – 25 г\nАсшаян – 20 г\nСпайси соус",
+   "en": "Rice – 25 g\nShrimp – 20 g\nSpicy sauce"
+  },
+  "additional_information": [],
+  "image": "0004.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "0005": {
+  "title": {
+   "ru": "ГУНКАН С ЭСКОЛАРОМ",
+   "kk": "ЭСКОЛАРЛЫ ГУНКАН",
+   "en": "ESCOLAR GUNKAN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nЭсколар – 15 гр\nБальзамик – 5 гр\nСтружка миндаля",
+   "kk": "Күріш – 25 г\nЭсколар – 15 г\nБальзамик – 5 г\nБадам үгіндісі",
+   "en": "Rice – 25 g\nEscolar – 15 g\nBalsamic – 5 g\nAlmond flakes"
+  },
+  "additional_information": [],
+  "image": null,
+  "category": [
+   "gunkan_and_sushi"
+  ],
+  "deleted": true
+ },
+ "0006": {
+  "title": {
+   "ru": "СУШИ ЛОСОСЬ ГРИЛЬ",
+   "kk": "ГРИЛЬДЕГІ ЛОСОСЬ СУШИ",
+   "en": "GRILLED SALMON SUSHI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nЛосось гриль – 30 гр\nЧерная Масаго – 2 гр\nУнаги – 2 гр\nПищевое золото",
+   "kk": "Күріш – 25 г\nГрильдегі лосось – 30 г\nҚара масаго – 2 г\nУнаги – 2 г\nТағамдық алтын",
+   "en": "Rice – 25 g\nGrilled salmon – 30 g\nBlack masago – 2 g\nUnagi – 2 g\nEdible gold"
+  },
+  "additional_information": [],
+  "image": "0006.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "-0007": {
+  "title": {
+   "ru": "ГУНКАН С КРАБОМ",
+   "kk": "КРАБТЫ ГУНКАН",
+   "en": "CRAB GUNKAN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nКрабовый микс – 15 гр\nСоус спайси – 5 гр\nКрасная и зеленая Масаго по 5 гр",
+   "kk": "Күріш – 25 г\nКрабты микс – 15 г\nСпайси соус – 5 г\nҚызыл және жасыл масаго, әрқайсысы 5 г",
+   "en": "Rice – 25 g\nCrab mix – 15 g\nSpicy sauce – 5 g\nRed and green masago, 5 g each"
+  },
+  "additional_information": [],
+  "image": "-0007.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "0008": {
+  "title": {
+   "ru": "ГУНКАН С КРАБОМ",
+   "kk": "КРАБТЫ ГУНКАН",
+   "en": "CRAB GUNKAN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nКрабовый микс – 15 гр\nСоус спайси – 5 гр\nКрасная Масаго – 2 гр",
+   "kk": "Күріш – 25 г\nКрабты микс – 15 г\nСпайси соус – 5 г\nҚызыл масаго – 2 г",
+   "en": "Rice – 25 g\nCrab mix – 15 g\nSpicy sauce – 5 g\nRed masago – 2 g"
+  },
+  "additional_information": [],
+  "image": "0008.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "0009": {
+  "title": {
+   "ru": "СУШИ ЛОСОСЬ",
+   "kk": "ЛОСОСЬ СУШИ",
+   "en": "SALMON SUSHI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nЛосось – 30 гр\nСоус спайси – 2 гр",
+   "kk": "Күріш – 25 г\nЛосось – 30 г\nСпайси соус – 2 г",
+   "en": "Rice – 25 g\nSalmon – 30 g\nSpicy sauce – 2 g"
+  },
+  "additional_information": [],
+  "image": "0009.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "0010": {
+  "title": {
+   "ru": "СУШИ С ТУНЦОМ",
+   "kk": "ТУНЕЦ СУШИ",
+   "en": "TUNA SUSHI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис – 25 гр\nТунец – 30 гр\nВасаби – 2 гр\nЧерная Масаго – 2 гр",
+   "kk": "Күріш – 25 г\nТунец – 30 г\nВасаби – 2 г\nҚара масаго – 2 г",
+   "en": "Rice – 25 g\nTuna – 30 g\nWasabi – 2 g\nBlack masago – 2 g"
+  },
+  "additional_information": [],
+  "image": "0010.jpg",
+  "category": [
+   "gunkan_and_sushi"
+  ]
+ },
+ "8282": {
+  "title": {
+   "ru": "КРАКЕН",
+   "kk": "КРАКЕН",
+   "en": "KRAKEN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Sunny roll 1 шт.\nКриспи Фиш 1 шт.\nЯки эби 1 шт.\nСуши лосось чиз 2 шт.\nСуши тунец чиз 2 шт.\nСуши эби темпура 2 шт.\nГункан сяке икура 2 шт.",
+   "kk": "Sunny roll 1 дана\nКриспи балық 1 дана\nЯки эби 1 дана\nІрімшікті лососьты суши 2 дана\nІрімшікті тунецті суши 2 дана\nЭби темпура суши 2 дана\nСяке икура гункан 2 дана",
+   "en": "Sunny roll 1 pcs\nCrispy fish 1 pcs\nYaki ebi 1 pcs\nSalmon cheese sushi 2 pcs\nTuna cheese sushi 2 pcs\nEbi tempura sushi 2 pcs\nSalmon & ikura gunkan 2 pcs"
+  },
+  "additional_information": [],
+  "image": "8282.jpg",
+  "category": [
+   "sets-classic"
+  ]
+ },
+ "5656": {
+  "title": {
+   "ru": "СЕТ НАРЦИСС ВАЛЕРА",
+   "kk": "НАРЦИСС ВАЛЕРА СЕТ",
+   "en": "NARCISSUS VALERA SET"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Ролл в манго\nРолл с тунцом в золоте\nРолл в красной масаге\nТар тар из тунца и лосося в рисовых чипсах\nФруктово-ягодный микс",
+   "kk": "Мангодағы ролл\nАлтындағы тунецті ролл\nҚызыл масагодағы ролл\nКүріш чипсіндегі тунец пен лосось тартары\nЖеміс-жидек микс",
+   "en": "Roll in mango\nTuna roll in gold\nRoll in red masago\nTuna and salmon tartare on rice chips\nFruit & berry mix"
+  },
+  "additional_information": [],
+  "image": "5656.jpg",
+  "category": [
+   "sets-classic"
+  ],
+  "createdAt": "2025-10-04"
+ },
+ "3345": {
+  "title": {
+   "ru": "БУРГЕР С РВАНОЙ ГОВЯДИНОЙ",
+   "kk": "ТАРТЫЛҒАН СИЫР ЕТІМЕН БУРГЕР",
+   "en": "PULLED BEEF BURGER"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Булочка\nСоус Бургер новый\nАйсберг\nПомидоры\nРванина\nПикули\nЛук красный\nЧеддер\nКартофель пай\nМикс салата",
+   "kk": "Бөлке\nЖаңа бургер соусы\nАйсберг салаты\nҚызанақтар\nТартылған ет\nПикули\nҚызыл пияз\nЧеддер\nКартоп пай\nСалат микс",
+   "en": "Bun\nNew burger sauce\nIceberg lettuce\nTomatoes\nPulled meat\nPickles\nRed onion\nCheddar\nPotato pie\nSalad mix"
+  },
+  "additional_information": [],
+  "image": "3345.png",
+  "category": [
+   "burger"
+  ],
+  "createdAt": "2025-12-03"
+ },
+ "3346": {
+  "title": {
+   "ru": "ДАБЛ ЧИЗБУРГЕР",
+   "kk": "ДАБЛ ЧИЗБУРГЕР",
+   "en": "DOUBLE CHEESEBURGER"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Барбекю соус\nКрасный лук\nЧеддер 2 шт.\nКотлета\nЧесночный соус\nСалат айсберг\nБулочка",
+   "kk": "Барбекю соусы\nҚызыл пияз\nЧеддер 2 дана\nКотлет\nСарымсақ соусы\nАйсберг салаты\nБөлке",
+   "en": "Barbecue sauce\nRed onion\nCheddar 2 pcs\nPatty\nGarlic sauce\nIceberg lettuce\nBun"
+  },
+  "additional_information": [],
+  "image": "3346.png",
+  "category": [
+   "burger"
+  ],
+  "createdAt": "2025-12-03"
+ },
+ "3344": {
+  "title": {
+   "ru": "БУРГЕР С ВИШНЕВЫМ СОУСОМ",
+   "kk": "ШИЕ СОУСЫМЕН БУРГЕР",
+   "en": "BURGER WITH CHERRY SAUCE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Булочка\nСоус Бургер новый\nАйсберг\nРванина\nПомидор\nПикули\nМикс салата\nЧеддер\nСоус вишня",
+   "kk": "Бөлке\nЖаңа бургер соусы\nАйсберг салаты\nТартылған ет\nҚызанақ\nПикули\nСалат микс\nЧеддер\nШие соусы",
+   "en": "Bun\nNew burger sauce\nIceberg lettuce\nPulled meat\nTomato\nPickles\nSalad mix\nCheddar\nCherry sauce"
+  },
+  "additional_information": [],
+  "image": "3344.png",
+  "category": [
+   "burger"
+  ],
+  "createdAt": "2025-12-03"
+ },
+ "3347": {
+  "title": {
+   "ru": "МАРГАРИТА КЛАССИЧЕСКАЯ",
+   "kk": "КЛАССИКАЛЫҚ МАРГАРИТА",
+   "en": "CLASSIC MARGHERITA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nСоус красный\nСыр моцарелла 2 шт.",
+   "kk": "Қамыр\nҚызыл соус\nМоцарелла ірімшігі 2 дана",
+   "en": "Dough\nRed sauce\nMozzarella cheese 2 pcs"
+  },
+  "additional_information": [],
+  "image": "3347.png",
+  "category": [
+   "pizza"
+  ],
+  "createdAt": "2025-12-03"
+ },
+ "3350": {
+  "title": {
+   "ru": "ПИЦЦА С ОХОТНИЧЬИМИ КОЛБАСКАМИ",
+   "kk": "АҢШЫ ШҰЖЫҒЫМЕН ПИЦЦА",
+   "en": "PIZZA WITH HUNTER SAUSAGES"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Тесто\nСоус красный\nСыр моцарелла\nКарбонат\nКолбаски охотничьи\nББК соус",
+   "kk": "Қамыр\nҚызыл соус\nМоцарелла ірімшігі\nКарбонат\nАңшы шұжықтары\nBBQ соусы",
+   "en": "Dough\nRed sauce\nMozzarella cheese\nSmoked pork loin\nHunter sausages\nBBQ sauce"
+  },
+  "additional_information": [],
+  "image": "3350.png",
+  "category": [
+   "pizza"
+  ],
+  "createdAt": "2025-12-03"
+ },
+ "3348": {
+  "title": {
+   "ru": "ФРИ С КОПЧЕННОЙ КУРОЙ",
+   "kk": "ЫСТАЛҒАН ТАУЫҚПЕН ФРИ",
+   "en": "FRIES WITH SMOKED CHICKEN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Фри\nКопченная кура\nЧесночный соус",
+   "kk": "Фри\nЫсталған тауық\nСарымсақ соусы",
+   "en": "Fries\nSmoked chicken\nGarlic sauce"
+  },
+  "additional_information": [],
+  "image": "3348.png",
+  "category": [
+   "snacks"
+  ],
+  "createdAt": "2025-12-03"
+ },
+ "3349": {
+  "title": {
+   "ru": "ФРИ С ОХОТ КОЛБАСКОЙ",
+   "kk": "АҢШЫ ШҰЖЫҒЫМЕН ФРИ",
+   "en": "FRIES WITH HUNTER SAUSAGE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Фри\nОхотничьи колбаски колечко\nСоус bbq",
+   "kk": "Фри\nАңшы шұжығы (сақина)\nBBQ соусы",
+   "en": "Fries\nHunter sausage ring\nBBQ sauce"
+  },
+  "additional_information": [],
+  "image": "3349.png",
+  "category": [
+   "snacks"
+  ],
+  "createdAt": "2025-12-03"
+ },
+ "3351": {
+  "title": {
+   "ru": "САЛАТ С ХРУСТЯЩИМИ ШАМПИНЬОНАМИ",
+   "kk": "ҚЫТЫРЛАҚ ШАМПИНЬОНЫ БАР САЛАТ",
+   "en": "SALAD WITH CRISPY MUSHROOMS"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Шампиньоны\nСоус устричный\nКрахмал\nЧерри\nСвит Чили\nМикс салата\nКинза",
+   "kk": "Шампиньон\nУстрица соусы\nКрахмал\nШери\nТәтті чили\nСалат микс\nКинза",
+   "en": "Mushrooms\nOyster sauce\nStarch\nCherry tomato\nSweet chili\nSalad mix\nCilantro"
+  },
+  "additional_information": [],
+  "image": "3351.png",
+  "category": [
+   "salads"
+  ],
+  "createdAt": "2025-12-03"
+ },
+ "3352": {
+  "title": {
+   "ru": "САЛАТ С АВОКАДО КИНОА",
+   "kk": "АВОКАДО МЕН КИНОАСЫ БАР САЛАТ",
+   "en": "SALAD WITH AVOCADO AND QUINOA"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Авокадо\nКинула\nМикс салата либо шпинат\nЗаправка цитронет\nЧерри\nАпельсин\nКреветки",
+   "kk": "Авокадо\nКинза\nСалат микс немесе шпинат\nЦитронет құймасы\nШери\nАпельсин\nАсшаяндар",
+   "en": "Avocado\nCilantro\nSalad mix or spinach\nCitronette dressing\nCherry tomato\nOrange\nShrimp"
+  },
+  "additional_information": [],
+  "image": "3352.png",
+  "category": [
+   "salads"
+  ],
+  "createdAt": "2025-12-03"
+ },
+ "5511": {
+  "title": {
+   "ru": "КОМБО KIDS 1",
+   "kk": "KIDS КОМБО 1",
+   "en": "KIDS COMBO 1"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Пицца курица и грибы 1\nФри 1 п\nНаггетсы 1п\nРолл мини с огурцом 1\nСоус сырный 1\nCoyc bbq 1\nМорс 0,5 смородина 1\nМорс 0,5 клюква 1",
+   "kk": "Тауық еті мен саңырауқұлақты пицца 1\nФри 1 дана\nНаггетстер 1 дана\nҚиярлы мини ролл 1\nІрімшік соусы 1\nBBQ соусы 1\nҚарақат морсы 0,5 л 1\nМүкжидек морсы 0,5 л 1",
+   "en": "Chicken & mushroom pizza 1\nFries 1 pcs\nNuggets 1 pcs\nMini cucumber roll 1\nCheese sauce 1\nBBQ sauce 1\nBlackcurrant fruit drink 0.5 l 1\nCranberry fruit drink 0.5 l 1"
+  },
+  "additional_information": [],
+  "image": "5511.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2025-12-19"
+ },
+ "5512": {
+  "title": {
+   "ru": "КОМБО KIDS 2",
+   "kk": "KIDS КОМБО 2",
+   "en": "KIDS COMBO 2"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Пицца Маргарита классическая 1\nФри 1\nНаггетсы 1\nРолл мини с огурцом 1\nСоус сырный 1\nCoyc bbq 1\nМорс клюква 0,5 -1\nМорс смородина 0,5-1",
+   "kk": "Классикалық Маргарита пиццасы 1\nФри 1\nНаггетстер 1\nҚиярлы мини ролл 1\nІрімшік соусы 1\nBBQ соусы 1\nМүкжидек морсы 0,5 л – 1\nҚарақат морсы 0,5 л – 1",
+   "en": "Classic Margherita pizza 1\nFries 1\nNuggets 1\nMini cucumber roll 1\nCheese sauce 1\nBBQ sauce 1\nCranberry fruit drink 0.5 l – 1\nBlackcurrant fruit drink 0.5 l – 1"
+  },
+  "additional_information": [],
+  "image": "5512.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2025-12-19"
+ },
+ "5513": {
+  "title": {
+   "ru": "КОМБО БПК",
+   "kk": "БПК КОМБО",
+   "en": "BPK COMBO"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Чикен бургер 2 шт\nКрылья Фрайд 1 п\nПицца курица и грибы 1\nКола 0,5 л-1",
+   "kk": "Чикен бургер 2 дана\nҚуырылған қанаттар 1 дана\nТауық еті мен саңырауқұлақты пицца 1\nКола, 0,5 л – 1",
+   "en": "Chicken burger 2 pcs\nFried wings 1 pcs\nChicken & mushroom pizza 1\nCola, 0.5 l – 1"
+  },
+  "additional_information": [],
+  "image": "5513.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2025-12-19"
+ },
+ "5514": {
+  "title": {
+   "ru": "ИМПЕРАТОР",
+   "kk": "ИМПЕРАТОР",
+   "en": "EMPEROR"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Чикен Бургер 2 шт\nПицца Маргарита классическая 1\nПицца курица и грибы 1\nНаггетсы 1\nФри 1\nCoyc bbq 1\nСоус сырный 1\nМорс клюква 0,5\nМорс смородина 0,5\nМини с огурцом ролл 1\nРолл тори темпура 1\nЗапеченный сяке 1\nФила Лайт 1\nТуна спайси 1\nРолл икура 1\nЭти кранч 1\nЧиз рок 1",
+   "kk": "Чикен бургер 2 дана\nКлассикалық Маргарита пиццасы 1\nТауық еті мен саңырауқұлақты пицца 1\nНаггетстер 1\nФри 1\nBBQ соусы 1\nІрімшік соусы 1\nМүкжидек морсы 0,5 л\nҚарақат морсы 0,5 л\nҚиярлы мини ролл 1\nТори темпура ролл 1\nПісірілген сяке 1\nФила Лайт 1\nСпайси тунец 1\nИкура ролл 1\nЭти кранч 1\nЧиз рок 1",
+   "en": "Chicken Burger 2 pcs\nClassic Margherita pizza 1\nChicken & mushroom pizza 1\nNuggets 1\nFries 1\nBBQ sauce 1\nCheese sauce 1\nCranberry fruit drink 0.5 l\nBlackcurrant fruit drink 0.5 l\nMini cucumber roll 1\nTori tempura roll 1\nBaked salmon 1\nPhila Light 1\nSpicy tuna 1\nIkura roll 1\nEbi crunch 1\nCheese rock 1"
+  },
+  "additional_information": [],
+  "image": "5514.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2025-12-19"
+ },
+ "5515": {
+  "title": {
+   "ru": "VIP",
+   "kk": "VIP",
+   "en": "VIP"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Чикен Бургер 2 шт\nПицца маргарита классическая 1\nКола 0,5 л\nТори темпура ролл 1\nМини терияки 1\nФила Лайт 1",
+   "kk": "Чикен бургер 2 дана\nКлассикалық Маргарита пиццасы 1\nКола, 0,5 л\nТори темпура ролл 1\nМини терияки 1\nФила Лайт 1",
+   "en": "Chicken Burger 2 pcs\nClassic Margherita pizza 1\nCola, 0.5 l\nTori tempura roll 1\nMini teriyaki 1\nPhila Light 1"
+  },
+  "additional_information": [],
+  "image": "5515.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2025-12-19"
+ },
+ "5516": {
+  "title": {
+   "ru": "КОМБО ДЛЯ ДРУЗЕЙ",
+   "kk": "ДОСТАРҒА АРНАЛҒАН КОМБО",
+   "en": "COMBO FOR FRIENDS"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Пицца курица и грибы 1\nКрылья фрайд 1\nМорс смородина 0,5\nРолл тори темпура 1\nРолл темпура терияки 1\nФила Лайт 1",
+   "kk": "Тауық еті мен саңырауқұлақты пицца 1\nҚуырылған қанаттар 1\nҚарақат морсы 0,5 л\nТори темпура ролл 1\nТемпура терияки ролл 1\nФила Лайт 1",
+   "en": "Chicken & mushroom pizza 1\nFried wings 1\nBlackcurrant fruit drink 0.5 l\nTori tempura roll 1\nTempura teriyaki roll 1\nPhila Light 1"
+  },
+  "additional_information": [],
+  "image": "5516.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2025-12-19"
+ },
+ "5517": {
+  "title": {
+   "ru": "СЕТ ТОКИО",
+   "kk": "ТОКИО СЕТ",
+   "en": "TOKYO SET"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Ролл икура 1\nРолл шахматы 1\nЗапеченный сяке 1\nТуна спайси 1\nХот сяке 1\nЭти кранч 1",
+   "kk": "Икура ролл 1\nШахмат ролл 1\nПісірілген сяке 1\nСпайси тунец 1\nХот сяке 1\nЭти кранч 1",
+   "en": "Ikura roll 1\nChessboard roll 1\nBaked salmon 1\nSpicy tuna 1\nHot salmon roll 1\nEbi crunch 1"
+  },
+  "additional_information": [],
+  "image": "5517.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2025-12-19"
+ },
+ "5518": {
+  "title": {
+   "ru": "ЦУНАМИ",
+   "kk": "ЦУНАМИ",
+   "en": "TSUNAMI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Чикен бургеры 2\nКрылья фрайд 1\nКола 0,5 1\nМини с огурцом 1\nФила Лайт 1\nМини терияки 1\nТуна спайсе 1",
+   "kk": "Чикен бургерлер 2\nҚуырылған қанаттар 1\nКола 0,5 л 1\nҚиярлы мини 1\nФила Лайт 1\nМини терияки 1\nСпайси тунец 1",
+   "en": "Chicken burgers 2\nFried wings 1\nCola 0.5 l 1\nMini with cucumber 1\nPhila Light 1\nMini teriyaki 1\nSpicy tuna 1"
+  },
+  "additional_information": [],
+  "image": "5518.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2025-12-19"
+ },
+ "5519": {
+  "title": {
+   "ru": "САМУРАЙ",
+   "kk": "САМУРАЙ",
+   "en": "SAMURAI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Чикен Бургер 1\nФри с Охотничьи 1\nЗапеченный сяке 1\nЧиз рок 1\nXот cакe 1",
+   "kk": "Чикен бургер 1\nАңшы шұжығымен фри 1\nПісірілген сяке 1\nЧиз рок 1\nХот сяке 1",
+   "en": "Chicken Burger 1\nFries with hunter sausages 1\nBaked salmon 1\nCheese rock 1\nHot salmon roll 1"
+  },
+  "additional_information": [],
+  "image": "5519.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2025-12-19"
+ },
+ "7111": {
+  "title": {
+   "ru": "ДРАКОН",
+   "kk": "ДРАКОН",
+   "en": "DRAGON"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "1. Етеки ролл\nРис\nНори\nСыр творожный\nОгурец\nЛосось\nИкра имитация\nЗолото\n\n2. Магуро ролл\nРис\nНори\nСыр творожный\nАпельсин\nТунец\nКлубника\nМасаго зеленая\nКокосовая стружка\n\n3. Men's roll\nРис\nНори\nСыр творожный\nОмлет\nАйсберг\nБекон ленточный\nШапка из мидий\nСоус угорь\n\n4. Мексиканский ролл\nТортилья\nСыр творожный\nКур копченная\nПомидор\nЛук зеленый\nСоус чесночный\nКляр\nПанировка",
+   "kk": "1. Етеки ролл\nКүріш\nНори\nМай ірімшік\nҚияр\nЛосось\nИмитацияланған уылдырық\nАлтын\n\n2. Магуро ролл\nКүріш\nНори\nМай ірімшік\nАпельсин\nТунец\nҚұлпынай\nЖасыл масаго\nКокос үгіндісі\n\n3. Men's roll\nКүріш\nНори\nМай ірімшік\nОмлет\nАйсберг салаты\nЖолақ бекон\nМидия қалпағы\nЖыланбалық соусы\n\n4. Мексикалық ролл\nТортилья\nМай ірімшік\nЫсталған тауық\nҚызанақ\nЖасыл пияз\nСарымсақ соусы\nҚамыр (кляр)\nПанировка",
+   "en": "1. Eteki roll\nRice\nNori\nCream cheese\nCucumber\nSalmon\nImitation caviar\nGold leaf\n\n2. Maguro roll\nRice\nNori\nCream cheese\nOrange\nTuna\nStrawberry\nGreen masago\nShredded coconut\n\n3. Men's roll\nRice\nNori\nCream cheese\nOmelet\nIceberg lettuce\nBacon strips\nMussel topping\nEel sauce\n\n4. Mexican roll\nTortilla\nCream cheese\nSmoked chicken\nTomato\nGreen onion\nGarlic sauce\nBatter\nBreading"
+  },
+  "additional_information": [],
+  "image": "7111.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2026-01-09"
+ },
+ "7112": {
+  "title": {
+   "ru": "СЕТ ФУЮ",
+   "kk": "ФУЮ СЕТ",
+   "en": "FUYU SET"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "1. Етеки ролл\nРис\nНори\nСыр творожный\nОгурец\nЛосось\nИкра имитация\nЗолото\n\n2. ШОК МАКИ\nРис\nНори\nСыр творожный\nАйсберг\nЛук зеленый\nЛосось\nХот соус\nКляр\nПанировка\n\n3. Атлантик ролл\nРис\nНори\nСыр творожный\nОмлет\nОгурец\nМассаго красная\nШапка из мидий\nСоус сырный\n\n4. Шримп ролл\nТортилья\nСыр творожный\nКреветка Темпура\nОгурец\nТоматы вяленые\nСвит Чили",
+   "kk": "1. Етеки ролл\nКүріш\nНори\nМай ірімшік\nҚияр\nЛосось\nИмитацияланған уылдырық\nАлтын\n\n2. ШОК МАКИ\nКүріш\nНори\nМай ірімшік\nАйсберг салаты\nЖасыл пияз\nЛосось\nХот соус\nҚамыр (кляр)\nПанировка\n\n3. Атлантик ролл\nКүріш\nНори\nМай ірімшік\nОмлет\nҚияр\nҚызыл масаго\nМидия қалпағы\nІрімшік соусы\n\n4. Шримп ролл\nТортилья\nМай ірімшік\nТемпура асшаян\nҚияр\nКептірілген қызанақ\nТәтті чили",
+   "en": "1. Eteki roll\nRice\nNori\nCream cheese\nCucumber\nSalmon\nImitation caviar\nGold leaf\n\n2. SHOCK MAKI\nRice\nNori\nCream cheese\nIceberg lettuce\nGreen onion\nSalmon\nHot sauce\nBatter\nBreading\n\n3. Atlantic roll\nRice\nNori\nCream cheese\nOmelet\nCucumber\nRed masago\nMussel topping\nCheese sauce\n\n4. Shrimp roll\nTortilla\nCream cheese\nTempura shrimp\nCucumber\nSun-dried tomatoes\nSweet chili"
+  },
+  "additional_information": [],
+  "image": "7112.png",
+  "category": [
+   "sets-lite"
+  ],
+  "createdAt": "2026-01-09"
+ },
+ "1234": {
+  "title": {
+   "ru": "СЕТ МИЮКИ",
+   "kk": "МИЮКИ СЕТ",
+   "en": "MIYUKI SET"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "1. Ролл тартар в кунжуте\nРис\nСыр творожный\nТартар\nКунжут\nОгурец\nСоус Hot\n\n2. Ролл Темпура в тортилье с креветкой Темпура\nЛепешка\nСыр творожный\nКреветка Темпура\nОгурец\nМасаго красная\nВяленые томаты\nСвит Чили \n\n3. Ролл в тортилье запеченный\nЛепешка\nСыр творожный\nОгурец \nКурица копченная\nмидии\nЧеддер\nСоус сырный\nСоус унаги\nЛук фри\n\n4. Ролл из черного риса с клубникой\nРис черный\nСыр творожный\nАпельсин\nТунец\nКлубника\nКокосовая стружка",
+   "kk": "1. Күнжіттегі тартар ролл\nКүріш\nМай ірімшік\nТартар\nКүнжіт\nҚияр\nХот соус\n\n2. Тортильядағы темпура асшаяны бар темпура ролл\nТортилья\nМай ірімшік\nТемпура асшаян\nҚияр\nҚызыл масаго\nКептірілген қызанақ\nТәтті чили\n\n3. Тортильядағы пісірілген ролл\nТортилья\nМай ірімшік\nҚияр\nЫсталған тауық\nмидия\nЧеддер\nІрімшік соусы\nУнаги соусы\nҚуырылған пияз\n\n4. Құлпынайлы қара күріш ролл\nҚара күріш\nМай ірімшік\nАпельсин\nТунец\nҚұлпынай\nКокос үгіндісі",
+   "en": "1. Tartare roll in sesame\nRice\nCream cheese\nTartare\nSesame seeds\nCucumber\nHot sauce\n\n2. Tempura roll in tortilla with tempura shrimp\nTortilla\nCream cheese\nTempura shrimp\nCucumber\nRed masago\nSun-dried tomatoes\nSweet chili\n\n3. Baked roll in tortilla\nTortilla\nCream cheese\nCucumber\nSmoked chicken\nmussels\nCheddar\nCheese sauce\nUnagi sauce\nFried onion\n\n4. Black rice roll with strawberry\nBlack rice\nCream cheese\nOrange\nTuna\nStrawberry\nShredded coconut"
+  },
+  "additional_information": [],
+  "image": "1234.png",
+  "category": [
+   "sets-classic"
+  ],
+  "createdAt": "2026-01-29"
+ },
+ "1235": {
+  "title": {
+   "ru": "АЮМИ",
+   "kk": "АЮМИ",
+   "en": "AYUMI"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "1. Ролл из красного риса\nРис красный\nСыр творожный\nТунец\nМанго рубленный\nСоус угорь\nСтружка нори\n\n2. Ролл из черного риса с креветкой\nРис черный\nСыр творожный\nАнанас консервированный\nКреветка тигровая отварная\nИкра имитация\n\n3. Ролл Темпура в тортилье\nЛепешка\nСыр творожный\nОгурец\nАйсберг\nЛосось\nСоус Hot\n\n4. Ролл запеченный в тортилье\nЛепешка\nСыр творожный\nОгурец\nОмлет\nСоус для запекания из лосося\nСоус угорь",
+   "kk": "1. Қызыл күрішті ролл\nҚызыл күріш\nМай ірімшік\nТунец\nТуралған манго\nЖыланбалық соусы\nНори үгіндісі\n\n2. Асшаянды қара күріш ролл\nҚара күріш\nМай ірімшік\nКонсервіленген ананас\nҚайнатылған жолбарыс асшаяны\nИмитацияланған уылдырық\n\n3. Тортильядағы темпура ролл\nТортилья\nМай ірімшік\nҚияр\nАйсберг салаты\nЛосось\nХот соус\n\n4. Тортильядағы пісірілген ролл\nТортилья\nМай ірімшік\nҚияр\nОмлет\nЛосось пісіру соусы\nЖыланбалық соусы",
+   "en": "1. Red rice roll\nRed rice\nCream cheese\nTuna\nChopped mango\nEel sauce\nNori flakes\n\n2. Black rice roll with shrimp\nBlack rice\nCream cheese\nCanned pineapple\nBoiled tiger shrimp\nImitation caviar\n\n3. Tempura roll in tortilla\nTortilla\nCream cheese\nCucumber\nIceberg lettuce\nSalmon\nHot sauce\n\n4. Baked roll in tortilla\nTortilla\nCream cheese\nCucumber\nOmelet\nSalmon baking sauce\nEel sauce"
+  },
+  "additional_information": [],
+  "image": "1235.png",
+  "category": [
+   "sets-classic"
+  ],
+  "createdAt": "2026-01-29"
+ },
+ "7878": {
+  "title": {
+   "ru": "БАНАНОВЫЙ ЧИЗ РОЛЛ",
+   "kk": "БАНАН ІРІМШІК РОЛЛЫ",
+   "en": "BANANA CHEESE ROLL"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Сыр творожный\nШоколад белый\nКлубника\nБанан\nАпельсин\nЯгода\nТопинг\nАрахис\nСуб. малина\nМята",
+   "kk": "Май ірімшік\nАқ шоколад\nҚұлпынай\nБанан\nАпельсин\nЖидек\nТоппинг\nЖержаңғақ\nТаңқурай\nЖалбыз",
+   "en": "Cream cheese\nWhite chocolate\nStrawberry\nBanana\nOrange\nBerry\nTopping\nPeanuts\nRaspberry\nMint"
+  },
+  "additional_information": [],
+  "image": "7878.jpg",
+  "category": [
+   "desserts"
+  ],
+  "createdAt": "2026-04-25"
+ },
+ "7879": {
+  "title": {
+   "ru": "КЛУБНИЧНЫЙ ЧИЗ РОЛЛ",
+   "kk": "ҚҰЛПЫНАЙ ІРІМШІК РОЛЛЫ",
+   "en": "STRAWBERRY CHEESE ROLL"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Сыр творожный\nШоколад белый\nКлубника\nМанго\nБанан\nМята\nМиндаль\nТоппинг",
+   "kk": "Май ірімшік\nАқ шоколад\nҚұлпынай\nМанго\nБанан\nЖалбыз\nБадам\nТоппинг",
+   "en": "Cream cheese\nWhite chocolate\nStrawberry\nMango\nBanana\nMint\nAlmond\nTopping"
+  },
+  "additional_information": [],
+  "image": "7879.jpg",
+  "category": [
+   "desserts"
+  ],
+  "createdAt": "2026-04-25"
+ },
+ "3567": {
+  "title": {
+   "ru": "МацуЭбиМаки",
+   "kk": "МацуЭбиМаки",
+   "en": "MatsuEbiMaki"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Рис\nСыр творожный\nКреветка темпера\nЛосось\nНори\nЧукка\nЧерри\nОреховый соус",
+   "kk": "Күріш\nМай ірімшік\nТемпура асшаян\nЛосось\nНори\nЧука\nШери\nЖаңғақ соусы",
+   "en": "Rice\nCream cheese\nTempura shrimp\nSalmon\nNori\nChuka seaweed\nCherry tomato\nNut sauce"
+  },
+  "additional_information": [],
+  "image": "3567.jpg",
+  "category": [
+   "rolls-classic"
+  ],
+  "createdAt": "2026-05-04"
+ },
+ "4141": {
+  "title": {
+   "ru": "Fuse tea 0.5 л",
+   "kk": "Fuze Tea 0.5 л",
+   "en": "Fuze Tea 0.5 l"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Фьюс ти, Фьюзти 500 мл",
+   "kk": "Fuze Tea, 500 мл",
+   "en": "Fuze Tea, 500 ml"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 л",
+     "kk": "0.5 л",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4141.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4142": {
+  "title": {
+   "ru": "PIKO 1Л. ПЛАСТИК",
+   "kk": "PIKO 1 Л. ПЛАСТИК",
+   "en": "PIKO 1 L. PLASTIC BOTTLE"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Пико",
+   "kk": "Пико",
+   "en": "Piko"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "1 л",
+     "kk": "1 л",
+     "en": "1 l"
+    }
+   }
+  ],
+  "image": "4142.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4143": {
+  "title": {
+   "ru": "Cola zero 0.5",
+   "kk": "Кола Зеро 0.5 л",
+   "en": "Cola Zero 0.5 l"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Coca-Cola Zero, Кола без сахара 500 мл",
+   "kk": "Coca-Cola Zero, қантсыз кола, 500 мл",
+   "en": "Coca-Cola Zero, sugar-free cola, 500 ml"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 л",
+     "kk": "0.5 л",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4143.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4144": {
+  "title": {
+   "ru": "Piko с трубочкой 200 мл",
+   "kk": "Түтігі бар Пико, 200 мл",
+   "en": "Piko with straw, 200 ml"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Пико",
+   "kk": "Пико",
+   "en": "Piko"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.2 л",
+     "kk": "0.2 л",
+     "en": "0.2 l"
+    }
+   }
+  ],
+  "image": "4144.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4145": {
+  "title": {
+   "ru": "Спрайт 0.5 л",
+   "kk": "Спрайт 0.5 л",
+   "en": "Sprite 0.5 l"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Sprite 500 мл",
+   "kk": "Sprite, 500 мл",
+   "en": "Sprite, 500 ml"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 л",
+     "kk": "0.5 л",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4145.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4146": {
+  "title": {
+   "ru": "Фанта 0.5 л",
+   "kk": "Фанта 0.5 л",
+   "en": "Fanta 0.5 l"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Fanta 500 мл",
+   "kk": "Fanta, 500 мл",
+   "en": "Fanta, 500 ml"
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 л",
+     "kk": "0.5 л",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4146.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "4147": {
+  "title": {
+   "ru": "Морс черная смородина 0.5 л",
+   "kk": "Қарақат морсы 0.5 л",
+   "en": "Blackcurrant fruit drink 0.5 l"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [
+   {
+    "title": {
+     "ru": "Объем",
+     "kk": "Көлемі",
+     "en": "Volume"
+    },
+    "value": {
+     "ru": "0.5 л",
+     "kk": "0.5 л",
+     "en": "0.5 l"
+    }
+   }
+  ],
+  "image": "4147.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "0912": {
+  "title": {
+   "ru": "Черная КОРОЛЕВА",
+   "kk": "Қара патшайым",
+   "en": "Black QUEEN"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "Калифорния с лососем 8 шт.\nРубленный тунец с сыром 8 шт.\nЗапеченный ролл с тунцом в черной масаге 8 шт. (соус из креветки)\nЗапеченный ролл с тунцом в кокосовой стружке 8 шт. (соус из креветки)",
+   "kk": "Лососьты Калифорния 8 дана\nІрімшікті туралған тунец 8 дана\nҚара масагодағы пісірілген тунецті ролл, 8 дана (асшаян соусы)\nКокос үгіндісіндегі пісірілген тунецті ролл, 8 дана (асшаян соусы)",
+   "en": "California with salmon 8 pcs\nChopped tuna with cheese 8 pcs\nBaked tuna roll in black masago, 8 pcs (shrimp sauce)\nBaked tuna roll in coconut flakes, 8 pcs (shrimp sauce)"
+  },
+  "additional_information": [],
+  "image": "0912.jpg",
+  "category": [
+   "sets-mix"
+  ],
+  "createdAt": "2026-06-15"
+ },
+ "987754": {
+  "title": {
+   "ru": "FLASH в ассортименте",
+   "kk": "FLASH әртүрлі",
+   "en": "FLASH assorted"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [],
+  "image": "987754.jpg",
+  "category": [
+   "drinks"
+  ]
+ },
+ "8905": {
+  "title": {
+   "ru": "Сет Островская",
+   "kk": "Островская сеті",
+   "en": "Ostrovskaya Set"
+  },
+  "short_description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "description": {
+   "ru": "",
+   "kk": "",
+   "en": ""
+  },
+  "additional_information": [],
+  "image": "8905.jpg",
+  "category": [
+   "sets-mix"
+  ],
+  "createdAt": "2026-08-26"
+ }
 }
 </script>
   <script type="application/json" id="embedded-categories">{
 	"//": {
-		"title": "Название категории",
+		"title": { "ru": "Название категории на трёх языках: {ru}", "kk": "Название категории на трёх языках: {kk}", "en": "Название категории на трёх языках: {en}" },
 		"categories": {
 			"//-под_категория": {
-				"title": "Название подкатегории формат categories //: (название_категории-название_подкатегории)"
+				"title": { "ru": "Название подкатегории формат categories //: (название_категории-название_подкатегории)", "kk": "Название подкатегории формат categories //: (название_категории-название_подкатегории)", "en": "Название подкатегории формат categories //: (название_категории-название_подкатегории)" }
 			}
 		}
 	},
 	"new": {
-		"title": "Новинки"
+		"title": { "ru": "Новинки", "kk": "Жаңалықтар", "en": "New" }
 	},
 	"rolls": {
-		"title": "Роллы",
+		"title": { "ru": "Роллы", "kk": "Роллдар", "en": "Rolls" },
 		"categories": {
 			"rolls-classic": {
-				"title": "Роллы классика"
+				"title": { "ru": "Роллы классика", "kk": "Классикалық роллдар", "en": "Classic rolls" }
 			},
 			"rolls-tempura": {
-				"title": "Роллы темпура"
+				"title": { "ru": "Роллы темпура", "kk": "Темпура роллдар", "en": "Tempura rolls" }
 			},
 			"rolls-baked": {
-				"title": "Роллы запечённые"
+				"title": { "ru": "Роллы запечённые", "kk": "Пісірілген роллдар", "en": "Baked rolls" }
 			},
 			"rolls-mini": {
-				"title": "Роллы мини"
+				"title": { "ru": "Роллы мини", "kk": "Мини роллдар", "en": "Mini rolls" }
 			}
 		}
 	},
 	"sets": {
-		"title": "Сеты",
+		"title": { "ru": "Сеты", "kk": "Сеттер", "en": "Sets" },
 		"categories": {
 			"sets-classic": {
-				"title": "Классические сеты"
+				"title": { "ru": "Классические сеты", "kk": "Классикалық сеттер", "en": "Classic sets" }
 			},
 			"sets-baked": {
-				"title": "Запеченные сеты"
+				"title": { "ru": "Запеченные сеты", "kk": "Пісірілген сеттер", "en": "Baked sets" }
 			},
 			"sets-mix": {
-				"title": "Микс сеты"
+				"title": { "ru": "Микс сеты", "kk": "Микс сеттер", "en": "Mix sets" }
 			},
 			"sets-lite": {
-				"title": "Лайт сеты"
+				"title": { "ru": "Лайт сеты", "kk": "Жеңіл сеттер", "en": "Lite sets" }
 			}
 		}
 	},
 	"gunkan_and_sushi": {
-		"title": "Гунканы и суши"
+		"title": { "ru": "Гунканы и суши", "kk": "Гункандар мен суши", "en": "Gunkan & sushi" }
 	},
 	"salads": {
-		"title": "Салаты"
+		"title": { "ru": "Салаты", "kk": "Салаттар", "en": "Salads" }
 	},
 	"delicious_wings": {
-		"title": "Вкуснейшие крылышки"
+		"title": { "ru": "Вкуснейшие крылышки", "kk": "Дәмді қанаттар", "en": "Delicious wings" }
 	},
 	"burger": {
-		"title": "Бургеры"
+		"title": { "ru": "Бургеры", "kk": "Бургерлер", "en": "Burgers" }
 	},
 	"pizza": {
-		"title": "Пиццы"
+		"title": { "ru": "Пиццы", "kk": "Пиццалар", "en": "Pizzas" }
 	},
 	"snacks": {
-		"title": "Закуски"
+		"title": { "ru": "Закуски", "kk": "Тіскебасар", "en": "Snacks" }
 	},
 	"soups": {
-		"title": "Супы"
+		"title": { "ru": "Супы", "kk": "Сорпалар", "en": "Soups" }
 	},
 	"pastes": {
-		"title": "Пасты"
+		"title": { "ru": "Пасты", "kk": "Пасталар", "en": "Pastas" }
 	},
 	"poke": {
-		"title": "Поке"
+		"title": { "ru": "Поке", "kk": "Поке", "en": "Poke" }
 	},
 	"desserts": {
-		"title": "Десерты"
+		"title": { "ru": "Десерты", "kk": "Тәттілер", "en": "Desserts" }
 	},
 	"sauces": {
-		"title": "Соусы"
+		"title": { "ru": "Соусы", "kk": "Соустар", "en": "Sauces" }
 	},
 	"drinks": {
-		"title": "Напитки"
+		"title": { "ru": "Напитки", "kk": "Сусындар", "en": "Drinks" }
 	},
 	"other": {
-		"title": "Другое",
+		"title": { "ru": "Другое", "kk": "Басқа", "en": "Other" },
 		"hidden": true
 	}
 }
